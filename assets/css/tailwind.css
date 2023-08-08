@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .gap-x {
+        @apply gap-x-sm xs:gap-x-md md:gap-x-lg lg:gap-x-xl;
+    }
+
+    .gap-y {
+        @apply gap-x-sm xs:gap-x-md md:gap-x-lg lg:gap-x-xl;
+    }
+}
