@@ -3,7 +3,9 @@
     <header class="fixed -z-10 grid h-screen w-full grid-cols-12 bg-gray-900">
       <nav class="col-span-full bg-green-400 lg:col-span-10 lg:col-start-3">Navigation</nav>
     </header>
-    <aside class="grid-row-1 pb-safe pointer-events-none fixed z-10 grid h-screen w-full grid-cols-12 lg:grid-rows-2">
+    <aside
+      class="grid-row-1 pb-safe pointer-events-none fixed left-0 right-0 top-0 z-10 grid h-screen w-full grid-cols-12 lg:grid-rows-2"
+    >
       <div class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block">
         <div @click="console.log('Logo')">Logo</div>
         <div>
