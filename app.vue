@@ -6,17 +6,27 @@
     <aside
       class="grid-row-1 pointer-events-none fixed left-0 right-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-12 lg:grid-rows-2"
     >
-      <div class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block">
-        <div @click="console.log('Logo')">Logo</div>
+      <div
+        class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start px-2 py-1 lg:col-span-2 lg:block"
+      >
+        <div @click="console.log('Logo')">crafted by lutz.</div>
         <div>
           <div>+49 152 26269766</div>
           <div>info@lutzweigold.de</div>
         </div>
       </div>
       <div class="col-span-full col-start-1 row-start-2 self-end lg:col-span-2">
-        <div class="flex divide-x-2 divide-white border-2 lg:block lg:divide-x-0 lg:divide-y-2">
-          <div class="w-1/2 lg:w-full">Button</div>
-          <div class="w-1/2 lg:w-full">Button</div>
+        <div
+          class="flex flex-row-reverse divide-x-2 divide-x-reverse divide-white border-2 lg:block lg:divide-x-0 lg:divide-y-2"
+        >
+          <div class="flex w-1/2 justify-between px-2 py-1 lg:w-full">
+            <span> Menu </span>
+            <span> [about] </span>
+          </div>
+          <div class="flex w-1/2 justify-between px-2 py-1 lg:w-full">
+            <span> Language </span>
+            <span> [DE] </span>
+          </div>
         </div>
       </div>
     </aside>
