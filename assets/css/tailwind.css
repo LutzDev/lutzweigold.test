@@ -11,3 +11,9 @@
         @apply gap-x-sm xs:gap-x-md md:gap-x-lg lg:gap-x-xl;
     }
 }
+
+@layer utilities {
+    .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
