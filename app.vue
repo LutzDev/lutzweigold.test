@@ -30,14 +30,16 @@
         </div>
       </div>
     </aside>
-    <main id="smooth-content" class="col-span-full col-start-1 bg-red-500 lg:col-span-10 lg:col-start-3">
-      <section class="h-screen bg-gray-500 p-10">
-        <div @click="console.log('Button')">Button</div>
-      </section>
-      <section class="h-screen bg-gray-400">Section 2</section>
-      <section class="h-screen bg-gray-500">Section 3</section>
-    </main>
-    <footer class="col-span-full col-start-1 bg-yellow-600 lg:col-span-10 lg:col-start-3">Footer</footer>
+    <div id="smooth-content" class="col-span-full col-start-1 lg:col-span-10 lg:col-start-3">
+      <main class="translate-x-full bg-red-500">
+        <section class="h-screen bg-gray-500 p-10">
+          <div @click="console.log('Button')">Button</div>
+        </section>
+        <section class="h-screen bg-gray-400">Section 2</section>
+        <section class="h-screen bg-gray-500">Section 3</section>
+      </main>
+      <footer class="bg-yellow-600">Footer</footer>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
