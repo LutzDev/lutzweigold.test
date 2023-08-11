@@ -65,7 +65,7 @@ const theme = {
     59: '29.5rem',
     60: '30rem',
     xs: '0.25rem',
-    sm: '0.5',
+    sm: '0.5rem',
     md: '1rem',
     lg: '2rem',
     xl: '3rem',
@@ -79,7 +79,8 @@ const theme = {
     lg: '1024px',
     xl: '1440px',
     '2xl': '1920px',
-    '3xl': '3840px',
+    '3xl': '2560px',
+    '4xl': '3840px',
   },
 };
 
