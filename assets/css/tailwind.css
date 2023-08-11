@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-    .gap-x {
-        @apply gap-x-sm xs:gap-x-md md:gap-x-lg lg:gap-x-xl;
+    .p-x-md {
+        @apply px-2 xs:px-3 md:px-4 2xl:px-8 4xl:px-10;
     }
 
-    .gap-y {
-        @apply gap-x-sm xs:gap-x-md md:gap-x-lg lg:gap-x-xl;
+    .p-y-md {
+        @apply py-2 xs:py-3 md:py-4 2xl:py-8 3xl:py-10;
     }
+
 }
 
 @layer utilities {
