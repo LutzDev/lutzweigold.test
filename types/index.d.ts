@@ -1,3 +1,3 @@
-import { TextTag, WrapperTag, Variant, Theme } from '@Types/general';
+import { TextTag, HeadlineTag, TypographyTags, WrapperTag, Variant, Theme } from '@Types/general';
 
-export { TextTag, WrapperTag, Variant, Theme };
+export { TextTag, HeadlineTag, TypographyTags, WrapperTag, Variant, Theme };
