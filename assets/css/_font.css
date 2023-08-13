@@ -1,0 +1,68 @@
+:root {
+    --font-size-sm: clamp(0.8rem, 0.16vw + 0.75rem, 1.14rem);
+    --font-size-base: clamp(1rem, 0.48vw + 0.86rem, 2rem);
+    --font-size-md: clamp(1.25rem, 1.07vw + 0.93rem, 3.5rem);
+    --font-size-lg: clamp(1.56rem, 2.17vw + 0.91rem, 6.13rem);
+    --font-size-xl: clamp(1.95rem, 4.17vw + 0.7rem, 10.72rem);
+    --font-size-xxl: clamp(2.44rem, 7.77vw + 0.11rem, 18.76rem);
+    --font-size-xxxl: clamp(3.05rem, 14.18vw + -1.2rem, 32.83rem);
+}
+
+/*.text-display,
+.text-body
+{
+    font-family: 'PPNeueMontreal', sans-serif;
+}*/
+
+.text-display {
+    font-size: clamp(4rem, 12.381vw + 0.286rem, 30rem);
+    line-height: 1;
+}
+
+/*
+ * 480px - 3840px: 32px - 160px
+ */
+.first-headline {
+    font-size: clamp(2rem, 3.81vw + 0.857rem, 10rem);
+    line-height: 1.125;
+}
+
+/*
+ * 480px - 3840px: 24px - 96px
+ */
+.second-headline {
+    font-size: clamp(1.5rem, 2.143vw + 0.857rem, 6rem);
+    line-height: 1.125;
+}
+
+/*
+ * 480px - 3840px: 20px - 64px
+ */
+.third-headline {
+    font-size: clamp(1.25rem, 1.31vw + 0.857rem, 4rem);
+    line-height: 1.125;
+}
+
+/*
+ * 480px - 3840px: 20px - 64px
+ */
+.fourth-headline {
+    font-size: clamp(1rem, 0.238vw + 0.929rem, 1.5rem);
+    line-height: 1.125;
+}
+
+/*
+ * 480px - 3840px: 16px - 24px
+ */
+.text-body {
+    font-size: clamp(1rem, 0.238vw + 0.929rem, 1.5rem);
+    line-height: 1.5;
+}
+
+/*
+ * 480px - 3840px: 14px -20px
+ */
+.text-small {
+    font-size: clamp(0.75rem, 0.238vw + 0.679rem, 1.25rem);
+    line-height: 1.5;
+}
