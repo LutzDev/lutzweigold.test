@@ -1,6 +1,6 @@
 <template>
   <AtomsWrapper html-tag="nav">
-    <ul class="flex flex-wrap gap-x-10 xl:justify-end">
+    <ul class="sm:flex sm:flex-wrap sm:gap-x-10 xl:justify-end">
       <AtomsNavigationItem v-for="(item, key) in navItems" :key="key" :prefix="key + 1" :to="item.to"
         >{{ item.entry }}
       </AtomsNavigationItem>
