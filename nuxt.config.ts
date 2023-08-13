@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss', '@nuxt/image', '@pinia/nuxt'],
+  css: ['@/assets/css/main.css'],
   alias: {
     '@Types': './types',
   },
