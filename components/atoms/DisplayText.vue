@@ -1,5 +1,5 @@
 <template>
-  <component :is="props.htmlTag" class="text-[180px]">
+  <component :is="props.htmlTag" class="text-display">
     <slot />
   </component>
 </template>
@@ -16,3 +16,4 @@ const props = defineProps({
   },
 });
 </script>
+p
