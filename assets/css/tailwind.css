@@ -11,6 +11,14 @@
         @apply py-2 xs:py-3 md:py-4 2xl:py-8 3xl:py-10;
     }
 
+    .gap-x {
+        @apply gap-2 xs:gap-3 md:gap-4 2xl:gap-8 4xl:gap-10;
+    }
+
+    .gap-y {
+        @apply gap-2 xs:gap-3 md:gap-4 2xl:gap-8 4xl:gap-10;
+    }
+
 }
 
 @layer utilities {
