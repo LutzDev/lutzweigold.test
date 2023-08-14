@@ -1,5 +1,5 @@
 <template>
-  <main :class="`translate-x pointer-events-auto bg-red-500 ${open ? 'translate-x-[99%]' : ''}`" @click="open = !open">
+  <main :class="`translate-x pointer-events-auto bg-gray-100 ${open ? 'translate-x-[99%]' : ''}`" @click="open = !open">
     <slot />
   </main>
   <footer class="bg-yellow-600">Footer</footer>
