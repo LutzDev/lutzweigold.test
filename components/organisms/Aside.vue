@@ -9,7 +9,7 @@
         <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
       </div>
     </AtomsWrapper>
-    <AtomsWrapper class="pb-safe col-span-full col-start-1 row-start-2 self-end xl:col-span-2">
+    <AtomsWrapper class="col-span-full col-start-1 row-start-2 self-end xl:col-span-2">
       <div
         class="flex flex-row-reverse divide-x-2 divide-x-reverse divide-white border-2 border-white xl:block xl:divide-x-0 xl:divide-y-2"
       >
