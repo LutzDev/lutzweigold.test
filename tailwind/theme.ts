@@ -1,3 +1,5 @@
+import safelist from './safelist';
+
 const theme = {
   extend: {},
   spacing: {
@@ -82,6 +84,7 @@ const theme = {
     '3xl': '2560px',
     '4xl': '3840px',
   },
+  safelist: [...safelist],
 };
 
 export default theme;
