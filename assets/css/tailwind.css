@@ -3,20 +3,57 @@
 @tailwind utilities;
 
 @layer base {
+
+    .p-x-sm {
+        @apply px-1 xl:px-2 2xl:px-4 4xl:px-6;
+    }
+
     .p-x-md {
-        @apply px-2 xs:px-3 md:px-4 2xl:px-8 4xl:px-10;
+        @apply px-2 xl:px-4 2xl:px-8 4xl:px-10;
+    }
+
+    .px-lg {
+        @apply px-4 xl:px-8 2xl:px-16 4xl:px-20;
+    }
+
+    .p-y-sm {
+        @apply py-1 xl:py-2 2xl:py-4 4xl:py-6;
     }
 
     .p-y-md {
-        @apply py-2 xs:py-3 md:py-4 2xl:py-8 3xl:py-10;
+        @apply py-2 xl:py-4 2xl:py-8 4xl:py-10;
     }
 
-    .gap-x {
-        @apply gap-2 xs:gap-3 md:gap-4 2xl:gap-8 4xl:gap-10;
+    .p-y-lg {
+        @apply py-10 lg:py-2 xl:py-4 2xl:py-8 4xl:py-10;
     }
 
-    .gap-y {
-        @apply gap-2 xs:gap-3 md:gap-4 2xl:gap-8 4xl:gap-10;
+    .gapx-sm {
+        @apply gap-x-1 xl:gap-x-2 2xl:gap-x-4 4xl:gap-x-6;
+    }
+
+    .gapx-md {
+        @apply gap-x-2 xl:gap-x-4 2xl:gap-x-8 4xl:gap-x-10;
+    }
+
+    .gapx-lg {
+        @apply gap-x-4 xl:gap-x-8 2xl:gap-x-16 4xl:gap-x-20;
+    }
+
+    .gapy-sm {
+        @apply gap-y-1 xl:gap-y-2 2xl:gap-y-4 4xl:gap-y-6;
+    }
+
+    .gapy-md {
+        @apply gap-y-2 xl:gap-y-4 2xl:gap-y-8 4xl:gap-y-10;
+    }
+
+    .gapy-lg {
+        @apply gap-y-8 lg:gap-y-12 2xl:gap-y-20 4xl:gap-y-32;
+    }
+
+    .full-screen{
+        @apply lg:min-h-screen lg:flex lg:flex-col
     }
 
 }
