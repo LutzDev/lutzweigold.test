@@ -1,9 +1,11 @@
 <template>
   <component
     :is="props.htmlTag"
-    :class="`${props.variant === 'sm' ? 'p-x-sm p-y-sm' : props.variant === 'md' ? 'p-x-md p-y-md' : 'p-x-lg p-y-lg'}`"
+    :class="`${props.xPadding === 'sm' ? 'p-x-sm' : props.xPadding === 'md' ? 'p-x-md' : 'p-x-lg'} ${
+      props.yPadding === 'sm' ? 'p-y-sm' : props.yPadding === 'md' ? 'p-y-md' : 'p-y-lg'
+    } ${isFullScreen ? 'full-screen' : ''}`"
   >
-    <slot />
+    <slot :is-full-screen="props.isFullScreen" />
   </component>
 </template>
 
@@ -17,10 +19,20 @@ const props = defineProps({
     required: false,
     default: 'div',
   },
-  variant: {
+  xPadding: {
     type: String as PropType<Variant>,
     required: false,
     default: 'md',
+  },
+  yPadding: {
+    type: String as PropType<Variant>,
+    required: false,
+    default: 'md',
+  },
+  isFullScreen: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 });
 </script>
