@@ -1,7 +1,11 @@
 <template>
   <component
     :is="props.htmlTag"
-    :class="`grid grid-cols-${props.cols} grid-rows-${props.rows} ${noYGap ? '' : 'gap-y'} ${noXGap ? '' : 'gap-x'}`"
+    :class="`grid grid-cols-${props.cols} grid-rows-${props.rows} ${
+      props.yGap === 'sm' ? 'gapy-sm' : props.yGap === 'md' ? 'gapy-md' : props.yGap === 'lg' ? 'gapy-lg' : 'gap-y-0'
+    } ${
+      props.xGap === 'sm' ? 'gapx-sm' : props.xGap === 'md' ? 'gapx-md' : props.xGap === 'lg' ? 'gapx-lg' : 'gap-x-0'
+    } ${props.isFullScreen ? 'flex-1' : ''}`"
   >
     <slot />
   </component>
@@ -9,7 +13,7 @@
 
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import { WrapperTag, Grid } from '@Types';
+import { WrapperTag, Grid, Variant } from '@Types';
 
 const props = defineProps({
   htmlTag: {
@@ -27,15 +31,20 @@ const props = defineProps({
     default: 'none',
     required: false,
   },
-  noXGap: {
-    type: Boolean,
-    default: false,
+  yGap: {
+    type: String as PropType<Variant>,
     required: false,
+    default: 'md',
   },
-  noYGap: {
-    type: Boolean,
-    default: false,
+  xGap: {
+    type: String as PropType<Variant>,
     required: false,
+    default: 'md',
+  },
+  isFullScreen: {
+    type: Boolean,
+    required: false,
+    default: false,
   },
 });
 </script>
