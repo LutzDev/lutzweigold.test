@@ -1,7 +1,7 @@
 <template>
   <component
     :is="props.htmlTag"
-    :class="`${
+    :class="`col-span-full md:col-span-6 lg:col-span-8 ${
       props.htmlTag === 'h1'
         ? 'first-headline'
         : props.htmlTag === 'h2'
