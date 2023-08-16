@@ -1,5 +1,5 @@
 <template>
-  <AtomsGrid :class="`h-full w-full`" :cols="10" :theme="props.theme">
+  <AtomsGrid class="w-full" :cols="10" :theme="props.theme">
     <AtomsGrid :cols="5" class="col-span-full w-full md:col-span-5">
       <slot :theme="props.theme" name="leftCol" />
     </AtomsGrid>
