@@ -16,30 +16,87 @@
                 fit="cover"
                 src="/images/portrait-2.jpg"
                 :img-attrs="{
-                  class: 'img object-cover w-full h-30 xs:h-40 sm:h-50 lg:h-55 xl:h-60 2xl:h-75 3xl:h-90 4xl:h-100',
+                  class: 'img object-cover w-full h-30 xs:h-40 sm:h-45 lg:h-50 xl:h-60 2xl:h-75 3xl:h-90 4xl:h-100',
                 }"
               />
             </div>
           </template>
           <template #rightCol>
-            <AtomsBodyText html-tag="p" class="col-span-full col-start-1 self-end lg:col-span-3 lg:col-start-3"
+            <AtomsBodyText
+              html-tag="p"
+              class="col-span-full col-start-1 self-end lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-3"
               >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer..</AtomsBodyText
-            >
+              industry's standard dummy text ever since the 1500s, when an unknown printer.
+            </AtomsBodyText>
           </template>
         </OrganismsTwoComponentsRow>
       </AtomsFlex>
     </template>
   </AtomsWrapper>
-  <AtomsWrapper class="h-screen bg-purple-500" html-tag="section" @click="console.log('Section 1')">
-    Section 2
-  </AtomsWrapper>
-  <AtomsWrapper class="h-screen bg-purple-500" html-tag="section" @click="console.log('Section 1')">
-    Section 3
+  <AtomsWrapper is-full-screen html-tag="section" y-padding="lg">
+    <template #default="{ isFullScreen }">
+      <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
+        <OrganismsOneComponentsRow>
+          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6"> 6+ years of experience</AtomsHeadline>
+        </OrganismsOneComponentsRow>
+        <OrganismsOneComponentsRow y-gap="none">
+          <MoleculesExperience :items="items" />
+        </OrganismsOneComponentsRow>
+      </AtomsFlex>
+    </template>
   </AtomsWrapper>
 </template>
 
 <script lang="ts" setup>
+import { Experience, ListItem } from '@Types';
+
+const items: Experience = {
+  year: 20,
+  entries: [
+    {
+      year: 16,
+      additionalYear: 20,
+      title: 'Self employee',
+      description: ['hallo', 'asdasd', 'sdsd'],
+      to: '/about',
+    },
+    {
+      year: 17,
+      additionalYear: 23,
+      title: 'Self employee!!',
+      description: 'asdasdasdasdasd asd asd ',
+      to: '/about',
+    },
+    {
+      year: 18,
+      additionalYear: 14,
+      title: 'Self employee',
+      description: ['asdasd', 'asdasd', 'asdasd'],
+      to: '/lutz',
+    },
+    {
+      year: 19,
+      additionalYear: 16,
+      title: 'Self employee',
+      description: ['hallo', 'asdasd', 'sdsd'],
+      to: '/ka',
+    },
+    {
+      year: 20,
+      additionalYear: 23,
+      title: 'Self employee!!',
+      description: 'asdasdasdasdasd asd asd ',
+    },
+    {
+      year: 16,
+      additionalYear: 'today',
+      title: 'Self employee',
+      description: ['asdasd', 'asdasd', 'asdasd'],
+      to: 'https://test.de',
+    },
+  ],
+};
+
 /* const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const firstImg = ref<HTMLDivElement | null>(null);
