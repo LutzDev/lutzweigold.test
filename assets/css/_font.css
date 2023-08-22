@@ -20,6 +20,15 @@
 }
 
 /*
+ * 480px - 3840px: 48px - 160px
+ */
+.text-title {
+    font-size: clamp(3rem, 8.095vw + 0.571rem, 20rem);
+    line-height: 1;
+}
+
+
+/*
  * 480px - 3840px: 32px - 160px
  */
 .first-headline {
@@ -44,18 +53,19 @@
 }
 
 /*
- * 480px - 3840px: 20px - 64px
+ * 480px - 3840px: 14px - 24px
  */
 .fourth-headline {
-    font-size: clamp(1rem, 0.238vw + 0.929rem, 1.5rem);
+    font-size: clamp(0.875rem, 0.298vw + 0.786rem, 1.5rem);
+    font-weight: 500;
     line-height: 1.125;
 }
 
 /*
- * 480px - 3840px: 16px - 24px
+ * 480px - 3840px: 14px - 24px
  */
 .text-body {
-    font-size: clamp(1rem, 0.238vw + 0.929rem, 1.5rem);
+    font-size: clamp(0.875rem, 0.298vw + 0.786rem, 1.5rem);
     line-height: 1.5;
 }
 
