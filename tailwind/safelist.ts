@@ -1,4 +1,4 @@
-const safelist = [
+const grid = [
   'grid-cols-12',
   'grid-cols-11',
   'grid-cols-10',
@@ -27,4 +27,4 @@ const safelist = [
   'grid-rows-none',
 ];
 
-export default safelist;
+export default [...grid];
