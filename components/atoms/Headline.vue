@@ -1,11 +1,11 @@
 <template>
   <component
     :is="props.htmlTag"
-    :class="`col-span-full md:col-span-6 lg:col-span-8 ${
+    :class="` ${
       props.htmlTag === 'h1'
-        ? 'first-headline'
+        ? 'first-headline col-span-full md:col-span-6 lg:col-span-8'
         : props.htmlTag === 'h2'
-        ? 'second-headline'
+        ? 'second-headline col-span-full md:col-span-6 lg:col-span-8'
         : props.htmlTag === 'h3'
         ? 'third-headline'
         : 'fourth-headline'
