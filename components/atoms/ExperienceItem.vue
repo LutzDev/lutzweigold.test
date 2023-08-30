@@ -1,7 +1,7 @@
 <template>
   <AtomsGrid :cols="8" y-gap="sm" class="w-full" @mouseenter="isHover = true" @mouseleave="isHover = false">
     <div class="col-span-6 md:col-span-2">
-      <AtomsTitleText class="inline-block"
+      <AtomsTitleText size="lg" class="inline-block"
         ><span class="md:hidden">{{ props.year }}</span
         >{{ props.item.year }}</AtomsTitleText
       >
