@@ -1,8 +1,10 @@
 <template>
   <component
     :is="props.htmlTag"
-    :class="`${props.xPadding === 'sm' ? 'p-x-sm' : props.xPadding === 'md' ? 'p-x-md' : 'p-x-lg'} ${
-      props.yPadding === 'sm' ? 'p-y-sm' : props.yPadding === 'md' ? 'p-y-md' : 'p-y-lg'
+    :class="`${
+      props.xPadding === 'sm' ? 'p-x-sm' : props.xPadding === 'md' ? 'p-x-md' : props.xPadding === 'lg' ? 'p-x-lg' : ''
+    } ${
+      props.yPadding === 'sm' ? 'p-y-sm' : props.yPadding === 'md' ? 'p-y-md' : props.yPadding === 'lg' ? 'p-y-lg' : ''
     } ${isFullScreen ? 'full-screen' : ''}`"
   >
     <slot :is-full-screen="props.isFullScreen" />
