@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Experience, ListItem } from '@Types';
+import { Experience } from '@Types';
 
 const items: Experience = {
   year: 20,
