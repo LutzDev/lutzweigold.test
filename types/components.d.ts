@@ -23,14 +23,30 @@ interface Link {
   title: string;
 }
 
-interface ListTitle {
-  name: string;
-  reverse?: boolean;
-}
-
 interface ListItem {
   title: string;
   entries: Array<string | Link>;
 }
 
-export { Grid, Experience, ExperienceItem, ScrambleTextItem, Link, ListTitle, ListItem };
+interface PortfolioItem {
+  title: string;
+  tags: Array<string>;
+  to: string;
+}
+
+interface ProjectSliderItem {
+  left: string;
+  center: string;
+  right: string;
+}
+
+export {
+  Grid,
+  Experience,
+  ExperienceItem,
+  ScrambleTextItem,
+  Link,
+  ListItem,
+  PortfolioItem,
+  ProjectSlidProjectSliderItem,
+};

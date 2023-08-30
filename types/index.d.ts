@@ -1,5 +1,14 @@
 import { TextTag, HeadlineTag, TypographyTags, WrapperTag, Variant, Theme } from '@Types/general';
-import { Grid, Experience, ExperienceItem, ScrambleTextItem, Link, ListItem, ListTitle } from '@Types/components';
+import {
+  Grid,
+  Experience,
+  ExperienceItem,
+  ScrambleTextItem,
+  Link,
+  ListItem,
+  PortfolioItem,
+  ProjectSliderItem,
+} from '@Types/components';
 
 export {
   TextTag,
@@ -14,5 +23,6 @@ export {
   ScrambleTextItem,
   Link,
   ListItem,
-  ListTitle,
+  PortfolioItem,
+  ProjectSliderItem,
 };
