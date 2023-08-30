@@ -8,6 +8,11 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "pnpm": {
+    "overrides": {
+      "node-fetch-native": "1.2.0"
+    }
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/image": "1.0.0-rc.1",
