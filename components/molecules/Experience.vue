@@ -1,8 +1,12 @@
 <template>
   <div ref="wrapper" class="relative col-span-2 row-span-6 row-start-1 hidden md:block">
     <div ref="text" class="text-title flex justify-end">
-      <AtomsTitleText ref="el" class="inline-block translate-x-2 xl:translate-x-4 2xl:translate-x-8 4xl:translate-x-10">
-        20
+      <AtomsTitleText
+        ref="el"
+        size="lg"
+        class="inline-block translate-x-2 xl:translate-x-4 2xl:translate-x-8 4xl:translate-x-10"
+      >
+        {{ props.items.year }}
       </AtomsTitleText>
     </div>
   </div>
