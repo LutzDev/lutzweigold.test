@@ -20,9 +20,25 @@
 }
 
 /*
- * 480px - 3840px: 48px - 160px
+ * 480px - 3840px: 20px - 56px
  */
-.text-title {
+.text-title-sm {
+    font-size: clamp(1.25rem, 1.071vw + 0.929rem, 3.5rem);
+    line-height: 1;
+}
+
+/*
+ * 480px - 3840px: 36px - 240px
+ */
+.text-title-md {
+    font-size: clamp(2.25rem, 6.071vw + 0.429rem, 15rem);
+    line-height: 1;
+}
+
+/*
+ * 480px - 3840px: 48px - 320px
+ */
+.text-title-lg {
     font-size: clamp(3rem, 8.095vw + 0.571rem, 20rem);
     line-height: 1;
 }
