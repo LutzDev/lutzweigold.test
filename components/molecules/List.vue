@@ -1,5 +1,13 @@
 <template>
   <div ref="scope" class="col-span-full">
+    <div
+      v-if="props.title"
+      :class="`p-y-1 w-full whitespace-nowrap border-t-2 text-4xl ${
+        props.theme === 'bright' ? 'border-black' : 'border-white'
+      }`"
+    >
+      <AtomsMarquee :title="props.title.name" :reverse="props.title.reverse" />
+    </div>
     <AtomsGrid v-for="(item, key) in props.list" :key="key" :cols="10" y-gap="none" class="border-t-2 border-black">
       <AtomsBodyText html-tag="span" class="col-span-5 py-sm md:col-span-6">{{ item.title }}</AtomsBodyText>
       <div
@@ -19,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ListItem } from '@Types';
+import { ListItem, ListTitle } from '@Types';
 
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
@@ -29,6 +37,10 @@ let ctx: gsap.Context;
 let trigger: ScrollTrigger[];
 
 const props = defineProps({
+  title: {
+    type: Object as PropType<ListTitle>,
+    required: false,
+  },
   width: {
     type: String,
     default: 'full',
