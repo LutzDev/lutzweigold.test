@@ -95,12 +95,17 @@ const items: Array<PortfolioItem> = [
     to: 'asdasdasd',
   },
   {
+    title: 'Freya',
+    tags: ['Nuxt', 'Vue3'],
+    to: 'asdasdasd',
+  },
+  {
     title: 'Pleta',
     tags: ['Nuxt', 'Vue3'],
     to: 'asdasdasd',
   },
   {
-    title: 'Smaragd',
+    title: 'SmarAct',
     tags: ['Nuxt', 'Vue3'],
     to: 'asdasdasd',
   },
