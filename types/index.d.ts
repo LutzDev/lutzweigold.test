@@ -6,6 +6,7 @@ import {
   ScrambleTextItem,
   Link,
   ListItem,
+  ListTitle,
   PortfolioItem,
   ProjectSliderItem,
 } from '@Types/components';
@@ -23,6 +24,7 @@ export {
   ScrambleTextItem,
   Link,
   ListItem,
+  ListTitle,
   PortfolioItem,
   ProjectSliderItem,
 };

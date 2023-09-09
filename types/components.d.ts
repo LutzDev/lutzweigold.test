@@ -40,6 +40,11 @@ interface ProjectSliderItem {
   right: string;
 }
 
+interface ListTitle {
+  name: string;
+  reverse?: boolean;
+}
+
 export {
   Grid,
   Experience,
@@ -47,6 +52,7 @@ export {
   ScrambleTextItem,
   Link,
   ListItem,
+  ListTitle,
   PortfolioItem,
   ProjectSlidProjectSliderItem,
 };
