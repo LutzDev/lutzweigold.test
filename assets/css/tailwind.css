@@ -19,6 +19,10 @@
         @apply px-4 xl:px-8 2xl:px-16 4xl:px-20;
     }
 
+    .p-x-xl {
+        @apply px-20 lg:px-4 xl:px-8 2xl:px-16 4xl:px-20;
+    }
+
     .p-y-xs {
         @apply py-0.25 xl:py-0.5 2xl:py-1 4xl:py-2;
     }
@@ -33,6 +37,10 @@
 
     .p-y-lg {
         @apply py-10 lg:py-2 xl:py-4 2xl:py-8 4xl:py-10;
+    }
+
+    .p-y-xl {
+        @apply py-10 lg:py-4 xl:py-24 2xl:py-48 4xl:py-64;
     }
 
     .gapx-sm {

@@ -2,9 +2,25 @@
   <component
     :is="props.htmlTag"
     :class="`${
-      props.xPadding === 'sm' ? 'p-x-sm' : props.xPadding === 'md' ? 'p-x-md' : props.xPadding === 'lg' ? 'p-x-lg' : ''
+      props.xPadding === 'sm'
+        ? 'p-x-sm'
+        : props.xPadding === 'md'
+        ? 'p-x-md'
+        : props.xPadding === 'lg'
+        ? 'p-x-lg'
+        : props.xPadding === 'xl'
+        ? 'p-x-xl'
+        : ''
     } ${
-      props.yPadding === 'sm' ? 'p-y-sm' : props.yPadding === 'md' ? 'p-y-md' : props.yPadding === 'lg' ? 'p-y-lg' : ''
+      props.yPadding === 'sm'
+        ? 'p-y-sm'
+        : props.yPadding === 'md'
+        ? 'p-y-md'
+        : props.yPadding === 'lg'
+        ? 'p-y-lg'
+        : props.yPadding === 'xl'
+        ? 'p-y-xl'
+        : ''
     } ${isFullScreen ? 'full-screen' : ''}`"
   >
     <slot :is-full-screen="props.isFullScreen" />
