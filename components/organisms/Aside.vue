@@ -13,9 +13,12 @@
       <div
         class="flex flex-row-reverse divide-x-2 divide-x-reverse divide-white border-2 border-white lg:block lg:divide-x-0 lg:divide-y-2"
       >
-        <div class="flex w-1/2 justify-between px-2 py-1 text-white lg:w-full">
+        <div
+          class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1 text-white lg:w-full"
+          @click="toggleModal"
+        >
           <AtomsBodyText html-tag="span">Menu</AtomsBodyText>
-          <AtomsBodyText html-tag="span">[about]</AtomsBodyText>
+          <AtomsBodyText html-tag="span">[<span ref="text"></span>]</AtomsBodyText>
         </div>
         <div class="flex w-1/2 justify-between px-2 py-1 text-white lg:w-full">
           <AtomsBodyText html-tag="span">Language</AtomsBodyText>
@@ -26,4 +29,34 @@
   </aside>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { $gsap: gsap } = useNuxtApp();
+const route = useRoute();
+const modalStore = useModalStore();
+const text = ref();
+const { toggleModal } = modalStore;
+let ctx: gsap.Context;
+
+onMounted(() => {
+  ctx = gsap.context(() => {
+    watch(
+      () => route.name,
+      (newValue) => {
+        gsap.to(text.value, {
+          duration: 1,
+          scrambleText: {
+            text: `${newValue !== 'index' ? String(newValue) : 'about'}`,
+            chars: '/$#',
+            tweenLength: true,
+          },
+        });
+      },
+      { immediate: true }
+    );
+  });
+});
+
+onUnmounted(() => {
+  ctx.revert();
+});
+</script>
