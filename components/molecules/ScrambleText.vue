@@ -24,11 +24,13 @@ onBeforeMount(() => {
 });
 onMounted(() => {
   ctx = gsap.context(() => {
+    // TODO: Scrolltrigger not working on skill page
     ScrollTrigger.create({
       trigger: wrapper.value,
       toggleActions: 'play pause resume pause',
       animation: tl.value?.seek(gsap.utils.random(1, 3)),
       refreshPriority: 1,
+      markers: false,
     });
   });
 });
