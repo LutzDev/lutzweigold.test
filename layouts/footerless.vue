@@ -4,11 +4,6 @@
       <slot />
     </div>
   </main>
-  <footer ref="footer" class="pointer-events-auto overflow-hidden bg-yellow-600">
-    <div ref="footerContent">
-      <MoleculesFooter />
-    </div>
-  </footer>
 </template>
 
 <script lang="ts" setup>
@@ -20,9 +15,7 @@ const animationStore = useAnimationStore();
 let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
 const main = ref(null);
-const footer = ref(null);
 const mainContent = ref(null);
-const footerContent = ref(null);
 
 onMounted(() => {
   ctx = gsap.context(() => {
@@ -31,21 +24,20 @@ onMounted(() => {
       defaults: { ease: Power4.easeInOut, duration: 2 },
     });
     tl.to(
-      [main.value, footer.value],
+      main.value,
       {
         x: '100%',
       },
       0
     );
     tl.to(
-      [mainContent.value, footerContent.value],
+      mainContent.value,
       {
         x: '-50%',
       },
       0
     );
     animationStore.master.value.add(tl, 0);
-    //console.log(animationStore.master.value.getChildren(false));
   });
 
   watch(
