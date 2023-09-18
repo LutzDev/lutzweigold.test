@@ -1,6 +1,7 @@
 <template>
   <component
     :is="props.htmlTag"
+    ref="target"
     :class="`${
       props.xPadding === 'sm'
         ? 'p-x-sm'
@@ -23,13 +24,19 @@
         : ''
     } ${isFullScreen ? 'full-screen' : ''}`"
   >
-    <slot :is-full-screen="props.isFullScreen" />
+    <slot :is-full-screen="props.isFullScreen" :theme="props.theme" />
   </component>
 </template>
 
 <script lang="ts" setup>
 import { PropType } from 'vue';
 import { WrapperTag, Variant } from '@Types';
+
+const target = ref<HTMLDivElement | null>(null);
+
+defineExpose({
+  target,
+});
 
 const props = defineProps({
   htmlTag: {
@@ -51,6 +58,11 @@ const props = defineProps({
     type: Boolean,
     required: false,
     default: false,
+  },
+  theme: {
+    type: String,
+    default: 'light',
+    required: false,
   },
 });
 </script>
