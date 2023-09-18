@@ -68,7 +68,7 @@
     }
 
     .full-screen{
-        @apply lg:min-h-screen lg:flex lg:flex-col
+        @apply lg:min-h-screen lg:flex lg:flex-col;
     }
 
 }
