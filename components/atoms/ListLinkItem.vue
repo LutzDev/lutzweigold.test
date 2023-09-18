@@ -5,12 +5,15 @@
     @mouseenter="hover = true"
     @mouseleave="hover = false"
   >
-    <AtomsBodyText html-tag="span">{{ props.name }}</AtomsBodyText>
-    <AtomsButton :event="hover" size="sm" :to="to" />
+    <AtomsBodyText html-tag="span" :theme="props.theme">{{ props.name }}</AtomsBodyText>
+    <AtomsButton :event="hover" size="sm" :to="to" :theme="props.theme" />
   </NuxtLink>
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue/dist/vue';
+import { Theme } from '@Types';
+
 const hover = ref<boolean>(false);
 
 const props = defineProps({
@@ -23,8 +26,8 @@ const props = defineProps({
     required: true,
   },
   theme: {
-    type: String,
-    default: 'bright',
+    type: String as PropType<Theme>,
+    default: 'light',
     required: false,
   },
 });

@@ -3,23 +3,38 @@
     <div
       v-if="props.title"
       :class="`p-y-1 w-full whitespace-nowrap border-t-2 text-4xl ${
-        props.theme === 'bright' ? 'border-black' : 'border-white'
+        props.theme === 'light' ? 'border-black' : 'border-white'
       }`"
     >
-      <AtomsMarquee :title="props.title.name" :reverse="props.title.reverse" />
+      <AtomsMarquee :title="props.title.name" :reverse="props.title.reverse" :theme="props.theme" />
     </div>
-    <AtomsGrid v-for="(item, key) in props.list" :key="key" :cols="10" y-gap="none" class="border-t-2 border-black">
-      <AtomsBodyText html-tag="span" class="col-span-5 py-sm md:col-span-6">{{ item.title }}</AtomsBodyText>
+    <AtomsGrid
+      v-for="(item, key) in props.list"
+      :key="key"
+      :cols="props.width === 'full' ? 10 : 5"
+      y-gap="none"
+      :class="`border-t-2 ${props.theme === 'light' ? 'border-black' : 'border-white'}`"
+    >
+      <AtomsBodyText
+        html-tag="span"
+        :class="`${props.width === 'full' ? 'col-span-5 md:col-span-6' : 'col-span-2'} py-sm`"
+        :theme="props.theme"
+        >{{ item.title }}</AtomsBodyText
+      >
       <div
         v-for="(entry, index) in item.entries"
         :key="index"
-        class="col-span-5 col-start-6 md:col-span-4 md:col-start-7"
+        :class="`${
+          props.width === 'full' ? 'col-span-5 col-start-6 md:col-span-4 md:col-start-7' : 'col-span-3 col-start-3'
+        }`"
       >
-        <AtomsListLinkItem v-if="typeof entry === 'object'" :name="entry.name" :to="entry.to" />
-        <AtomsBodyText v-else html-tag="div" class="py-sm">{{ entry }}</AtomsBodyText>
+        <AtomsListLinkItem v-if="typeof entry === 'object'" :name="entry.name" :to="entry.to" :theme="props.theme" />
+        <AtomsBodyText v-else html-tag="div" class="py-sm" :theme="props.theme">{{ entry }}</AtomsBodyText>
         <div
           v-if="index < item.entries.length - 1"
-          class="test col-span-full h-[2px] origin-left scale-x-0 bg-black"
+          :class="`line col-span-full h-[2px] origin-left scale-x-0 ${
+            props.theme === 'light' ? 'bg-black' : 'bg-white'
+          }`"
         ></div>
       </div>
     </AtomsGrid>
@@ -27,7 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import { ListItem, ListTitle } from '@Types';
+import { PropType } from 'vue';
+import { ListItem, ListTitle, Theme } from '@Types';
 
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
@@ -51,15 +67,15 @@ const props = defineProps({
     required: true,
   },
   theme: {
-    type: String,
-    default: 'bright',
+    type: String as PropType<Theme>,
+    default: 'light',
     required: false,
   },
 });
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    const lines: HTMLElement[] = gsap.utils.toArray('.test');
+    const lines: HTMLElement[] = gsap.utils.toArray('.line');
 
     trigger = ScrollTrigger.batch(lines, {
       start: 'top bottom',

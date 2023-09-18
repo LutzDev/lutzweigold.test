@@ -1,5 +1,5 @@
 <template>
-  <AtomsWrapper html-tag="section" y-padding="lg" class="bg-black">
+  <AtomsWrapper html-tag="section" y-padding="xl" data-speed="clamp(0.8)">
     <template #default>
       <AtomsGrid :cols="10" :rows="3">
         <div class="col-span-8 row-span-1 row-start-1 md:col-span-4 md:col-start-1">
@@ -16,16 +16,16 @@
       </AtomsGrid>
     </template>
   </AtomsWrapper>
-  <AtomsWrapper html-tag="section" y-padding="lg">
-    <template #default="{ isFullScreen }">
+  <AtomsWrapper theme="dark" html-tag="section" y-padding="lg">
+    <template #default="{ isFullScreen, theme }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
-          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6">
+          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6" :theme="theme" data-speed="clamp(1.15)">
             I'm a creative developer based in germany
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
-          <MoleculesList :list="list" />
+          <MoleculesList :list="list" :theme="theme" />
         </OrganismsOneComponentsRow>
       </AtomsFlex>
     </template>
@@ -46,8 +46,8 @@ const list: Array<ListItem> = [
   {
     title: '© lutz weigold',
     entries: [
+      { name: 'Privacy', to: '/', title: 'Its the title of the link' },
       { name: 'Imprint', to: '/', title: 'Its the title of the link' },
-      { name: 'info@lutzweigold.de', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
     ],
   },
 ];
