@@ -15,7 +15,7 @@
 }*/
 
 .text-display {
-    font-size: clamp(4rem, 12.381vw + 0.286rem, 30rem);
+    font-size: clamp(4rem, 10vw + 1rem, 25rem);
     line-height: 1;
 }
 
@@ -39,7 +39,7 @@
  * 480px - 3840px: 48px - 320px
  */
 .text-title-lg {
-    font-size: clamp(3rem, 8.095vw + 0.571rem, 20rem);
+    font-size: clamp(3rem, 12.857vw + -0.857rem, 30rem);
     line-height: 1;
 }
 
