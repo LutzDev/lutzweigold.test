@@ -52,11 +52,12 @@ const { $gsap: gsap, $Power0: Power0 } = useNuxtApp();
 
 const scope = ref();
 const target = ref();
+let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    const mm: gsap.MatchMedia = gsap.matchMedia();
+    mm = gsap.matchMedia();
 
     gsap.utils.toArray('.row').forEach((value) => {
       const row: HTMLElement = value as HTMLElement;
