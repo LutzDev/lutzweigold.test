@@ -45,6 +45,15 @@ interface ListTitle {
   reverse?: boolean;
 }
 
+interface Image {
+  src: string;
+  alt: string;
+}
+
+interface NavigationState {
+  [key: string]: boolean;
+}
+
 export {
   Grid,
   Experience,
@@ -54,5 +63,7 @@ export {
   ListItem,
   ListTitle,
   PortfolioItem,
+  Image,
+  NavigationState,
   ProjectSlidProjectSliderItem,
 };

@@ -1,16 +1,17 @@
 <template>
   <AtomsWrapper html-tag="nav">
     <ul ref="scope" class="sm:flex sm:flex-wrap sm:gap-x-10 xl:justify-end">
-      <AtomsNavigationItem v-for="(item, key) in navItems" :key="key" :prefix="key + 1" :to="item.to"
-        >{{ item.entry }}
-      </AtomsNavigationItem>
+      <AtomsLangSwitchItem v-for="(item, key) in locales" :key="key" :prefix="key + 1" :lang="item.code"
+        >{{ item.name }}
+      </AtomsLangSwitchItem>
     </ul>
   </AtomsWrapper>
 </template>
 
 <script lang="ts" setup>
-const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
+const { $gsap: gsap, $Power2: Power2 } = useNuxtApp();
 const animationStore = useAnimationStore();
+const { locales } = useI18n();
 
 const scope = ref();
 let tlReveal: gsap.core.Timeline;
@@ -20,30 +21,19 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tlReveal = gsap.timeline({
       data: { name: 'SUBNAVIGATION' },
-      defaults: { ease: Power4.easeInOut, duration: 3 },
+      defaults: { ease: Power2.easeOut, duration: 0.8 },
     });
 
     tlReveal.to('.navItem', {
       y: 0,
-      stagger: 0.15,
+      stagger: 0.1,
     });
 
-    animationStore.master.value.add(tlReveal, '0-=0.5');
+    animationStore.navigationMaster.value.add(tlReveal, '<80%');
   }, scope.value!);
 });
 
 onUnmounted(() => {
   ctx.revert();
 });
-
-const navItems = [
-  {
-    entry: 'German',
-    to: '/',
-  },
-  {
-    entry: 'English',
-    to: '/work',
-  },
-];
 </script>

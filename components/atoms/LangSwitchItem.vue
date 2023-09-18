@@ -2,26 +2,26 @@
   <li class="overflow-hidden">
     <div class="navItem flex translate-y-full items-baseline gap-2 py-2">
       <AtomsBodyText html-tag="span">0{{ props.prefix }}</AtomsBodyText>
-      <NuxtLink :to="localePath({ name: props.to })" @click="toggleModal">
-        <AtomsDisplayText class="pointer-events-auto cursor-pointer" html-tag="span">
-          {{ $t(`${props.title}`) }}
-        </AtomsDisplayText>
-      </NuxtLink>
+      <AtomsDisplayText class="pointer-events-auto cursor-pointer" html-tag="span" @click="handleClick">
+        <slot />
+      </AtomsDisplayText>
     </div>
   </li>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
+const router = useRouter();
 const modalStore = useModalStore();
 const { toggleModal } = modalStore;
-const localePath = useLocalePath();
+const switchLocalePath = useSwitchLocalePath();
+
+const handleClick = () => {
+  router.push({ path: switchLocalePath(props.lang) });
+  toggleModal();
+};
 
 const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  to: {
+  lang: {
     type: String,
     required: true,
   },

@@ -9,6 +9,8 @@ import {
   ListTitle,
   PortfolioItem,
   ProjectSliderItem,
+  Image,
+  NavigationState,
 } from '@Types/components';
 
 export {
@@ -25,6 +27,8 @@ export {
   Link,
   ListItem,
   ListTitle,
+  Image,
+  NavigationState,
   PortfolioItem,
   ProjectSliderItem,
 };

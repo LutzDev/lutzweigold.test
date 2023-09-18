@@ -1,15 +1,19 @@
 <template>
   <AtomsWrapper html-tag="nav">
     <ul ref="scope" class="sm:flex sm:flex-wrap sm:gap-x-10 xl:justify-end">
-      <AtomsNavigationItem v-for="(item, key) in navItems" :key="key" :prefix="key + 1" :to="item.to"
-        >{{ item.entry }}
-      </AtomsNavigationItem>
+      <AtomsNavigationItem
+        v-for="(item, key) in navItems"
+        :key="key"
+        :prefix="key + 1"
+        :to="item.to"
+        :title="item.entry"
+      />
     </ul>
   </AtomsWrapper>
 </template>
 
 <script lang="ts" setup>
-const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
+const { $gsap: gsap, $Power2: Power2 } = useNuxtApp();
 const animationStore = useAnimationStore();
 
 const scope = ref();
@@ -20,15 +24,15 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tlReveal = gsap.timeline({
       data: { name: 'NAVIGATION' },
-      defaults: { ease: Power4.easeInOut, duration: 3 },
+      defaults: { ease: Power2.easeOut, duration: 0.8 },
     });
 
     tlReveal.to('.navItem', {
       y: 0,
-      stagger: 0.15,
+      stagger: 0.1,
     });
 
-    animationStore.master.value.add(tlReveal, '0-=0.5');
+    animationStore.navigationMaster.value.add(tlReveal.reverse(0));
   }, scope.value!);
 });
 
@@ -38,20 +42,20 @@ onUnmounted(() => {
 
 const navItems = [
   {
-    entry: 'About',
-    to: '/',
+    entry: 'pages.about.title',
+    to: 'index',
   },
   {
-    entry: 'Work',
-    to: '/work',
+    entry: 'pages.work.title',
+    to: 'work',
   },
   {
-    entry: 'Skill',
-    to: '/skill',
+    entry: 'pages.skill.title',
+    to: 'skill',
   },
   {
-    entry: 'Contact',
-    to: '/contact',
+    entry: 'pages.contact.title',
+    to: 'contact',
   },
 ];
 </script>
