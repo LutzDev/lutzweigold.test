@@ -37,6 +37,7 @@ const wrapper = ref<HTMLDivElement | null>(null);
 const text = ref<HTMLDivElement | null>(null);
 
 let ctx: gsap.Context;
+let mm: gsap.MatchMedia;
 let trigger: ScrollTrigger[];
 
 const props = defineProps({
@@ -48,7 +49,7 @@ const props = defineProps({
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    const mm: gsap.MatchMedia = gsap.matchMedia();
+    mm = gsap.matchMedia();
     const sections: HTMLElement[] = gsap.utils.toArray('.section');
 
     mm.add('(min-width: 640px)', () => {

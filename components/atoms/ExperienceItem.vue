@@ -5,10 +5,12 @@
         ><span class="md:hidden">{{ props.year }}</span
         >{{ props.item.year }}</AtomsTitleText
       >
-      <AtomsBodyText class="inline-block" html-tag="span">- {{ props.item.additionalYear }}</AtomsBodyText>
     </div>
     <div class="col-span-full self-end sm:col-span-6 md:col-span-4">
-      <AtomsHeadline html-tag="h4" class="mb-0.5"> {{ props.item.title }}</AtomsHeadline>
+      <AtomsSmallText class="mb-0.5 inline-block font-medium uppercase tracking-wide text-gray-500" html-tag="span">{{
+        props.item.additionalYear
+      }}</AtomsSmallText>
+      <AtomsHeadline html-tag="h4" class="mb-0"> {{ props.item.title }}</AtomsHeadline>
       <AtomsGrid v-if="Array.isArray(props.item?.description)" :cols="4" y-gap="none">
         <AtomsBodyText v-for="(entry, key) in props.item?.description" :key="key" class="col-span-2"
           >- {{ entry }}</AtomsBodyText
