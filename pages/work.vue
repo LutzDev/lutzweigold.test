@@ -3,7 +3,12 @@
     <template #default="{ isFullScreen }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
-          <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-6">
+          <AtomsHeadline
+            html-tag="h1"
+            class="col-span-full lg:col-span-8"
+            data-speed="clamp(1.15)"
+            data-lag="clamp(0.25)"
+          >
             I'm a creative developer based in germany
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
