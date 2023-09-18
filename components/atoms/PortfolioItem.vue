@@ -11,14 +11,9 @@
         <AtomsTitleText size="md">{{ props.item.title }}</AtomsTitleText>
       </AtomsFlex>
       <AtomsFlex class="col-span-3 col-start-6" x-gap="sm" wrap y-gap="sm">
-        <span
-          v-for="(tag, key) in props.item?.tags"
-          :key="key"
-          class="p-x-xs inline-block rounded-full border-2 border-black"
-          >{{ tag }}
-        </span>
+        <AtomsTag v-for="(tag, key) in props.item?.tags" :key="key">{{ tag }}</AtomsTag>
       </AtomsFlex>
-      <AtomsButton class="col-span-2 col-start-9 justify-self-end" :event="isHover" to="https://sdsd" size="md" />
+      <AtomsButton class="col-span-2 col-start-9 justify-self-end" :event="isHover" :to="item.to" size="md" />
     </AtomsGrid>
   </NuxtLink>
 </template>
