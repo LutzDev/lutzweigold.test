@@ -87,12 +87,12 @@ const items: Array<PortfolioItem> = [
   {
     title: 'Didem',
     tags: ['iOS', 'React'],
-    to: 'asdasdasd',
+    to: 'https',
   },
   {
     title: 'Xtrym',
     tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    to: '/projects/xtrym',
   },
   {
     title: 'Freya',
