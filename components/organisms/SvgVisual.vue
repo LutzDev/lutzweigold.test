@@ -4,7 +4,7 @@
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
           <OrganismsOneComponentsRow>
-            <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-6">
+            <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8">
               I'm a creative developer based in germany
             </AtomsHeadline>
           </OrganismsOneComponentsRow>
@@ -12,7 +12,7 @@
             <template #default>
               <div
                 ref="leftCircle"
-                class="relative -z-20 col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
+                class="relative col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
               >
                 <AtomsTitleText
                   size="sm"
@@ -40,7 +40,7 @@
               </div>
               <div
                 ref="rightCircle"
-                class="relative -z-20 col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
+                class="relative col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
               >
                 <AtomsTitleText
                   size="sm"
@@ -57,7 +57,7 @@
         </AtomsFlex>
         <div
           ref="background"
-          class="absolute left-0 top-0 -z-10 h-full w-full overflow-hidden bg-purple-400"
+          class="absolute left-0 top-0 -z-10 hidden h-full w-full overflow-hidden bg-purple-400 lg:block"
           :style="{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }"
         >
           <AtomsWrapper class="h-full w-full" y-padding="lg">
@@ -119,6 +119,7 @@ const { $gsap: gsap, $Power4: Power4, $ScrollTrigger: ScrollTrigger, $DrawSVGPlu
 const animationStore = useAnimationStore();
 
 let ctx: gsap.Context;
+let mm: gsap.MatchMedia;
 let tlReveal: gsap.core.Timeline;
 let tlScroll: gsap.core.Timeline;
 const background = ref<HTMLDivElement | null>(null);
@@ -131,30 +132,33 @@ const scope = ref(null);
 
 onMounted(() => {
   ctx = gsap.context(() => {
+    mm = gsap.matchMedia();
     tlScroll = gsap.timeline({});
+
+    mm.add('(min-width: 1024px)', () => {
+      tlScroll.to(
+        background.value,
+        {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+        },
+        '0'
+      );
+
+      ScrollTrigger.create({
+        trigger: scope.value,
+        snap: 1,
+        pin: true,
+        scrub: 0.2,
+        markers: false,
+        refreshPriority: 1,
+        animation: tlScroll,
+      });
+    });
 
     tlReveal = gsap.timeline({
       data: { name: 'SVG-VISUAL' },
       defaults: { ease: Power4.easeInOut, duration: 1.5 },
     });
-
-    ScrollTrigger.create({
-      trigger: scope.value,
-      snap: 1,
-      pin: true,
-      scrub: 0.2,
-      markers: false,
-      refreshPriority: 1,
-      animation: tlScroll,
-    });
-
-    tlScroll.to(
-      background.value,
-      {
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
-      },
-      '0'
-    );
 
     gsap.utils.toArray([backendCircle.value, frontendCircle.value]).forEach((entry) => {
       if (entry instanceof HTMLDivElement) {
@@ -178,7 +182,7 @@ onMounted(() => {
       '0+=0.5'
     );
     tlReveal.to('.drawStroke', { stagger: 0.25, drawSVG: 0, ease: Power4.easeInOut }, '0+=0.5');
-    animationStore.master.value.add(tlReveal, '0');
+    animationStore.master.value.add(tlReveal, '0-=0.25');
   }, scope.value!);
 });
 
