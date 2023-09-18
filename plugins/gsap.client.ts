@@ -1,4 +1,4 @@
-import { gsap, Power0, Power4 } from 'gsap';
+import { gsap, Power0, Power1, Power2, Power4 } from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
@@ -14,6 +14,8 @@ export default defineNuxtPlugin(() => {
     provide: {
       gsap,
       Power0,
+      Power1,
+      Power2,
       Power4,
       ScrollSmoother,
       ScrollTrigger,
