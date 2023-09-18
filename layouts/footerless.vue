@@ -1,5 +1,5 @@
 <template>
-  <main ref="main" class="`translate-x pointer-events-auto overflow-hidden bg-gray-100">
+  <main ref="main" class="`translate-x pointer-events-auto overflow-hidden bg-black">
     <div ref="mainContent">
       <slot />
     </div>

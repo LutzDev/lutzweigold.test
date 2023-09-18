@@ -4,7 +4,7 @@
       <slot />
     </div>
   </main>
-  <footer ref="footer" class="pointer-events-auto overflow-hidden bg-yellow-600">
+  <footer ref="footer" class="pointer-events-auto overflow-hidden bg-black">
     <div ref="footerContent">
       <MoleculesFooter />
     </div>
@@ -27,6 +27,24 @@ const footerContent = ref(null);
 onMounted(() => {
   ctx = gsap.context(() => {
     tl = gsap.timeline({
+      onStart: () => {
+        useHead({
+          bodyAttrs: {
+            class: {
+              'overflow-y-hidden': true,
+            },
+          },
+        });
+      },
+      onReverseComplete: () => {
+        useHead({
+          bodyAttrs: {
+            class: {
+              'overflow-y-hidden': false,
+            },
+          },
+        });
+      },
       data: { name: 'DEFAULT' },
       defaults: { ease: Power4.easeInOut, duration: 2 },
     });
@@ -45,7 +63,6 @@ onMounted(() => {
       0
     );
     animationStore.master.value.add(tl, 0);
-    //console.log(animationStore.master.value.getChildren(false));
   });
 
   watch(
