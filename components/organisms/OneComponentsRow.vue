@@ -43,7 +43,7 @@ const props = defineProps({
   },
   theme: {
     type: String,
-    default: 'bright',
+    default: 'light',
     required: false,
   },
 });

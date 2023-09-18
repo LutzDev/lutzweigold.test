@@ -2,18 +2,27 @@
   <div class="cursor-pointer overflow-hidden">
     <div class="wrapper relative flex text-6xl">
       <div ref="target" class="box flex">
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4">{{ props.title }}</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4">—</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4">{{ props.title }}</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4">—</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4">{{ props.title }}</AtomsTitleText
-        ><AtomsTitleText html-tag="span" size="md" class="self-center px-4">—</AtomsTitleText>
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+          props.title
+        }}</AtomsTitleText>
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+          props.title
+        }}</AtomsTitleText>
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+          props.title
+        }}</AtomsTitleText
+        ><AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue/dist/vue';
+import { Theme } from '@Types';
+
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const target = ref<HTMLDivElement | null>(null);
@@ -26,6 +35,11 @@ const props = defineProps({
   reverse: {
     type: Boolean,
     default: false,
+  },
+  theme: {
+    type: String as PropType<Theme>,
+    default: 'light',
+    required: false,
   },
 });
 

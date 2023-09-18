@@ -9,7 +9,7 @@
         : props.size === 'lg'
         ? 'text-title-lg font-light'
         : ''
-    } `"
+    } ${props.theme === 'light' ? 'text-black' : 'text-white'}`"
   >
     <slot />
   </component>
@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import { TextTag, Variant } from '@Types';
+import { TextTag, Theme, Variant } from '@Types';
 
 const props = defineProps({
   htmlTag: {
@@ -30,6 +30,11 @@ const props = defineProps({
     type: String as PropType<Variant>,
     required: false,
     default: 'md',
+  },
+  theme: {
+    type: String as PropType<Theme>,
+    default: 'light',
+    required: false,
   },
 });
 </script>
