@@ -4,7 +4,7 @@
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
           <OrganismsOneComponentsRow>
-            <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-6">
+            <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8">
               I'm a creative developer based in germany
             </AtomsHeadline>
           </OrganismsOneComponentsRow>
@@ -50,11 +50,13 @@
       </template>
     </AtomsWrapper>
   </div>
-  <AtomsWrapper is-full-screen html-tag="section" y-padding="lg">
+  <AtomsWrapper is-full-screen html-tag="section" y-padding="xl">
     <template #default="{ isFullScreen }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
-          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6"> 6+ years of experience</AtomsHeadline>
+          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6" data-speed="clamp(1.15)">
+            6+ years of experience</AtomsHeadline
+          >
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
           <MoleculesExperience :items="items" />
@@ -70,6 +72,8 @@ const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const imgWrapper = ref<HTMLDivElement | null>(null);
 const scope = ref();
+let tl: gsap.core.Timeline;
+let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 
 const items: Experience = {
@@ -121,7 +125,21 @@ const items: Experience = {
 
 onMounted(() => {
   ctx = gsap.context(() => {
-    const tl = gsap.timeline();
+    mm = gsap.matchMedia();
+    tl = gsap.timeline({ data: { name: 'IMAGE' } });
+
+    mm.add('(min-width: 1024px)', () => {
+      ScrollTrigger.create({
+        trigger: scope.value,
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        snap: 1,
+        scrub: 1,
+        refreshPriority: 1,
+        animation: tl,
+      });
+    });
 
     tl.to(
       imgWrapper.value,
@@ -138,17 +156,10 @@ onMounted(() => {
       },
       0
     );
-
-    ScrollTrigger.create({
-      trigger: scope.value,
-      start: 'top top',
-      end: 'bottom top',
-      pin: true,
-      snap: 1,
-      scrub: 1,
-      refreshPriority: 1,
-      animation: tl,
-    });
   }, scope.value);
+});
+
+onUnmounted(() => {
+  ctx.revert();
 });
 </script>
