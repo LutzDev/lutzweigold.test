@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" @click="tl?.play()">
+  <div ref="wrapper">
     <div v-for="(item, key) in props.rows" :key="key">
       <AtomsScrambleTextItem v-if="props.title" :title="props.title" :delay="key" @timeline="handleEmit" />
     </div>
