@@ -3,7 +3,7 @@
     <AtomsWrapper
       class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block lg:space-y-4"
     >
-      <AtomsBodyText @click="console.log('Logo')">crafted by lutz. Building site</AtomsBodyText>
+      <AtomsLogo />
       <div>
         <AtomsSmallText>+49 152 26269766</AtomsSmallText>
         <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
