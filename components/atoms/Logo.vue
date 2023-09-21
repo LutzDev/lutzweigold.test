@@ -1,6 +1,6 @@
 <template>
   <NuxtLink to="mailto:info@lutzweigold.de">
-    <AtomsBodyText html-tag="div" class="inline-flex gap-0.5 whitespace-nowrap">
+    <AtomsBodyText theme="dark" html-tag="div" class="inline-flex gap-0.5 whitespace-nowrap">
       <div ref="prefix" class="overflow-hidden">crafted by</div>
       <div class="inline-flex gap-0">
         lutz
