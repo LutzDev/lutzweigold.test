@@ -4,7 +4,7 @@
       class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block lg:space-y-4"
     >
       <AtomsLogo />
-      <div>
+      <div class="text-white">
         <AtomsSmallText>+49 152 26269766</AtomsSmallText>
         <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
       </div>
@@ -24,7 +24,7 @@
         <div
           class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1 lg:w-full"
           data-item="lang"
-          @click="handleNavigation"
+          @click="handleNavigation($event)"
         >
           <AtomsBodyText html-tag="span" theme="dark"> {{ $t('general.cta.language') }}</AtomsBodyText>
           <AtomsBodyText html-tag="span" theme="dark">[<span ref="lang"></span>]</AtomsBodyText>
