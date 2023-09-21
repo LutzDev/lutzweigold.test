@@ -9,6 +9,9 @@
       </NuxtLayout>
     </div>
   </div>
+  <div class="fixed -z-10">
+    <MoleculesLiquidBackground />
+  </div>
 </template>
 <script lang="ts" setup>
 const route = useRoute();
