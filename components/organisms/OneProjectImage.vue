@@ -6,6 +6,7 @@
           <AtomsParallaxImage
             class="col-span-full md:col-span-8 md:col-start-2"
             :image="{ src: props.image?.src!, alt: props.image?.alt! }"
+            :priority="100"
           />
         </template>
       </OrganismsOneComponentsRow>
