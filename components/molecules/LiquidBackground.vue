@@ -22,6 +22,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 
+// TODO: https://github.com/nuxt/nuxt/issues/22994
 const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
 const { width: windowWidth, height: windowHeight } = useWindowSize();
 
@@ -121,9 +122,6 @@ const initPost = () => {
   composer.addPass(effect1);
 };
 
-const setupResize = () => {};
-const resize = () => {};
-
 const addObjects = () => {
   material = new ShaderMaterial({
     side: DoubleSide,
@@ -141,7 +139,7 @@ const addObjects = () => {
 };
 
 const render = () => {
-  time += 0.01;
+  time += 0.005;
   material.uniforms.time.value = time;
   composer.render();
   requestAnimationFrame(render);
@@ -219,6 +217,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const vertexShader = () => {
@@ -288,21 +287,25 @@ mat2 rotate2D(float angle){
 void main() {
     float n = noise(vPosition +time);
 
-    vec3 highlight =  vec3(0./255., 255./255., 0./255.);
-    vec3 background =  vec3(255./255., 0./255., 0./255.);
-    vec3 peak =  vec3(0./255., 0./255., 255./255.);
-    vec3 accent =  vec3(0./255., 0./255., 0./255.);
+    vec3 highlight =  vec3(30./255., 5./255., 60./255.); // purple
+    vec3 background =  vec3(255./255., 56./255., 110./255.); // red
+    vec3 peak =  vec3(5./255., 0./255., 40./255.);
+    vec3 accent =   vec3(100./255., 255./255., 0./255.); // green
+    vec3 test =   vec3(75./255., 125./255., 0./255.);
+
 
     vec2 baseUV = rotate2D(n)*vPosition.xy*0.1; // rotation, edit 0.2
     float basePattern = createLines(baseUV, 0.6);
     float secondPattern = createLines(baseUV, 0.4);
     float thirdPatter = createLines(baseUV, 0.2);
+    float fourthPattern = createLines(baseUV, 0.1);
 
     vec3 baseColor = mix(peak,highlight,basePattern);
     vec3 secondBaseColor = mix(baseColor,background,secondPattern);
     vec3 thirdBaseColor = mix(secondBaseColor,accent,thirdPatter);
+    vec3 fourthBaseColor = mix(thirdBaseColor,test,fourthPattern);
 
-    gl_FragColor = vec4( vec3(thirdBaseColor), 1.);
+    gl_FragColor = vec4( vec3(fourthBaseColor), 1.);
 }`;
 };
 </script>
