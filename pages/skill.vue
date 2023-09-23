@@ -1,13 +1,13 @@
 <template>
   <OrganismsSvgVisual />
-  <AtomsWrapper html-tag="section" y-padding="xl" class="bg-purple-400">
+  <AtomsWrapper html-tag="section" y-padding="xl" class="bg-primary">
     <template #default>
       <OrganismsOneComponentsRow y-gap="none">
         <MoleculesList :list="list" :title="{ name: 'Backend Development', reverse: true }" />
       </OrganismsOneComponentsRow>
     </template>
   </AtomsWrapper>
-  <AtomsWrapper html-tag="section" y-padding="lg" class="bg-purple-400">
+  <AtomsWrapper html-tag="section" y-padding="xl">
     <template #default>
       <OrganismsOneComponentsRow y-gap="none">
         <MoleculesList :list="list" :title="{ name: 'Frontend Development' }" />
