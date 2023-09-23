@@ -2,7 +2,9 @@
   <component
     :is="props.htmlTag"
     :class="`${
-      props.size === 'sm'
+      props.size === 'xs'
+        ? 'text-title-xs font-normal'
+        : props.size === 'sm'
         ? 'text-title-sm font-normal'
         : props.size === 'md'
         ? 'text-title-md font-light'
