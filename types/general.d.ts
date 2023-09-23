@@ -3,7 +3,7 @@ type TextTag = 'p' | 'li' | 'span' | 'div';
 type HeadlineTag = 'h1' | 'h2' | 'h3' | 'h4';
 type TypographyTags = TextTag | HeadlineTag;
 
-type Variant = 'none' | 'sm' | 'md' | 'lg' | 'xl';
+type Variant = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 type Theme = 'light' | 'dark';
 

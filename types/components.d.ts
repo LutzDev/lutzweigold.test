@@ -6,12 +6,17 @@ interface Experience {
 }
 interface ExperienceItem {
   year: number;
-  additionalYear: number | string;
+  additionalYear: string;
   title: string;
-  description: string | string[];
-  to?: string;
+  description: string;
+  link?: Omit<Link, 'name'>;
+  tags: Array<Tag>;
 }
 
+interface Tag {
+  name: string;
+  color: 0 | 1 | 2;
+}
 interface ScrambleTextItem {
   tl: gsap.core.Timeline;
   delay: number;
@@ -58,6 +63,7 @@ export {
   Grid,
   Experience,
   ExperienceItem,
+  Tag,
   ScrambleTextItem,
   Link,
   ListItem,
@@ -65,5 +71,5 @@ export {
   PortfolioItem,
   Image,
   NavigationState,
-  ProjectSlidProjectSliderItem,
+  ProjectSliderItem,
 };
