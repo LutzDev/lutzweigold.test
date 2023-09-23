@@ -9,7 +9,7 @@
             data-speed="clamp(1.15)"
             data-lag="clamp(0.25)"
           >
-            I'm a creative developer based in germany
+            I design, develop and ship digital products that drive success for our clients.
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
