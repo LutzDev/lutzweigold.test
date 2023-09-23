@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
   ssr: true,
   modules: [
     '@nuxtjs/eslint-module',
@@ -13,11 +15,29 @@ export default defineNuxtConfig({
   ],
   css: ['@/assets/css/main.css'],
 
+  nitro: {
+    compressPublicAssets: true,
+  },
+
+  routeRules: {
+    '/_nuxt/**': { headers: { 'cache-control': 's-maxage=86400' } },
+  },
+
   /*  routeRules: {
     '/': { redirect: '/en-CA' },
   }, */
 
   i18n: {
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      fallbackLocale: 'en',
+      redirectOn: 'root',
+      useCookie: true,
+      cookieCrossOrigin: false,
+      cookieDomain: null,
+      cookieKey: 'i18n_redirected',
+      cookieSecure: false,
+    },
     customRoutes: 'config',
     pages: {
       work: {
@@ -31,6 +51,14 @@ export default defineNuxtConfig({
       contact: {
         en: '/contact',
         de: '/kontakt',
+      },
+      imprint: {
+        en: '/imprint',
+        de: '/impressum',
+      },
+      privacy: {
+        en: '/privacy',
+        de: '/datenschutz',
       },
       /*      'projects/[slug]': {
         en: 'projects/[slug]',
@@ -67,6 +95,6 @@ export default defineNuxtConfig({
   },
 
   alias: {
-    '@Types': './types',
+    '@Types': '../types',
   },
 });
