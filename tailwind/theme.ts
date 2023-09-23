@@ -1,7 +1,52 @@
 import safelist from './safelist';
 
 const theme = {
-  extend: {},
+  extend: {
+    colors: {
+      primary: {
+        DEFAULT: '#BFFF00',
+        50: '#EDFFB8',
+        100: '#E8FFA3',
+        200: '#DEFF7A',
+        300: '#D3FF52',
+        400: '#C9FF29',
+        500: '#BFFF00',
+        600: '#95C700',
+        700: '#6B8F00',
+        800: '#415700',
+        900: '#171F00',
+        950: '#020300',
+      },
+      secondary: {
+        DEFAULT: '#843592',
+        50: '#D4A2DD',
+        100: '#CD93D8',
+        200: '#C075CD',
+        300: '#B257C2',
+        400: '#9F40B0',
+        500: '#843592',
+        600: '#5F2669',
+        700: '#3A1740',
+        800: '#140817',
+        900: '#000000',
+        950: '#000000',
+      },
+      typo: {
+        DEFAULT: '#666666',
+        50: '#C2C2C2',
+        100: '#B8B8B8',
+        200: '#A3A3A3',
+        300: '#8F8F8F',
+        400: '#7A7A7A',
+        500: '#666666',
+        600: '#4A4A4A',
+        700: '#2E2E2E',
+        800: '#121212',
+        900: '#000000',
+        950: '#000000',
+      },
+    },
+  },
   spacing: {
     0: '0',
     0.25: '0.125rem',
@@ -123,6 +168,13 @@ const theme = {
     '2xl': '1920px',
     '3xl': '2560px',
     '4xl': '3840px',
+  },
+  listStyleType: {
+    none: 'none',
+    disc: 'disc',
+    decimal: 'decimal',
+    square: 'square',
+    roman: 'upper-roman',
   },
   safelist: [...safelist],
 };
