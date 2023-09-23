@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="mailto:info@lutzweigold.de">
-    <AtomsBodyText theme="dark" html-tag="div" class="inline-flex gap-0.5 whitespace-nowrap">
-      <div ref="prefix" class="overflow-hidden">crafted by</div>
+    <AtomsBodyText theme="dark" html-tag="div" class="inline-flex whitespace-nowrap">
+      <div ref="prefix" class="overflow-hidden">crafted @</div>
       <div class="inline-flex gap-0">
         lutz
         <div ref="lastName" class="w-0 overflow-hidden">weigold</div>
@@ -58,5 +58,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>
