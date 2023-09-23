@@ -3,7 +3,7 @@
     <template #default="{ isFullScreen, theme }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
-          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6" :theme="theme">
+          <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8" :theme="theme">
             I'm a creative developer based in germany
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
