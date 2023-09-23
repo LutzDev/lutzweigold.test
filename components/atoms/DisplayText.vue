@@ -1,5 +1,5 @@
 <template>
-  <component :is="props.htmlTag" class="text-display">
+  <component :is="props.htmlTag" :class="`text-display ${props.theme === 'light' ? 'text-black' : 'text-white'}`">
     <slot />
   </component>
 </template>
@@ -13,6 +13,11 @@ const props = defineProps({
     type: String as PropType<TextTag>,
     required: false,
     default: 'span',
+  },
+  theme: {
+    type: String as PropType<Theme>,
+    default: 'light',
+    required: false,
   },
 });
 </script>
