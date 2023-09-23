@@ -1,5 +1,5 @@
 <template>
-  <div ref="scope" class="fixed left-0 top-0 z-50 w-full overflow-hidden bg-gray-950">
+  <div ref="scope" class="fixed left-0 top-0 z-50 w-full overflow-hidden bg-black">
     <AtomsWrapper ref="wrapper" class="h-screen text-white opacity-0">
       <AtomsFlex class="h-full items-center justify-center">
         <div class="text-body text-center">
@@ -114,15 +114,16 @@ onMounted(() => {
       },
       '+=0.4'
     );
+
     master.to(scope.value, {
-      y: '100%',
+      x: '100%',
       duration: 1.5,
       ease: Power4.easeInOut,
     });
     master.to(
       wrapper.value.target,
       {
-        y: '-80%',
+        x: '-80%',
         duration: 1.5,
         ease: Power4.easeInOut,
       },
@@ -134,5 +135,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>
