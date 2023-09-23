@@ -5,7 +5,7 @@
         <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
           <OrganismsOneComponentsRow>
             <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8">
-              I'm a creative developer based in germany
+              {{ $t('pages.about.content.visual.headline') }}
             </AtomsHeadline>
           </OrganismsOneComponentsRow>
           <OrganismsTwoComponentsRow>
@@ -13,49 +13,43 @@
               <div
                 ref="imgWrapper"
                 :style="{ clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)' }"
-                class="z-10 col-span-3 col-start-2 row-start-1 overflow-hidden md:col-span-full md:col-start-1 lg:col-span-4 lg:col-start-2"
+                class="z-10 col-span-3 col-start-2 row-start-1 hidden overflow-hidden md:col-span-full md:col-start-1 lg:block"
               >
                 <nuxt-picture
                   fit="cover"
                   src="/images/portrait-2.jpg"
                   :img-attrs="{
-                    class:
-                      'img scale-125 object-cover w-full h-30 xs:h-40 sm:h-45 lg:h-50 xl:h-60 2xl:h-75 3xl:h-90 4xl:h-100',
+                    class: 'img scale-125 object-cover w-full h-30 sm:h-35 lg:h-40 xl:h-45 2xl:h-55 3xl:h-70 4xl:h-80',
                   }"
                 />
               </div>
-              <div
-                class="col-span-3 col-start-2 row-start-1 overflow-hidden md:col-span-full md:col-start-1 lg:col-span-4 lg:col-start-2"
-              >
+              <div class="col-span-3 col-start-2 row-start-1 overflow-hidden md:col-span-full md:col-start-1">
                 <nuxt-picture
                   fit="cover"
                   src="/images/portrait-1.jpg"
                   :img-attrs="{
-                    class:
-                      'img scale-125 object-cover w-full h-30 xs:h-40 sm:h-45 lg:h-50 xl:h-60 2xl:h-75 3xl:h-90 4xl:h-100',
+                    class: 'img scale-125 object-cover w-full h-30 sm:h-35 lg:h-40 xl:h-45 2xl:h-55 3xl:h-70 4xl:h-80',
                   }"
                 />
               </div>
             </template>
             <template #rightCol>
-              <AtomsBodyText
-                html-tag="p"
-                class="col-span-full col-start-1 self-end lg:col-span-4 lg:col-start-2 xl:col-span-3 xl:col-start-3"
-                >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer.
-              </AtomsBodyText>
+              <div class="col-span-full col-start-1 space-y-md self-end lg:col-span-4 lg:col-start-2">
+                <AtomsBodyText html-tag="p">{{ $t('pages.about.content.visual.description.role') }} </AtomsBodyText>
+                <AtomsBodyText html-tag="p">{{ $t('pages.about.content.visual.description.hobby') }} </AtomsBodyText>
+              </div>
             </template>
           </OrganismsTwoComponentsRow>
         </AtomsFlex>
       </template>
     </AtomsWrapper>
   </div>
-  <AtomsWrapper is-full-screen html-tag="section" y-padding="xl">
+  <AtomsWrapper is-full-screen html-tag="section" y-padding="xl" class="bg-white">
     <template #default="{ isFullScreen }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
           <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6" data-speed="clamp(1.15)">
-            6+ years of experience</AtomsHeadline
+            {{ $t('pages.about.content.experience.headline') }}</AtomsHeadline
           >
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
@@ -76,49 +70,112 @@ let tl: gsap.core.Timeline;
 let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 
+/*const test = {
+  year: 20,
+  entries: [
+    {
+      year: 23,
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.selfEmployment.additionalYear',
+          title: 'pages.about.content.experience.items.selfEmployment.title',
+          description: 'pages.about.content.experience.items.selfEmployment.description',
+          tags: [{ name: 'working', color: 1 }],
+        },
+      ],
+    },
+  ],
+};*/
+
 const items: Experience = {
   year: 20,
   entries: [
     {
-      year: 16,
-      additionalYear: 20,
-      title: 'Self employee',
-      description: ['hallo', 'asdasd', 'sdsd'],
-      to: '/about',
+      year: 23,
+      additionalYear: 'pages.about.content.experience.items.selfEmployment.additionalYear',
+      title: 'pages.about.content.experience.items.selfEmployment.title',
+      description: 'pages.about.content.experience.items.selfEmployment.description',
+      tags: [{ name: 'working', color: 1 }],
     },
     {
-      year: 17,
-      additionalYear: 23,
-      title: 'Self employee!!',
-      description: 'asdasdasdasdasd asd asd ',
-      to: '/about',
+      year: 22,
+      additionalYear: 'pages.about.content.experience.items.master.additionalYear',
+      title: 'pages.about.content.experience.items.master.title',
+      description: 'pages.about.content.experience.items.master.description',
+      link: {
+        to: 'pages.about.content.experience.items.master.link.to',
+        title: 'pages.about.content.experience.items.master.link.title',
+      },
+      tags: [{ name: 'education', color: 2 }],
     },
     {
-      year: 18,
-      additionalYear: 14,
-      title: 'Self employee',
-      description: ['asdasd', 'asdasd', 'asdasd'],
-      to: '/lutz',
+      year: 22,
+      additionalYear: 'pages.about.content.experience.items.teaching.additionalYear',
+      title: 'pages.about.content.experience.items.teaching.title',
+      description: 'pages.about.content.experience.items.teaching.description',
+      link: {
+        to: 'pages.about.content.experience.items.teaching.link.to',
+        title: 'pages.about.content.experience.items.teaching.link.title',
+      },
+      tags: [{ name: 'working', color: 1 }],
+    },
+    {
+      year: 21,
+      additionalYear: 'pages.about.content.experience.items.bachelor.additionalYear',
+      title: 'pages.about.content.experience.items.bachelor.title',
+      description: 'pages.about.content.experience.items.bachelor.description',
+      link: {
+        to: 'pages.about.content.experience.items.bachelor.link.to',
+        title: 'pages.about.content.experience.items.bachelor.link.title',
+      },
+      tags: [{ name: 'education', color: 2 }],
+    },
+    {
+      year: 21,
+      additionalYear: 'pages.about.content.experience.items.ibc.additionalYear',
+      title: 'pages.about.content.experience.items.ibc.title',
+      description: 'pages.about.content.experience.items.ibc.description',
+      link: {
+        to: 'pages.about.content.experience.items.ibc.link.to',
+        title: 'pages.about.content.experience.items.ibc.link.title',
+      },
+      tags: [{ name: 'working', color: 1 }],
+    },
+    {
+      year: 21,
+      additionalYear: 'pages.about.content.experience.items.hiwi.additionalYear',
+      title: 'pages.about.content.experience.items.hiwi.title',
+      description: 'pages.about.content.experience.items.hiwi.description',
+      tags: [{ name: 'working', color: 1 }],
     },
     {
       year: 19,
-      additionalYear: 16,
-      title: 'Self employee',
-      description: ['hallo', 'asdasd', 'sdsd'],
-      to: '/ka',
+      additionalYear: 'pages.about.content.experience.items.webbrand.additionalYear',
+      title: 'pages.about.content.experience.items.webbrand.title',
+      description: 'pages.about.content.experience.items.webbrand.description',
+      link: {
+        to: 'pages.about.content.experience.items.webbrand.link.to',
+        title: 'pages.about.content.experience.items.webbrand.link.title',
+      },
+      tags: [{ name: 'working', color: 1 }],
     },
     {
-      year: 20,
-      additionalYear: 23,
-      title: 'Self employee!!',
-      description: 'asdasdasdasdasd asd asd ',
+      year: 17,
+      additionalYear: 'pages.about.content.experience.items.abi.additionalYear',
+      title: 'pages.about.content.experience.items.abi.title',
+      description: 'pages.about.content.experience.items.abi.description',
+      tags: [{ name: 'education', color: 2 }],
     },
     {
       year: 16,
-      additionalYear: 'today',
-      title: 'Self employee',
-      description: ['asdasd', 'asdasd', 'asdasd'],
-      to: 'https://test.de',
+      additionalYear: 'pages.about.content.experience.items.reizwerk.additionalYear',
+      title: 'pages.about.content.experience.items.reizwerk.title',
+      description: 'pages.about.content.experience.items.reizwerk.description',
+      link: {
+        to: 'pages.about.content.experience.items.reizwerk.link.to',
+        title: 'pages.about.content.experience.items.reizwerk.link.title',
+      },
+      tags: [{ name: 'working', color: 1 }],
     },
   ],
 };
@@ -137,6 +194,8 @@ onMounted(() => {
         snap: 1,
         scrub: 1,
         refreshPriority: 1,
+        invalidateOnRefresh: true,
+
         animation: tl,
       });
     });
@@ -161,5 +220,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>
