@@ -15,13 +15,11 @@
     :key="key"
     class="section col-span-full col-start-1 md:col-span-8 md:col-start-3"
   >
-    <NuxtLink v-if="item.to" :to="item.to">
-      <AtomsExperienceItem :year="items.year" :item="item" />
+    <NuxtLink v-if="item.link" :to="$t(item.link.to)" :title="$t(item.link.title)" :target="'_blank'">
+      <AtomsExperienceItem class="hover" :year="props.items?.year!" :item="item" />
     </NuxtLink>
     <AtomsExperienceItem v-else :year="items.year" :item="item" />
-    <div
-      class="line col-span-full col-start-3 my-2 h-[2px] w-full origin-left scale-x-0 bg-black opacity-10 md:col-span-8"
-    ></div>
+    <div class="line col-start-3 my-2 h-[2px] w-full origin-left scale-x-0 bg-black opacity-10 md:col-span-8"></div>
   </div>
 </template>
 
@@ -54,6 +52,8 @@ onMounted(() => {
 
     mm.add('(min-width: 640px)', () => {
       ScrollTrigger.create({
+        refreshPriority: 1,
+        invalidateOnRefresh: true,
         trigger: wrapper.value,
         start: 'top 70%',
         endTrigger: sections[sections.length - 1],
@@ -89,5 +89,6 @@ watch(height, () => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>

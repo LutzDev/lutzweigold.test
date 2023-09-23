@@ -19,8 +19,8 @@
         html-tag="span"
         :class="`${props.width === 'full' ? 'col-span-5 md:col-span-6' : 'col-span-2'} py-sm`"
         :theme="props.theme"
-        >{{ item.title }}</AtomsBodyText
-      >
+        >{{ $t(item.title) }}
+      </AtomsBodyText>
       <div
         v-for="(entry, index) in item.entries"
         :key="index"
@@ -28,7 +28,13 @@
           props.width === 'full' ? 'col-span-5 col-start-6 md:col-span-4 md:col-start-7' : 'col-span-3 col-start-3'
         }`"
       >
-        <AtomsListLinkItem v-if="typeof entry === 'object'" :name="entry.name" :to="entry.to" :theme="props.theme" />
+        <AtomsListLinkItem
+          v-if="typeof entry === 'object'"
+          :name="entry.name"
+          :to="entry.to"
+          :title="entry.title"
+          :theme="props.theme"
+        />
         <AtomsBodyText v-else html-tag="div" class="py-sm" :theme="props.theme">{{ entry }}</AtomsBodyText>
         <div
           v-if="index < item.entries.length - 1"
@@ -87,6 +93,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  trigger.map((el) => el.refresh());
+  ctx.kill();
+  // trigger.map((el) => el.refresh());
 });
 </script>

@@ -76,8 +76,8 @@ onMounted(() => {
           scrambleText: {
             text: `${
               newValue !== 'index___de' && newValue !== 'index___en'
-                ? t(`pages.${localRoute.split('/').splice(-1, 1)[0]}.title`).toLowerCase()
-                : t(`pages.about.title`).toLowerCase()
+                ? t(`pages.${localRoute.split('/').splice(-1, 1)[0]}.name`).toLowerCase()
+                : t(`pages.about.name`).toLowerCase()
             }`,
             chars: '/$#',
             tweenLength: true,
@@ -106,5 +106,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>

@@ -2,11 +2,11 @@
   <div ref="scope" class="col-span-full">
     <div class="mb-8 flex w-full justify-between">
       <AtomsTitleText size="sm"
-        ><span class="text-gray-400">~/projects/</span
+        ><span class="text-typo-200">~/projects/</span
         ><span ref="filterText" class="cursor-pointer underline" @click="openFilter">all</span></AtomsTitleText
       >
       <div class=""></div>
-      <AtomsTitleText size="sm" class="text-gray-400">[0{{ props.listLength }}]</AtomsTitleText>
+      <AtomsTitleText size="sm" class="text-typo-200">[0{{ props.listLength }}]</AtomsTitleText>
     </div>
     <div
       ref="filterWrapper"
@@ -18,7 +18,7 @@
         class="p-y-md p-x-md gapy-md col-span-full col-start-1 grid translate-x-full bg-white md:col-span-5 md:col-start-6 lg:col-span-4 lg:col-start-7"
       >
         <div
-          class="cursor-pointer self-center justify-self-end border-2 border-black px-4 py-1 text-black lg:self-start"
+          class="cursor-pointer self-center justify-self-end border-2 border-black px-4 py-1 lg:self-start"
           @click="closeFilter"
         >
           <AtomsBodyText html-tag="span">close</AtomsBodyText>
@@ -154,6 +154,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const props = defineProps({

@@ -30,13 +30,15 @@ onMounted(() => {
       toggleActions: 'play pause resume pause',
       animation: tl.value?.seek(gsap.utils.random(1, 3)),
       refreshPriority: 1,
-      markers: false,
+      invalidateOnRefresh: true,
+      markers: true,
     });
   });
 });
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const props = defineProps({

@@ -6,7 +6,8 @@
         :key="key"
         :prefix="key + 1"
         :to="item.to"
-        :title="item.entry"
+        :name="item.name"
+        :title="item.title"
       />
     </ul>
   </AtomsWrapper>
@@ -38,23 +39,28 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const navItems = [
   {
-    entry: 'pages.about.title',
+    name: 'pages.about.name',
+    title: 'pages.about.title',
     to: 'index',
   },
   {
-    entry: 'pages.work.title',
+    name: 'pages.work.name',
+    title: 'pages.work.title',
     to: 'work',
   },
   {
-    entry: 'pages.skill.title',
+    name: 'pages.skill.name',
+    title: 'pages.skill.title',
     to: 'skill',
   },
   {
-    entry: 'pages.contact.title',
+    name: 'pages.contact.name',
+    title: 'pages.contact.title',
     to: 'contact',
   },
 ];

@@ -79,6 +79,9 @@ onMounted(() => {
             duration: 0.15,
             ease: Power0.easeNone,
             scrollTrigger: {
+              refreshPriority: 1,
+              invalidateOnRefresh: true,
+
               trigger: scope.value,
               start: 'top bottom',
               end: 'bottom top',
@@ -92,6 +95,9 @@ onMounted(() => {
       y: 400,
       ease: Power0.easeInOut,
       scrollTrigger: {
+        refreshPriority: 1,
+        invalidateOnRefresh: true,
+
         trigger: scope.value,
         start: 'top bottom',
         end: 'bottom top',
@@ -103,6 +109,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const props = defineProps({

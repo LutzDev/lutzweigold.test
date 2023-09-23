@@ -1,5 +1,5 @@
 <template>
-  <div ref="target" class="text-body">
+  <div ref="target" class="text-body text-secondary-300">
     {{ props.title }}
   </div>
 </template>
@@ -57,6 +57,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 
 const props = defineProps({

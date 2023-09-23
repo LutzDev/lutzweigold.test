@@ -26,16 +26,19 @@ onMounted(() => {
     smooth: 2,
     effects: true,
     smoothTouch: 0.5,
+    normalizeScroll: true,
   });
 });
 
 watch(
   () => route.name,
   () => {
+    // console.log(smoother.effects());
     // TODO: fix smoother.effects -> Conflict with scrolltrigger in footer
-    ScrollTrigger.refresh();
     smoother.effects().forEach((effect) => effect.kill());
     smoother.effects('[data-lag], [data-speed]');
+    ScrollTrigger.clearScrollMemory();
+    ScrollTrigger.refresh();
   }
 );
 </script>
