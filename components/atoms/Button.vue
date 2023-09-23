@@ -1,13 +1,13 @@
 <template>
   <div
-    :class="`relative inline-block cursor-pointer overflow-hidden leading-[0px] after:absolute after:left-0 after:top-0 after:h-full after:bg-green-400 after:transition-all after:ease-in-out ${
+    :class="`relative inline-block cursor-pointer overflow-hidden leading-[0px] after:absolute after:left-0 after:top-0 after:h-full after:bg-[#BFFF00] after:transition-all after:ease-in-out ${
       event ? 'after:w-full' : 'after:w-0'
     }`"
   >
     <div
       :class="`relative z-10 transition-all ${
         event ? (isExtern ? '-translate-y-full translate-x-full' : 'translate-x-full') : 'translate-x-0 translate-y-0'
-      } ${props.theme === 'light' ? 'text-black' : 'text-white'}`"
+      }`"
     >
       <Icon
         :class="`${
@@ -18,7 +18,7 @@
             : props.size === 'lg'
             ? 'm-0.5 h-8 w-8 xs:h-12 xs:w-12 sm:m-1 xl:m-2 xl:h-20 xl:w-20 3xl:m-3 3xl:h-24 3xl:w-24'
             : 'm-0.25 h-4 w-4 xs:m-0.5 xs:h-8 xs:w-8 xl:m-1 xl:h-12 xl:w-12 3xl:m-2 3xl:h-20 3xl:w-20'
-        }`"
+        } ${props.theme === 'light' ? 'text-black' : 'text-white'}`"
         :name="`${isExtern ? 'ic:outline-arrow-outward' : 'ic:outline-arrow-forward'}`"
       />
       <Icon
@@ -30,7 +30,7 @@
             : props.size === 'lg'
             ? 'm-0.5 h-8 w-8 xs:m-1 xs:h-12 xs:w-12 xl:m-2 xl:h-20 xl:w-20 3xl:m-3 3xl:h-24 3xl:w-24'
             : 'm-0.25 h-4 w-4 xs:m-0.5 xs:h-8 xs:w-8 xl:m-1 xl:h-12 xl:w-12 3xl:m-2 3xl:h-20 3xl:w-20'
-        } absolute -left-full ${isExtern ? ' top-full' : ''}`"
+        } absolute -left-full ${isExtern ? ' top-full' : ''} text-black`"
         :name="`${isExtern ? 'ic:outline-arrow-outward' : 'ic:outline-arrow-forward'}`"
       />
     </div>
