@@ -50,6 +50,9 @@ onMounted(() => {
 
     const tl = marquee(target.value!, { duration: 30 }, props.reverse || false);
     ScrollTrigger.create({
+      refreshPriority: 1,
+      invalidateOnRefresh: true,
+
       onUpdate(self) {
         if (self.direction !== direction) {
           direction *= -1;
