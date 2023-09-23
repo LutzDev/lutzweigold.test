@@ -11,27 +11,36 @@
         <OrganismsTwoComponentsRow>
           <template #leftCol>
             <!--            <AtomsBodyText class="col-span-3 self-end"
-              >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer.
-            </AtomsBodyText> -->
+          >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer.
+        </AtomsBodyText> -->
             <MoleculesList :list="list" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsParallaxImage class="col-span-full" :image="{ src: '/images/bg-test.webp', alt: 'adasd' }" />
+            <AtomsParallaxImage
+              :priority="50"
+              class="col-span-full"
+              :image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
+            />
           </template>
         </OrganismsTwoComponentsRow>
       </AtomsFlex>
     </template>
   </AtomsWrapper>
   <OrganismsTwoProjectImages
+    :priority="50"
     :left-image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
-    :right-image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
+    :right-image="{ src: '/images/portrait-2.jpg', alt: 'adasd' }"
   />
   <OrganismsOneProjectImage :image="{ src: '/images/bg-test.webp', alt: 'adasd' }" />
 </template>
 
 <script setup lang="ts">
 import { ListItem } from '@Types';
+
+onMounted(() => {
+  console.log('Xtrym mounted');
+});
 
 const list: Array<ListItem> = [
   {

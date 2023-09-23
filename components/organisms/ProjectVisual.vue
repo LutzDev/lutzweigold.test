@@ -20,8 +20,8 @@
         </OrganismsTwoComponentsRow>
         <OrganismsOneComponentsRow>
           <AtomsParallaxImage
-            :has-overlay="true"
             class="col-span-full"
+            :priority="10"
             :image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
           >
             <AtomsTag theme="dark"> E-Commerce </AtomsTag>

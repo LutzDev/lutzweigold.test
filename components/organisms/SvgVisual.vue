@@ -57,7 +57,7 @@
         </AtomsFlex>
         <div
           ref="background"
-          class="absolute left-0 top-0 -z-10 hidden h-full w-full overflow-hidden bg-purple-400 lg:block"
+          class="absolute left-0 top-0 -z-10 hidden h-full w-full overflow-hidden bg-primary lg:block"
           :style="{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)' }"
         >
           <AtomsWrapper class="h-full w-full" y-padding="lg">
@@ -151,6 +151,8 @@ onMounted(() => {
         scrub: 0.2,
         markers: false,
         refreshPriority: 1,
+        invalidateOnRefresh: true,
+
         animation: tlScroll,
       });
     });
@@ -188,5 +190,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>

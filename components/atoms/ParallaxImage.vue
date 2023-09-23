@@ -5,6 +5,7 @@
         fit="cover"
         :src="props.image?.src!"
         :alt="props.image?.alt!"
+        @load="ScrollTrigger.refresh()"
         :img-attrs="{
           class: 'object-cover h-full w-full',
         }"
@@ -38,6 +39,10 @@ const props = defineProps({
     type: Object as PropType<Image>,
     required: true,
   },
+  priority: {
+    type: Number,
+    required: true,
+  },
 });
 
 onMounted(() => {
@@ -54,14 +59,16 @@ onMounted(() => {
       trigger: scope.value,
       scrub: true,
       animation: tl,
-      refreshPriority: 1,
-      markers: false,
+      refreshPriority: props.priority,
+      markers: true,
       invalidateOnRefresh: true,
+      onRefresh: console.log('Prallax refreshed', props.priority),
     });
   }, scope.value!);
 });
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>

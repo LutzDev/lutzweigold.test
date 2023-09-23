@@ -8,6 +8,7 @@
               fit="cover"
               :src="props.leftImage?.src!"
               :alt="props.leftImage?.alt!"
+              @load="ScrollTrigger.refresh()"
               :img-attrs="{
                 class: 'object-cover',
               }"
@@ -20,6 +21,7 @@
               fit="cover"
               :src="props.rightImage?.src!"
               :alt="props.rightImage?.alt!"
+              @load="ScrollTrigger.refresh()"
               :img-attrs="{
                 class: 'object-cover',
               }"
@@ -36,7 +38,7 @@ import { PropType } from 'vue';
 import Wrapper from '~/components/atoms/Wrapper.vue';
 import { Image } from '@Types';
 
-const { $gsap: gsap, $Power1: Power1, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+const { $gsap: gsap, $Power0: Power0, $Power1: Power1, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 let tl: gsap.core.Timeline;
 const scope = ref<InstanceType<typeof Wrapper> | null>(null);
@@ -54,6 +56,10 @@ const props = defineProps({
     type: Object as PropType<Image>,
     required: true,
   },
+  priority: {
+    type: Number,
+    required: true,
+  },
 });
 
 onMounted(() => {
@@ -62,7 +68,7 @@ onMounted(() => {
     tl = gsap.timeline({
       data: { name: 'TWOPROJECTIMAGES' },
       paused: true,
-      defaults: { ease: Power1.easeInOut },
+      defaults: { ease: Power0.easeNone },
     });
 
     tl.to(
@@ -82,13 +88,16 @@ onMounted(() => {
       },
       0
     );
+
     mm.add('(min-width: 768px)', () => {
       ScrollTrigger.create({
         trigger: scope.value.target,
-        scrub: 0.1,
+        scrub: true,
         animation: tl,
-        refreshPriority: 1,
-        markers: false,
+        refreshPriority: props.priority,
+        invalidateOnRefresh: true,
+        markers: true,
+        onRefresh: console.log('TwoProjectImages refreshed', props.priority),
       });
     });
   }, scope.value.target);
@@ -96,5 +105,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
+  ctx.kill();
 });
 </script>
