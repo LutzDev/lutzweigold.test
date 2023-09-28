@@ -96,7 +96,7 @@ onMounted(() => {
         animation: tl,
         refreshPriority: props.priority,
         invalidateOnRefresh: true,
-        markers: true,
+        markers: false,
         onRefresh: console.log('TwoProjectImages refreshed', props.priority),
       });
     });

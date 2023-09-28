@@ -31,7 +31,7 @@ onMounted(() => {
       animation: tl.value?.seek(gsap.utils.random(1, 3)),
       refreshPriority: 1,
       invalidateOnRefresh: true,
-      markers: true,
+      markers: false,
     });
   });
 });
