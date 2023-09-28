@@ -1,38 +1,32 @@
 <template>
-  <AtomsGrid :cols="8" y-gap="sm" class="w-full" @mouseenter="isHover = true" @mouseleave="isHover = false">
-    <div class="col-span-6 flex items-baseline gap-2 md:col-span-2">
-      <AtomsTitleText size="lg" class="inline-block"
-        ><span class="md:hidden">{{ $t(props.year) }}</span
-        >{{ props.item.year }}</AtomsTitleText
-      >
-      <div class="mb-1 flex gap-sm md:hidden">
-        <AtomsTag v-for="(entry, key) in props.item?.tags" :key="key" :color="entry.color"> {{ entry.name }} </AtomsTag>
+  <AtomsGrid :cols="6" y-gap="sm" @mouseenter="isHover = true" @mouseleave="isHover = false">
+    <div :class="`${props.item?.link ? 'col-span-5 xs:col-span-4' : 'col-span-full'} row-start-1`">
+      <div class="mb-1 flex gap-sm">
+        <AtomsTag
+          v-for="(entry, key) in props.item?.tags"
+          :key="key"
+          :color="entry.color"
+          :entry="entry.name"
+          class="md:opacity-25"
+        />
       </div>
-    </div>
-    <div class="col-span-full self-end pb-2 sm:col-span-6 md:col-span-4">
-      <div class="mb-1 hidden gap-sm md:flex">
-        <AtomsTag v-for="(entry, key) in props.item?.tags" :key="key" :color="entry.color"> {{ entry.name }} </AtomsTag>
-      </div>
-      <div class="mb-1">
-        <AtomsHeadline html-tag="h4"> {{ $t(props.item.title) }}</AtomsHeadline>
-        <AtomsSmallText class="mb-0.5 inline-block font-medium tracking-wide text-gray-500 md:block" html-tag="span">{{
-          $t(props.item.additionalYear)
-        }}</AtomsSmallText>
-      </div>
-      <ul class="list-inside list-square">
+      <AtomsHeadline html-tag="h4"> {{ $t(props.item.title) }}</AtomsHeadline>
+      <AtomsSmallText class="mb-0.5 block font-medium tracking-wide text-gray-500" html-tag="span">{{
+        $t(props.item.additionalYear)
+      }}</AtomsSmallText>
+      <ul class="list-outside list-square pl-2">
         <AtomsBodyText
           v-for="(entry, key) in $tm(<string>props.item?.description!)"
           :key="key"
           html-tag="li"
-          class="col-span-2"
+          class="col-span-1 xs:col-span-2"
           >{{ $rt(entry) }}</AtomsBodyText
         >
       </ul>
     </div>
-
     <AtomsButton
       v-if="props.item?.link"
-      class="col-span-2 col-start-7 row-start-1 self-end justify-self-end sm:row-start-2 md:row-start-1"
+      class="col-span-1 row-start-1 self-start justify-self-end xs:col-span-2 xs:self-end"
       :event="isHover"
       :to="$t(props.item?.link?.to!)"
     />
@@ -43,10 +37,6 @@
 import { PropType } from 'vue/dist/vue';
 import { ExperienceItem } from '@Types';
 const isHover = ref<boolean>(false);
-
-const emit = defineEmits<{
-  (e: 'external', id: boolean | undefined): void;
-}>();
 
 const props = defineProps({
   year: {

@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" class="relative col-span-2 row-span-6 row-start-1 hidden md:block">
+  <div ref="wrapper" class="relative col-span-2 hidden md:block">
     <div ref="text" class="text-title flex justify-end">
       <AtomsTitleText
         ref="el"
@@ -15,11 +15,9 @@
     :key="key"
     class="section col-span-full col-start-1 md:col-span-8 md:col-start-3"
   >
-    <NuxtLink v-if="item.link" :to="$t(item.link.to)" :title="$t(item.link.title)" :target="'_blank'">
-      <AtomsExperienceItem class="hover" :year="props.items?.year!" :item="item" />
-    </NuxtLink>
-    <AtomsExperienceItem v-else :year="items.year" :item="item" />
-    <div class="line col-start-3 my-2 h-[2px] w-full origin-left scale-x-0 bg-black opacity-10 md:col-span-8"></div>
+    <MoleculesExperienceContainer :year="props.items.year" :item="item" />
+
+    <div class="col-start-3 my-2 h-[2px] w-full bg-black md:col-span-8"></div>
   </div>
 </template>
 
@@ -50,35 +48,35 @@ onMounted(() => {
     mm = gsap.matchMedia();
     const sections: HTMLElement[] = gsap.utils.toArray('.section');
 
-    mm.add('(min-width: 640px)', () => {
+    mm.add('(min-width: 768px)', () => {
       ScrollTrigger.create({
         refreshPriority: 1,
         invalidateOnRefresh: true,
         trigger: wrapper.value,
-        start: 'top 70%',
+        start: 'top 50%',
         endTrigger: sections[sections.length - 1],
-        end: 'top 70%',
+        end: 'top 50%',
         markers: false,
         pin: text.value,
         pinSpacing: false,
       });
-    });
 
-    trigger = ScrollTrigger.batch(sections, {
-      start: () => `top 70%+=${height.value / 2}px`,
-      end: () => `bottom 70%+=${height.value / 2}px`,
-      onEnter: (batch) => {
-        gsap.to(gsap.utils.selector(batch)('.line'), { scaleX: 1, autoAlpha: 1, duration: 0.5, overwrite: true });
-      },
-      onLeave: (batch) => {
-        gsap.to(gsap.utils.selector(batch)('.line'), { scaleX: 1, autoAlpha: 0.1, duration: 0.5, overwrite: true });
-      },
-      onEnterBack: (batch) => {
-        gsap.to(gsap.utils.selector(batch)('.line'), { scaleX: 1, autoAlpha: 1, duration: 0.5, overwrite: true });
-      },
-      onLeaveBack: (batch) => {
-        gsap.to(gsap.utils.selector(batch)('.line'), { scaleX: 1, autoAlpha: 0.1, duration: 0.5, overwrite: true });
-      },
+      trigger = ScrollTrigger.batch(sections, {
+        start: () => `top 50%+=${height.value / 2}px`,
+        end: () => `bottom 50%+=${height.value / 2}px`,
+        onEnter: (batch) => {
+          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
+        },
+        onLeave: (batch) => {
+          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
+        },
+        onEnterBack: (batch) => {
+          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
+        },
+      });
     });
   });
 });
