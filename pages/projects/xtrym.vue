@@ -1,60 +1,53 @@
 <template>
-  <OrganismsProjectVisual />
-  <AtomsWrapper is-full-screen html-tag="section" y-padding="lg">
+  <OrganismsProjectVisual
+    headline="projects.xtrym.content.visual.headline"
+    tag="pages.work.content.filter.tags.shop"
+    :image="{
+      src: '/images/projects/xtrym/lutzweigold_xtrym_preview.webp',
+      alt: 'projects.xtrym.content.visual.image.alt',
+    }"
+  />
+  <AtomsWrapper html-tag="section" y-padding="xl">
     <template #default="{ isFullScreen }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
-          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-5">
-            I'm a creative developer based in germany
+          <AtomsHeadline html-tag="h2" class="col-span-full lg:col-span-6" data-speed="0.95">
+            {{ $t('projects.xtrym.content.techStack.headline') }}
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
         <OrganismsTwoComponentsRow>
           <template #leftCol>
-            <!--            <AtomsBodyText class="col-span-3 self-end"
-          >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer.
-        </AtomsBodyText> -->
             <MoleculesList :list="list" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsParallaxImage
-              :priority="50"
-              class="col-span-full"
-              :image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
-            />
+            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+              {{ $t('projects.xtrym.content.techStack.description') }}
+            </AtomsBodyText>
           </template>
         </OrganismsTwoComponentsRow>
       </AtomsFlex>
     </template>
   </AtomsWrapper>
-  <OrganismsTwoProjectImages
-    :priority="50"
-    :left-image="{ src: '/images/bg-test.webp', alt: 'adasd' }"
-    :right-image="{ src: '/images/portrait-2.jpg', alt: 'adasd' }"
+  <OrganismsOneProjectImage
+    :image="{
+      src: '/images/projects/xtrym/lutzweigold_xtrym_shop.webp',
+      alt: 'projects.xtrym.content.teaser.image.alt',
+    }"
   />
-  <OrganismsOneProjectImage :image="{ src: '/images/bg-test.webp', alt: 'adasd' }" />
 </template>
 
 <script setup lang="ts">
 import { ListItem } from '@Types';
 
-onMounted(() => {
-  console.log('Xtrym mounted');
-});
-
 const list: Array<ListItem> = [
   {
-    title: 'Contact details',
-    entries: [
-      { name: 'info@lutzweigold.de', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
-      { name: 'info@lutzweigold.de', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
-    ],
+    title: 'projects.xtrym.content.techStack.list.technology',
+    entries: ['Symphony Framework', 'Smarty Template Engine', 'TypeScript', 'SCSS'],
   },
   {
-    title: '© lutz weigold',
+    title: 'projects.xtrym.content.techStack.list.preview.name',
     entries: [
-      { name: 'Privacy', to: '/', title: 'Its the title of the link' },
-      { name: 'Imprint', to: '/', title: 'Its the title of the link' },
+      { name: 'xtrym.de', to: 'https://xtrym.de/', title: 'projects.xtrym.content.techStack.list.preview.title' },
     ],
   },
 ];
