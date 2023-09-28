@@ -19,6 +19,17 @@ export default defineNuxtConfig({
     compressPublicAssets: true,
   },
 
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+      cssnano:
+        process.env.NODE_ENV === 'production'
+          ? { preset: ['default', { discardComments: { removeAll: true } }] }
+          : false, // disable cssnano when not in production
+    },
+  },
+
   routeRules: {
     '/_nuxt/**': { headers: { 'cache-control': 's-maxage=86400' } },
   },
