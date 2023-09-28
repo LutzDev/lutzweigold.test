@@ -94,6 +94,6 @@ onMounted(() => {
 onUnmounted(() => {
   ctx.revert();
   ctx.kill();
-  // trigger.map((el) => el.refresh());
+  trigger.map((el) => el.refresh());
 });
 </script>
