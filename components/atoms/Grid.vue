@@ -1,6 +1,7 @@
 <template>
   <component
     :is="props.htmlTag"
+    ref="target"
     :class="`grid grid-cols-${props.cols} grid-rows-${props.rows} ${
       props.yGap === 'sm' ? 'gapy-sm' : props.yGap === 'md' ? 'gapy-md' : props.yGap === 'lg' ? 'gapy-lg' : 'gap-y-0'
     } ${
@@ -14,6 +15,12 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
 import { WrapperTag, Grid, Variant } from '@Types';
+
+const target = ref<HTMLDivElement | null>(null);
+
+defineExpose({
+  target,
+});
 
 const props = defineProps({
   htmlTag: {

@@ -60,10 +60,10 @@ export default defineNuxtConfig({
         en: '/privacy',
         de: '/datenschutz',
       },
-      /*      'projects/[slug]': {
-        en: 'projects/[slug]',
-        de: 'projekte/[slug]',
-      }, */
+      'projects/xtrym': {
+        en: '/projects/xtrym',
+        de: '/projekte/xtrym',
+      },
     },
     locales: [
       {

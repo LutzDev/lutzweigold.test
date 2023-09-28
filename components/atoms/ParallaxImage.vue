@@ -1,14 +1,14 @@
 <template>
-  <div ref="scope" class="relative h-30 overflow-hidden sm:h-40 md:h-50 lg:h-55 xl:h-60 2xl:h-65 3xl:h-70">
-    <div ref="target" class="absolute bottom-0 h-[calc(100%+150px)] w-full">
+  <div ref="scope" class="relative h-30 overflow-hidden sm:h-40 md:h-50 lg:h-60 xl:h-70 2xl:h-75 3xl:h-80">
+    <div ref="target" class="absolute bottom-0 h-[calc(100%+100px)] w-full">
       <nuxt-picture
         fit="cover"
         :src="props.image?.src!"
-        :alt="props.image?.alt!"
-        @load="ScrollTrigger.refresh()"
+        :alt="$t(props.image?.alt!)"
         :img-attrs="{
           class: 'object-cover h-full w-full',
         }"
+        @load="ScrollTrigger.refresh()"
       />
     </div>
     <div v-if="$slots.default" class="absolute left-0 top-0 h-full w-full bg-black/25">
@@ -52,7 +52,7 @@ onMounted(() => {
       defaults: { ease: 'none' },
     });
     tl.to(target.value, {
-      y: '150px',
+      y: '100px',
     });
 
     ScrollTrigger.create({
@@ -60,7 +60,7 @@ onMounted(() => {
       scrub: true,
       animation: tl,
       refreshPriority: props.priority,
-      markers: true,
+      markers: false,
       invalidateOnRefresh: true,
       onRefresh: console.log('Prallax refreshed', props.priority),
     });

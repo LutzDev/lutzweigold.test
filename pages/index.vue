@@ -17,7 +17,8 @@
               >
                 <nuxt-picture
                   fit="cover"
-                  src="/images/portrait-2.jpg"
+                  src="/images/general/lutzweigold_hiking.webp"
+                  :alt="$t('pages.about.content.visual.image.business.alt')"
                   :img-attrs="{
                     class: 'img scale-125 object-cover w-full h-30 sm:h-35 lg:h-40 xl:h-45 2xl:h-55 3xl:h-70 4xl:h-80',
                   }"
@@ -26,7 +27,8 @@
               <div class="col-span-3 col-start-2 row-start-1 overflow-hidden md:col-span-full md:col-start-1">
                 <nuxt-picture
                   fit="cover"
-                  src="/images/portrait-1.jpg"
+                  :alt="$t('pages.about.content.visual.image.hobby.alt')"
+                  src="/images/general/lutzweigold_portrait.webp"
                   :img-attrs="{
                     class: 'img scale-125 object-cover w-full h-30 sm:h-35 lg:h-40 xl:h-45 2xl:h-55 3xl:h-70 4xl:h-80',
                   }"
@@ -53,7 +55,7 @@
           >
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
-          <MoleculesExperience :items="items" />
+          <MoleculesExperience :items="test" />
         </OrganismsOneComponentsRow>
       </AtomsFlex>
     </template>
@@ -70,8 +72,9 @@ let tl: gsap.core.Timeline;
 let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 
-/*const test = {
+const test: Experience = {
   year: 20,
+  TEST: true,
   entries: [
     {
       year: 23,
@@ -80,102 +83,107 @@ let ctx: gsap.Context;
           additionalYear: 'pages.about.content.experience.items.selfEmployment.additionalYear',
           title: 'pages.about.content.experience.items.selfEmployment.title',
           description: 'pages.about.content.experience.items.selfEmployment.description',
-          tags: [{ name: 'working', color: 1 }],
+          tags: [{ name: 'general.tags.work', color: 1 }],
         },
       ],
     },
-  ],
-};*/
-
-const items: Experience = {
-  year: 20,
-  entries: [
-    {
-      year: 23,
-      additionalYear: 'pages.about.content.experience.items.selfEmployment.additionalYear',
-      title: 'pages.about.content.experience.items.selfEmployment.title',
-      description: 'pages.about.content.experience.items.selfEmployment.description',
-      tags: [{ name: 'working', color: 1 }],
-    },
     {
       year: 22,
-      additionalYear: 'pages.about.content.experience.items.master.additionalYear',
-      title: 'pages.about.content.experience.items.master.title',
-      description: 'pages.about.content.experience.items.master.description',
-      link: {
-        to: 'pages.about.content.experience.items.master.link.to',
-        title: 'pages.about.content.experience.items.master.link.title',
-      },
-      tags: [{ name: 'education', color: 2 }],
-    },
-    {
-      year: 22,
-      additionalYear: 'pages.about.content.experience.items.teaching.additionalYear',
-      title: 'pages.about.content.experience.items.teaching.title',
-      description: 'pages.about.content.experience.items.teaching.description',
-      link: {
-        to: 'pages.about.content.experience.items.teaching.link.to',
-        title: 'pages.about.content.experience.items.teaching.link.title',
-      },
-      tags: [{ name: 'working', color: 1 }],
-    },
-    {
-      year: 21,
-      additionalYear: 'pages.about.content.experience.items.bachelor.additionalYear',
-      title: 'pages.about.content.experience.items.bachelor.title',
-      description: 'pages.about.content.experience.items.bachelor.description',
-      link: {
-        to: 'pages.about.content.experience.items.bachelor.link.to',
-        title: 'pages.about.content.experience.items.bachelor.link.title',
-      },
-      tags: [{ name: 'education', color: 2 }],
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.master.additionalYear',
+          title: 'pages.about.content.experience.items.master.title',
+          description: 'pages.about.content.experience.items.master.description',
+          link: {
+            to: 'pages.about.content.experience.items.master.link.to',
+            title: 'pages.about.content.experience.items.master.link.title',
+          },
+          tags: [{ name: 'general.tags.education', color: 2 }],
+        },
+        {
+          additionalYear: 'pages.about.content.experience.items.teaching.additionalYear',
+          title: 'pages.about.content.experience.items.teaching.title',
+          description: 'pages.about.content.experience.items.teaching.description',
+          link: {
+            to: 'pages.about.content.experience.items.teaching.link.to',
+            title: 'pages.about.content.experience.items.teaching.link.title',
+          },
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+      ],
     },
     {
       year: 21,
-      additionalYear: 'pages.about.content.experience.items.ibc.additionalYear',
-      title: 'pages.about.content.experience.items.ibc.title',
-      description: 'pages.about.content.experience.items.ibc.description',
-      link: {
-        to: 'pages.about.content.experience.items.ibc.link.to',
-        title: 'pages.about.content.experience.items.ibc.link.title',
-      },
-      tags: [{ name: 'working', color: 1 }],
-    },
-    {
-      year: 21,
-      additionalYear: 'pages.about.content.experience.items.hiwi.additionalYear',
-      title: 'pages.about.content.experience.items.hiwi.title',
-      description: 'pages.about.content.experience.items.hiwi.description',
-      tags: [{ name: 'working', color: 1 }],
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.bachelor.additionalYear',
+          title: 'pages.about.content.experience.items.bachelor.title',
+          description: 'pages.about.content.experience.items.bachelor.description',
+          link: {
+            to: 'pages.about.content.experience.items.bachelor.link.to',
+            title: 'pages.about.content.experience.items.bachelor.link.title',
+          },
+          tags: [{ name: 'general.tags.education', color: 2 }],
+        },
+        {
+          additionalYear: 'pages.about.content.experience.items.ibc.additionalYear',
+          title: 'pages.about.content.experience.items.ibc.title',
+          description: 'pages.about.content.experience.items.ibc.description',
+          link: {
+            to: 'pages.about.content.experience.items.ibc.link.to',
+            title: 'pages.about.content.experience.items.ibc.link.title',
+          },
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+        {
+          additionalYear: 'pages.about.content.experience.items.hiwi.additionalYear',
+          title: 'pages.about.content.experience.items.hiwi.title',
+          description: 'pages.about.content.experience.items.hiwi.description',
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+      ],
     },
     {
       year: 19,
-      additionalYear: 'pages.about.content.experience.items.webbrand.additionalYear',
-      title: 'pages.about.content.experience.items.webbrand.title',
-      description: 'pages.about.content.experience.items.webbrand.description',
-      link: {
-        to: 'pages.about.content.experience.items.webbrand.link.to',
-        title: 'pages.about.content.experience.items.webbrand.link.title',
-      },
-      tags: [{ name: 'working', color: 1 }],
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.webbrand.additionalYear',
+          title: 'pages.about.content.experience.items.webbrand.title',
+          description: 'pages.about.content.experience.items.webbrand.description',
+          link: {
+            to: 'pages.about.content.experience.items.webbrand.link.to',
+            title: 'pages.about.content.experience.items.webbrand.link.title',
+          },
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+      ],
     },
     {
       year: 17,
-      additionalYear: 'pages.about.content.experience.items.abi.additionalYear',
-      title: 'pages.about.content.experience.items.abi.title',
-      description: 'pages.about.content.experience.items.abi.description',
-      tags: [{ name: 'education', color: 2 }],
+      items: [
+        {
+          year: 17,
+          additionalYear: 'pages.about.content.experience.items.abi.additionalYear',
+          title: 'pages.about.content.experience.items.abi.title',
+          description: 'pages.about.content.experience.items.abi.description',
+          tags: [{ name: 'general.tags.education', color: 2 }],
+        },
+      ],
     },
     {
       year: 16,
-      additionalYear: 'pages.about.content.experience.items.reizwerk.additionalYear',
-      title: 'pages.about.content.experience.items.reizwerk.title',
-      description: 'pages.about.content.experience.items.reizwerk.description',
-      link: {
-        to: 'pages.about.content.experience.items.reizwerk.link.to',
-        title: 'pages.about.content.experience.items.reizwerk.link.title',
-      },
-      tags: [{ name: 'working', color: 1 }],
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.reizwerk.additionalYear',
+          title: 'pages.about.content.experience.items.reizwerk.title',
+          description: 'pages.about.content.experience.items.reizwerk.description',
+          link: {
+            to: 'pages.about.content.experience.items.reizwerk.link.to',
+            title: 'pages.about.content.experience.items.reizwerk.link.title',
+          },
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+      ],
     },
   ],
 };

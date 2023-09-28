@@ -2,8 +2,10 @@
   <div ref="scope" class="col-span-full">
     <div class="mb-8 flex w-full justify-between">
       <AtomsTitleText size="sm"
-        ><span class="text-typo-200">~/projects/</span
-        ><span ref="filterText" class="cursor-pointer underline" @click="openFilter">all</span></AtomsTitleText
+        ><span class="text-typo-200">{{ $t('pages.work.content.filter.prefix') }}</span
+        ><span ref="filterText" class="cursor-pointer underline" @click="openFilter">{{
+          $t('pages.work.content.filter.all').toLowerCase()
+        }}</span></AtomsTitleText
       >
       <div class=""></div>
       <AtomsTitleText size="sm" class="text-typo-200">[0{{ props.listLength }}]</AtomsTitleText>
@@ -21,24 +23,34 @@
           class="cursor-pointer self-center justify-self-end border-2 border-black px-4 py-1 lg:self-start"
           @click="closeFilter"
         >
-          <AtomsBodyText html-tag="span">close</AtomsBodyText>
+          <AtomsBodyText html-tag="span">{{ $t('pages.work.content.filter.close') }}</AtomsBodyText>
         </div>
         <div class="space-y-4 self-start lg:self-end">
-          <AtomsHeadline html-tag="h3" class="filterTag col-span-full row-start-2 self-end"
-            >Filter by project:</AtomsHeadline
-          >
-          <div class="col-span-full row-start-3 cursor-pointer">
+          <AtomsHeadline html-tag="h3" class="filterTag col-span-full row-start-2 self-end">{{
+            $t('pages.work.content.filter.title')
+          }}</AtomsHeadline>
+          <div class="col-span-full row-start-3">
             <div class="py-0.2 overflow-hidden">
-              <AtomsFlex x-gap="none" class="filterTag hover:underline">
-                <AtomsTitleText size="sm" data-filter="" @click="updateFilter($event)">All</AtomsTitleText>
+              <AtomsFlex x-gap="none" class="filterTag">
+                <AtomsTitleText
+                  size="sm"
+                  data-filter=""
+                  class="cursor-pointer hover:underline"
+                  @click="updateFilter($event)"
+                  >{{ $t('pages.work.content.filter.all') }}</AtomsTitleText
+                >
                 <div class="ml-0.5 -translate-y-0.5">{{ props.totalLength }}</div>
               </AtomsFlex>
             </div>
             <div v-for="(filter, key) in props.tags" :key="key" class="overflow-hidden py-0.5">
-              <AtomsFlex x-gap="none" class="filterTag hover:underline">
-                <AtomsTitleText size="sm" :data-filter="filter[0].toLocaleLowerCase()" @click="updateFilter($event)">{{
-                  filter[0]
-                }}</AtomsTitleText>
+              <AtomsFlex x-gap="none" class="filterTag">
+                <AtomsTitleText
+                  class="cursor-pointer hover:underline"
+                  size="sm"
+                  :data-filter="filter[0].toLocaleLowerCase()"
+                  @click="updateFilter($event)"
+                  >{{ $t(filter[0]) }}</AtomsTitleText
+                >
                 <div class="ml-0.5 -translate-y-0.5">{{ filter[1] }}</div>
               </AtomsFlex>
             </div>
@@ -59,6 +71,7 @@ const filterModal = ref(null);
 const filterWrapper = ref(null);
 let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
+const { t } = useI18n();
 
 const { y } = useWindowScroll();
 
@@ -81,7 +94,7 @@ const updateFilter = (event: any) => {
     duration: 1,
     delay: 0.75,
     scrambleText: {
-      text: `${query.value !== '' ? query.value.toLowerCase() : 'all'}`,
+      text: `${query.value !== '' ? t(query.value).toLowerCase() : t('pages.work.content.filter.all').toLowerCase()}`,
       chars: '/$#',
       tweenLength: true,
     },
@@ -119,6 +132,7 @@ onMounted(() => {
             },
           },
         });
+        console.log('onReverseComplete done');
       },
       paused: true,
       defaults: { ease: Power4.easeInOut, duration: 1.5 },

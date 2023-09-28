@@ -5,7 +5,7 @@
         <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
           <OrganismsOneComponentsRow>
             <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8">
-              I'm a creative developer based in germany
+              {{ $t('pages.skill.content.visual.headline') }}
             </AtomsHeadline>
           </OrganismsOneComponentsRow>
           <OrganismsOneComponentsRow y-gap="none">
@@ -14,12 +14,14 @@
                 ref="leftCircle"
                 class="relative col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
               >
-                <AtomsTitleText
-                  size="sm"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5"
-                >
-                  <span class="serviceText p-y-1 inline-block translate-y-0"> Design </span>
-                </AtomsTitleText>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
+                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                    <AtomsTitleText size="sm"
+                      >{{ $t('pages.skill.content.visual.circles.strategy.title') }}
+                    </AtomsTitleText>
+                    <AtomsBodyText> {{ $t('pages.skill.content.visual.circles.strategy.description') }} </AtomsBodyText>
+                  </div>
+                </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <circle class="drawStroke" cx="50%" cy="50%" r="49%" stroke="black" stroke-width="1" fill="none" />
                 </svg>
@@ -28,12 +30,16 @@
                 ref="middleCircle"
                 class="relative col-span-4 col-start-4 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
               >
-                <AtomsTitleText
-                  size="sm"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5"
-                >
-                  <span class="serviceText p-y-1 inline-block translate-y-0">Development </span>
-                </AtomsTitleText>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
+                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                    <AtomsTitleText size="sm"
+                      >{{ $t('pages.skill.content.visual.circles.development.title') }}
+                    </AtomsTitleText>
+                    <AtomsBodyText>
+                      {{ $t('pages.skill.content.visual.circles.development.description') }}
+                    </AtomsBodyText>
+                  </div>
+                </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <circle class="drawStroke" cx="50%" cy="50%" r="49%" stroke="black" stroke-width="1" fill="none" />
                 </svg>
@@ -42,12 +48,16 @@
                 ref="rightCircle"
                 class="relative col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
               >
-                <AtomsTitleText
-                  size="sm"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5"
-                >
-                  <span class="serviceText p-y-1 inline-block translate-y-0">Support </span>
-                </AtomsTitleText>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
+                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                    <AtomsTitleText size="sm"
+                      >{{ $t('pages.skill.content.visual.circles.maintenance.title') }}
+                    </AtomsTitleText>
+                    <AtomsBodyText>
+                      {{ $t('pages.skill.content.visual.circles.maintenance.description') }}
+                    </AtomsBodyText>
+                  </div>
+                </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <circle class="drawStroke" cx="50%" cy="50%" r="49%" stroke="black" stroke-width="1" fill="none" />
                 </svg>
@@ -66,12 +76,16 @@
                 ref="backendCircle"
                 class="relative col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
               >
-                <AtomsTitleText
-                  size="sm"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5"
-                >
-                  <span class="serviceText p-y-1 inline-block translate-y-0"> Backend </span>
-                </AtomsTitleText>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
+                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                    <AtomsTitleText size="sm"
+                      >{{ $t('pages.skill.content.visual.circles.backend.title') }}
+                    </AtomsTitleText>
+                    <AtomsBodyText>
+                      {{ $t('pages.skill.content.visual.circles.backend.description') }}
+                    </AtomsBodyText>
+                  </div>
+                </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <circle
                     cx="50%"
@@ -88,12 +102,16 @@
                 ref="frontendCircle"
                 class="relative col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
               >
-                <AtomsTitleText
-                  size="sm"
-                  class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5"
-                >
-                  <span class="serviceText p-y-1 inline-block translate-y-0"> Frontend </span>
-                </AtomsTitleText>
+                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
+                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                    <AtomsTitleText size="sm"
+                      >{{ $t('pages.skill.content.visual.circles.frontend.title') }}
+                    </AtomsTitleText>
+                    <AtomsBodyText>
+                      {{ $t('pages.skill.content.visual.circles.frontend.description') }}
+                    </AtomsBodyText>
+                  </div>
+                </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                   <circle
                     cx="50%"
@@ -173,7 +191,7 @@ onMounted(() => {
       }
     });
 
-    tlReveal.to('.serviceText', { duration: 2, y: 100, stagger: 0.2, ease: Power4.easeInOut, overwrite: true }, 0);
+    tlReveal.to('.serviceText', { duration: 2, y: '100%', stagger: 0.2, ease: Power4.easeInOut, overwrite: true }, 0);
     tlReveal.to(
       [leftCircle.value, backendCircle.value, middleCircle.value, rightCircle.value, frontendCircle.value],
       {

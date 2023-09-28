@@ -1,17 +1,17 @@
 <template>
-  <div class="cursor-pointer overflow-hidden">
+  <div class="overflow-hidden">
     <div class="wrapper relative flex text-6xl">
       <div ref="target" class="box flex">
         <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
-          props.title
+          $t(props.title)
         }}</AtomsTitleText>
         <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
         <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
-          props.title
+          $t(props.title)
         }}</AtomsTitleText>
         <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
         <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
-          props.title
+          $t(props.title)
         }}</AtomsTitleText
         ><AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
       </div>

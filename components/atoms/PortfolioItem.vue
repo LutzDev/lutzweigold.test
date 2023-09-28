@@ -1,5 +1,8 @@
 <template>
-  <NuxtLink :to="props.item?.to">
+  <NuxtLink
+    :to="localePath(String(props.item?.link.to))"
+    :title="`${$t('general.phrases.openProject')} ${props.item?.title} `"
+  >
     <AtomsGrid
       :cols="10"
       class="cursor-pointer items-center"
@@ -16,9 +19,9 @@
         wrap
         y-gap="sm"
       >
-        <AtomsTag v-for="(tag, key) in props.item?.tags" :key="key">{{ tag }}</AtomsTag>
+        <AtomsTag v-for="(tag, key) in props.item?.tags" :key="key" :entry="tag" :color="0"></AtomsTag>
       </AtomsFlex>
-      <AtomsButton class="col-span-2 col-start-9 justify-self-end" :event="isHover" :to="item.to" size="md" />
+      <AtomsButton class="col-span-2 col-start-9 justify-self-end" :event="isHover" :to="item.link.to" size="md" />
     </AtomsGrid>
   </NuxtLink>
 </template>
@@ -26,7 +29,7 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
 import { PortfolioItem } from '@Types';
-
+const localePath = useLocalePath();
 const isHover = ref<boolean>(false);
 
 const props = defineProps({

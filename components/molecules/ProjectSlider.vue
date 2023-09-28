@@ -4,7 +4,7 @@
       <div ref="target">
         <AtomsGrid :cols="1" y-gap="sm" class="origin-center rotate-12 scale-150">
           <div
-            v-for="(index, key) in props.items"
+            v-for="(item, key) in props.items"
             :key="key"
             :class="`${key % 2 === 0 ? 'translate-x-[50px]' : '-translate-x-[50px]'} row col-span-full`"
             :data-direction="key % 2 === 0 ? 'backward' : 'forward'"
@@ -13,7 +13,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
-                  src="/images/portrait-2.jpg"
+                  :src="`images/${item.left.src}`"
+                  :alt="$t(item.left.alt)"
                   :img-attrs="{
                     class: 'pointer-events-none object-cover h-full w-full',
                   }"
@@ -22,7 +23,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
-                  src="/images/portrait-2.jpg"
+                  :src="`images/${item.center.src}`"
+                  :alt="$t(item.center.alt)"
                   :img-attrs="{
                     class: 'pointer-events-none object-cover h-full w-full',
                   }"
@@ -31,7 +33,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
-                  src="/images/portrait-2.jpg"
+                  :src="`images/${item.right.src}`"
+                  :alt="$t(item.right.alt)"
                   :img-attrs="{
                     class: 'pointer-events-none object-cover h-full w-full',
                   }"
