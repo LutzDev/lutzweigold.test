@@ -2,18 +2,19 @@
   <AtomsTitleText
     size="xs"
     html-tag="span"
-    :class="`p-x-xs ${
+    :class="`tag p-x-xs ${
       props.color === 1
         ? 'bg-primary-50 text-primary-800'
         : props.color === 2
         ? 'bg-secondary-50 text-secondary-600'
         : props.color === 0
         ? props.theme === 'light'
-          ? 'border-black text-black'
-          : 'border-white text-white'
+          ? 'border-2 border-black text-black'
+          : 'border-2 border-white text-white'
         : ''
     }`"
-    ><slot />
+  >
+    {{ $t(props.entry) }}
   </AtomsTitleText>
 </template>
 
@@ -22,6 +23,10 @@ import { PropType } from 'vue/dist/vue';
 import { Theme } from '@Types';
 
 const props = defineProps({
+  entry: {
+    type: String,
+    required: true,
+  },
   color: {
     type: Number as PropType<0 | 1 | 2>,
     default: 0,
