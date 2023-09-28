@@ -15,7 +15,7 @@
   >
     <div v-for="(item, key) in computedList" :key="key">
       <AtomsPortfolioItem :item="item" :position="key + 1" />
-      <div class="line col-span-full col-start-3 my-2 h-[2px] w-full origin-left bg-black md:col-span-8"></div>
+      <div class="col-span-full col-start-3 my-2 h-[2px] w-full bg-black md:col-span-8"></div>
     </div>
   </TransitionGroup>
 </template>
@@ -81,48 +81,66 @@ function onLeave(el: any, done: any) {
 const items: Array<PortfolioItem> = [
   {
     title: 'Portfolio',
-    tags: ['Digital', 'E-Commerce'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.website'],
+    link: {
+      to: 'projects-portfolio',
+    },
   },
   {
     title: 'Didem',
-    tags: ['iOS', 'React'],
-    to: 'https',
+    tags: ['pages.work.content.filter.tags.application'],
+    link: {
+      to: 'projects-didem',
+    },
   },
   {
     title: 'Xtrym',
-    tags: ['Nuxt', 'Vue3'],
-    to: '/projects/xtrym',
+    tags: ['pages.work.content.filter.tags.shop'],
+    link: {
+      to: 'projects-xtrym',
+    },
   },
   {
     title: 'Freya',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.website'],
+    link: {
+      to: 'projects-freya',
+    },
   },
   {
     title: 'Pleta',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.shop'],
+    link: {
+      to: 'projects-pleta',
+    },
   },
   {
     title: 'SmarAct',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.website'],
+    link: {
+      to: 'projects-smaract',
+    },
   },
   {
     title: 'Querformat',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.website'],
+    link: {
+      to: 'projects-querformat',
+    },
   },
   {
     title: 'Dark Pattern',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.application'],
+    link: {
+      to: 'projects-darkpattern',
+    },
   },
   {
     title: 'Fuwa Car',
-    tags: ['Nuxt', 'Vue3'],
-    to: 'asdasdasd',
+    tags: ['pages.work.content.filter.tags.application'],
+    link: {
+      to: 'projects-fuwacar',
+    },
   },
 ];
 </script>
