@@ -2,10 +2,15 @@ type Grid = 'none' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 interface Experience {
   year: number;
-  entries: ExperienceItem[];
+  entries: ExperienceContainer[];
 }
-interface ExperienceItem {
+
+interface ExperienceContainer {
   year: number;
+  items: ExperienceItem[];
+}
+
+interface ExperienceItem {
   additionalYear: string;
   title: string;
   description: string;
@@ -36,13 +41,22 @@ interface ListItem {
 interface PortfolioItem {
   title: string;
   tags: Array<string>;
-  to: string;
+  link: Omit<Link, 'name' | 'title'>;
 }
 
 interface ProjectSliderItem {
-  left: string;
-  center: string;
-  right: string;
+  left: {
+    src: string;
+    alt: string;
+  };
+  center: {
+    src: string;
+    alt: string;
+  };
+  right: {
+    src: string;
+    alt: string;
+  };
 }
 
 interface ListTitle {
@@ -62,6 +76,7 @@ interface NavigationState {
 export {
   Grid,
   Experience,
+  ExperienceContainer,
   ExperienceItem,
   Tag,
   ScrambleTextItem,

@@ -2,6 +2,7 @@ import { TextTag, HeadlineTag, TypographyTags, WrapperTag, Variant, Theme } from
 import {
   Grid,
   Experience,
+  ExperienceContainer,
   ExperienceItem,
   Tag,
   ScrambleTextItem,
@@ -23,6 +24,7 @@ export {
   Theme,
   Grid,
   Experience,
+  ExperienceContainer,
   ExperienceItem,
   Tag,
   ScrambleTextItem,
