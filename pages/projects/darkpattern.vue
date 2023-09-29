@@ -1,4 +1,11 @@
 <template>
+  <div class="h-screen bg-gray-600"><h1>Dark Pattern SITE</h1></div>
+  <div class="h-screen bg-gray-200">Second section</div>
+  <div class="h-screen bg-gray-600">Third section</div>
+  <div class="h-screen bg-gray-200">Fourgh section</div>
+</template>
+<!--
+<template>
   <OrganismsProjectVisual
     headline="projects.darkPattern.content.visual.headline"
     tag="pages.work.content.filter.tags.application"
@@ -50,3 +57,5 @@ const list: Array<ListItem> = [
   },
 ];
 </script>
+-->
+<script setup lang="ts"></script>

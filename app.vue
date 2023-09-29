@@ -23,10 +23,9 @@ let smoother: ScrollSmoother;
 
 onMounted(() => {
   smoother = ScrollSmoother.create({
-    smooth: 2,
-    effects: true,
-    smoothTouch: 0.5,
-    normalizeScroll: true,
+    smooth: 0.8,
+    effects: false,
+    smoothTouch: false,
   });
 });
 
