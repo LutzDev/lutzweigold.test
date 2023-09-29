@@ -1,5 +1,5 @@
 <template>
-  <aside class="grid-row-1 fixed left-0 right-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-12 lg:grid-rows-2">
+  <aside class="grid-row-1 pb-safe fixed left-0 right-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-12 lg:grid-rows-2">
     <AtomsWrapper
       class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block lg:space-y-4"
     >

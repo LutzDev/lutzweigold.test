@@ -76,7 +76,8 @@
 @layer utilities {
     .pb-safe {
         background: red;
-        padding-bottom: env(safe-area-inset-bottom);
-        padding-top: env(safe-area-inset-top);
+        margin-bottom: env(safe-area-inset-bottom) !important;
+        padding-left: env(safe-area-inset-left) !important;
+        padding-right: env(safe-area-inset-right) !important;
     }
 }
