@@ -1,4 +1,11 @@
 <template>
+  <div class="h-screen bg-gray-600"><h1>Contact SITE</h1></div>
+  <div class="h-screen bg-gray-200">Second section</div>
+  <div class="h-screen bg-gray-600">Third section</div>
+  <div class="h-screen bg-gray-200">Fourgh section</div>
+</template>
+<!--
+<template>
   <AtomsWrapper theme="dark" is-full-screen html-tag="section" y-padding="lg" class="flex min-h-screen flex-col">
     <template #default="{ isFullScreen, theme }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
@@ -46,3 +53,4 @@ const list: Array<ListItem> = [
   },
 ];
 </script>
+-->

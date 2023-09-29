@@ -1,4 +1,11 @@
 <template>
+  <div class="h-screen bg-gray-600"><h1>IMPRINT SITE</h1></div>
+  <div class="h-screen bg-gray-200">Second section</div>
+  <div class="h-screen bg-gray-600">Third section</div>
+  <div class="h-screen bg-gray-200">Fourgh section</div>
+</template>
+<!--
+<template>
   <AtomsWrapper
     theme="light"
     is-full-screen
@@ -114,3 +121,4 @@ definePageMeta({
   layout: 'footerless',
 });
 </script>
+-->
