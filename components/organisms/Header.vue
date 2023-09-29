@@ -1,5 +1,5 @@
 <template>
-  <header class="grid h-screen w-full grid-cols-12">
+  <header class="grid w-full bg-red-600">
     <MoleculesNavigation
       class="col-span-full row-start-1 flex items-center lg:col-span-10 lg:col-start-3 lg:justify-end"
     />

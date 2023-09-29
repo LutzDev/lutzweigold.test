@@ -1,35 +1,35 @@
 <template>
-  <aside class="grid-row-1 fixed left-0 right-0 top-0 z-10 grid h-[100dvh] w-full grid-cols-12 lg:grid-rows-2">
-    <AtomsWrapper
-      class="pointer-events-auto col-span-full col-start-1 flex justify-between self-start lg:col-span-2 lg:block lg:space-y-4"
-    >
-      <AtomsLogo />
-      <div class="text-white">
-        <AtomsSmallText>+49 152 26269766</AtomsSmallText>
-        <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
-      </div>
-    </AtomsWrapper>
-    <AtomsWrapper class="col-span-full col-start-1 row-start-2 self-end lg:col-span-2">
-      <div
-        class="flex flex-row-reverse divide-x-2 divide-x-reverse divide-white border-2 border-white lg:block lg:divide-x-0 lg:divide-y-2"
-      >
-        <div
-          class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1 lg:w-full"
-          data-item="menu"
-          @click="handleNavigation($event)"
-        >
-          <AtomsBodyText html-tag="span" theme="dark">{{ $t('general.cta.menu') }}</AtomsBodyText>
-          <AtomsBodyText html-tag="span" theme="dark">[<span ref="nav"></span>]</AtomsBodyText>
-        </div>
-        <div
-          class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1 lg:w-full"
-          data-item="lang"
-          @click="handleNavigation($event)"
-        >
-          <AtomsBodyText html-tag="span" theme="dark"> {{ $t('general.cta.language') }}</AtomsBodyText>
-          <AtomsBodyText html-tag="span" theme="dark">[<span ref="lang"></span>]</AtomsBodyText>
-        </div>
-      </div>
+  <aside class="col-span-2 bg-black">
+    <AtomsWrapper is-full-screen>
+      <template #default="{ isFullScreen }">
+        <AtomsFlex :is-full-screen="isFullScreen" wrap>
+          <div class="space-y-4">
+            <AtomsLogo />
+            <div class="text-white">
+              <AtomsSmallText>+49 152 26269766</AtomsSmallText>
+              <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
+            </div>
+          </div>
+          <div class="w-full divide-y-2 divide-white border-2 border-white">
+            <div
+              class="pointer-events-auto flex w-full cursor-pointer justify-between px-2 py-1"
+              data-item="menu"
+              @click="handleNavigation($event)"
+            >
+              <AtomsBodyText html-tag="span" theme="dark">{{ $t('general.cta.menu') }}</AtomsBodyText>
+              <AtomsBodyText html-tag="span" theme="dark">[<span ref="nav"></span>]</AtomsBodyText>
+            </div>
+            <div
+              class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1 lg:w-full"
+              data-item="lang"
+              @click="handleNavigation($event)"
+            >
+              <AtomsBodyText html-tag="span" theme="dark"> {{ $t('general.cta.language') }}</AtomsBodyText>
+              <AtomsBodyText html-tag="span" theme="dark">[<span ref="lang"></span>]</AtomsBodyText>
+            </div>
+          </div>
+        </AtomsFlex>
+      </template>
     </AtomsWrapper>
   </aside>
 </template>
