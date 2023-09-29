@@ -17,6 +17,10 @@ export default defineNuxtConfig({
 
   nitro: {
     compressPublicAssets: true,
+    routeRules: {
+      '/img/**': { headers: { 'cache-control': `public,max-age=31536000},s-maxage=31536000` } },
+      '/_nuxt/**': { headers: { 'cache-control': `public,max-age=31536000,s-maxage=31536000` } },
+    },
   },
 
   postcss: {
@@ -30,9 +34,9 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/_nuxt/**': { headers: { 'cache-control': 's-maxage=86400' } },
-  },
+  /*  routeRules: {
+    '/_nuxt/!**': { headers: { 'cache-control': 's-maxage=31536000' } },
+  },*/
 
   /*  routeRules: {
     '/': { redirect: '/en-CA' },
