@@ -35,10 +35,6 @@ export default defineNuxtConfig({
   },
 
   /*  routeRules: {
-    '/_nuxt/!**': { headers: { 'cache-control': 's-maxage=31536000' } },
-  },*/
-
-  /*  routeRules: {
     '/': { redirect: '/en-CA' },
   }, */
 
