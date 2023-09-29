@@ -1,6 +1,7 @@
 <template>
   <div class="relative overflow-x-hidden">
     <!--  <OrganismsLoadingScreen v-if="false" />-->
+    <div class="pb-safe fixed bottom-0 z-20 h-10 w-full bg-green-500">Test</div>
     <div id="smooth-wrapper" class="grid min-h-screen grid-cols-12">
       <OrganismsHeader class="fixed -z-10 bg-red-600" />
       <OrganismsAside class="pointer-events-none fixed left-0 right-0 top-0 z-10" />
