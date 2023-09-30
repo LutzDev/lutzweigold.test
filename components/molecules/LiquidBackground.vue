@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-/* import {
+import {
   SRGBColorSpace,
   Mesh,
   PerspectiveCamera,
@@ -56,7 +56,7 @@ const initPost = () => {
       scale: { value: 1.0 },
     },
 
-    vertexShader: /!* glsl *!/ `
+    vertexShader: /* glsl */ `
 
 		varying vec2 vUv;
 
@@ -67,7 +67,7 @@ const initPost = () => {
 
 		}`,
 
-    fragmentShader: /!* glsl *!/ `
+    fragmentShader: /* glsl */ `
 
 		uniform vec2 center;
 		uniform float angle;
@@ -305,5 +305,5 @@ void main() {
 
     gl_FragColor = vec4( vec3(fourthBaseColor), 1.);
 }`;
-}; */
+};
 </script>

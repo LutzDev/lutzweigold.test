@@ -1,5 +1,5 @@
 <template>
-  <aside class="col-span-2 bg-black">
+  <aside class="col-span-2 col-start-1 row-start-1">
     <AtomsWrapper is-full-screen class="sticky top-0">
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap>
