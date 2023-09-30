@@ -16,7 +16,7 @@
                   :src="`images/${item.left.src}`"
                   :alt="$t(item.left.alt)"
                   :img-attrs="{
-                    class: 'pointer-events-none object-cover h-full w-full',
+                    class: 'pointer-events-none touch-none object-cover h-full w-full',
                   }"
                 />
               </div>
@@ -26,7 +26,7 @@
                   :src="`images/${item.center.src}`"
                   :alt="$t(item.center.alt)"
                   :img-attrs="{
-                    class: 'pointer-events-none object-cover h-full w-full',
+                    class: 'pointer-events-none touch-none object-cover h-full w-full',
                   }"
                 />
               </div>
@@ -36,7 +36,7 @@
                   :src="`images/${item.right.src}`"
                   :alt="$t(item.right.alt)"
                   :img-attrs="{
-                    class: 'pointer-events-none object-cover h-full w-full',
+                    class: 'pointer-events-none touch-none object-cover h-full w-full',
                   }"
                 />
               </div>
