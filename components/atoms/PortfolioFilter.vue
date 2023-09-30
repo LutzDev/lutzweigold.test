@@ -118,10 +118,10 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       onStart: () => {
-        smoother.value?.paused(isFilterOpen.value);
+        smoother.value?.paused(true);
       },
       onReverseComplete: () => {
-        smoother.value?.paused(isFilterOpen.value);
+        smoother.value?.paused(false);
       },
       paused: true,
       defaults: { ease: Power4.easeInOut, duration: 1.5 },

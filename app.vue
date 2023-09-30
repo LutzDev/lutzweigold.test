@@ -35,7 +35,6 @@ onMounted(() => {
     effects: false,
     smoothTouch: false,
   });
-  console.log('APP.vue is mounted');
 });
 
 watch(
