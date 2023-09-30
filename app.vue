@@ -6,7 +6,7 @@
       >asdasd</AtomsWrapper
     >-->
     <MoleculesMobileMenu />
-    <div id="smooth-wrapper" class="grid !min-h-[100dvh] min-h-screen grid-cols-12">
+    <div id="smooth-wrapper" class="grid !min-h-[100svh] min-h-screen grid-cols-12">
       <OrganismsAside class="hidden lg:block" />
       <div id="smooth-content" class="pointer-events-none col-span-full row-start-1 lg:col-span-10 lg:col-start-3">
         <div class="overflow-x-hidden">
