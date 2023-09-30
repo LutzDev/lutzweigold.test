@@ -1,6 +1,6 @@
 <template>
   <header class="w-full bg-red-600">
-    <div class="sticky top-0 grid h-screen">
+    <div class="sticky top-0 grid h-[100dvh] h-screen">
       <MoleculesNavigation
         class="col-span-full row-start-1 flex items-center lg:col-span-10 lg:col-start-3 lg:justify-end"
       />

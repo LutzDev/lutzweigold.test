@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="h-screen w-screen bg-gray-800 brightness-100"></div>
+  <div ref="container" class="h-[100dvh] h-screen w-screen bg-gray-800 brightness-100"></div>
 </template>
 
 <script setup lang="ts">
