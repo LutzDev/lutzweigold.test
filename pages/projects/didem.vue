@@ -1,11 +1,4 @@
 <template>
-  <div class="!h-[100svh] h-screen bg-gray-600"><h1>DIDEM SITE</h1></div>
-  <div class="!h-[100svh] h-screen bg-gray-200">Second section</div>
-  <div class="!h-[100svh] h-screen bg-gray-600">Third section</div>
-  <div class="!h-[100svh] h-screen bg-gray-200">Fourgh section</div>
-</template>
-<!--
-<template>
   <OrganismsProjectVisual
     headline="projects.didem.content.visual.headline"
     tag="pages.work.content.filter.tags.application"
@@ -192,5 +185,3 @@ const mobileApplicationList: Array<ListItem> = [
 // TODO: Link zu Dialogmanager
 // TODO: Link zu Mobile application
 </script>
--->
-<script setup lang="ts"></script>
