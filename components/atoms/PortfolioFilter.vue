@@ -63,6 +63,8 @@
 
 <script setup lang="ts">
 const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
+const modalStore = useModalStore();
+const { smoother } = storeToRefs(modalStore);
 const isFilterOpen = ref<boolean>(false);
 const filterText = ref();
 const query = ref('');
@@ -116,23 +118,10 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       onStart: () => {
-        useHead({
-          bodyAttrs: {
-            class: {
-              'overflow-y-hidden': isFilterOpen.value,
-            },
-          },
-        });
+        smoother.value?.paused(isFilterOpen.value);
       },
       onReverseComplete: () => {
-        useHead({
-          bodyAttrs: {
-            class: {
-              'overflow-y-hidden': isFilterOpen.value,
-            },
-          },
-        });
-        console.log('onReverseComplete done');
+        smoother.value?.paused(isFilterOpen.value);
       },
       paused: true,
       defaults: { ease: Power4.easeInOut, duration: 1.5 },
