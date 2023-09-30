@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-safe fixed bottom-0 left-0 z-20 w-full text-white mix-blend-difference lg:hidden">
+  <div class="pb-safe fixed bottom-0 left-0 z-40 w-full text-white mix-blend-difference lg:hidden">
     <AtomsWrapper class="bg-red-black/0">
       <div class="flex divide-x-2 divide-white border-2 border-white">
         <div
