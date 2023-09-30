@@ -1,8 +1,8 @@
 <template>
-  <div class="h-[100dvh] h-screen bg-gray-600"><h1>Contact SITE</h1></div>
-  <div class="h-[100dvh] h-screen bg-gray-200">Second section</div>
-  <div class="h-[100dvh] h-screen bg-gray-600">Third section</div>
-  <div class="h-[100dvh] h-screen bg-gray-200">Fourgh section</div>
+  <div class="!h-[100dvh] h-screen bg-gray-600"><h1>Contact SITE</h1></div>
+  <div class="!h-[100dvh] h-screen bg-gray-200">Second section</div>
+  <div class="!h-[100dvh] h-screen bg-gray-600">Third section</div>
+  <div class="!h-[100dvh] h-screen bg-gray-200">Fourgh section</div>
 </template>
 <!--
 <template>
