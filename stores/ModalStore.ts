@@ -1,5 +1,7 @@
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 export const useModalStore = defineStore('modal', () => {
   const isModalOpen = ref<Boolean>(true);
+  const smoother = ref<ScrollSmoother>();
 
   const toggleModal = (): void => {
     isModalOpen.value = !isModalOpen.value;
@@ -18,5 +20,6 @@ export const useModalStore = defineStore('modal', () => {
     openModal,
     closeModal,
     toggleModal,
+    smoother,
   };
 });

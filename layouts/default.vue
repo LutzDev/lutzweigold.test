@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
 const modalStore = useModalStore();
-const { isModalOpen } = storeToRefs(modalStore);
+const { isModalOpen, smoother } = storeToRefs(modalStore);
 const animationStore = useAnimationStore();
 
 let tl: gsap.core.Timeline;
@@ -28,22 +28,10 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       onStart: () => {
-        useHead({
-          bodyAttrs: {
-            class: {
-              'overflow-y-hidden': true,
-            },
-          },
-        });
+        smoother.value?.paused(true);
       },
       onReverseComplete: () => {
-        useHead({
-          bodyAttrs: {
-            class: {
-              'overflow-y-hidden': false,
-            },
-          },
-        });
+        smoother.value?.paused(false);
       },
       data: { name: 'DEFAULT' },
       defaults: { ease: Power4.easeInOut, duration: 2 },

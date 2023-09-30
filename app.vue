@@ -25,11 +25,11 @@ const route = useRoute();
 const { $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 const appStore = useAppStore();
 const { isAppLoading } = storeToRefs(appStore);
-
-let smoother: ScrollSmoother;
+const modalStore = useModalStore();
+const { smoother } = storeToRefs(modalStore);
 
 onMounted(() => {
-  smoother = ScrollSmoother.create({
+  smoother.value = ScrollSmoother.create({
     smooth: 0.8,
     effects: false,
     smoothTouch: false,
@@ -44,7 +44,7 @@ watch(
     /*    smoother.effects().forEach((effect) => effect.kill());
     smoother.effects('[data-lag], [data-speed]');
     ScrollTrigger.clearScrollMemory();*/
-    smoother.refresh();
+    // smoother.refresh();
     ScrollTrigger.refresh();
   }
 );
