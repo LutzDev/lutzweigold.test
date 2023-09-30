@@ -1,8 +1,6 @@
 <template>
   <div ref="scope" class="relative h-30 bg-black xs:h-40 sm:h-50 md:h-60 lg:h-70 xl:h-80 2xl:h-90 3xl:h-95 4xl:h-100">
-    <div
-      class="absolute left-1/2 top-1/2 w-full origin-center -translate-x-1/2 -translate-y-[calc(50%+100px)] sm:-translate-y-[calc(50%+200px)]"
-    >
+    <div class="absolute left-1/2 top-1/2 w-full origin-center -translate-x-1/2 sm:-translate-y-[calc(50%+200px)]">
       <div ref="target">
         <AtomsGrid :cols="1" y-gap="sm" class="origin-center rotate-12 scale-150">
           <div
@@ -97,13 +95,12 @@ onMounted(() => {
     });
     mm.add(
       {
-        isMobile: '(max-width: 639px)',
-        isTablet: '(min-width: 640px)',
+        isTablet: '(min-width: 768px)',
       },
       (context) => {
         const { isMobile, isTablet, isDesktop, isDisplay } = context.conditions as gsap.Conditions;
         gsap.to(target.value, {
-          y: () => (isMobile ? 200 : isTablet ? 400 : 0),
+          y: 400,
           ease: Power0.easeInOut,
           scrollTrigger: {
             trigger: scope.value,
