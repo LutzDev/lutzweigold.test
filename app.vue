@@ -38,7 +38,7 @@ onMounted(() => {
     mm = gsap.matchMedia();
     mm.add('(min-width: 640px)', () => {
       if (ScrollTrigger.isTouch === 0) {
-        console.log('ScrollTrigger.isTouch === 0');
+        console.log('isTouch');
         smoother.value = ScrollSmoother.create({
           smooth: 0.8,
           ignoreMobileResize: true,
