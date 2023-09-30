@@ -14,6 +14,10 @@
             >
               <nuxt-picture
                 fit="cover"
+                format="webp"
+                densities="x1 x2"
+                width="1800"
+                height="1440"
                 :alt="$t('pages.about.content.visual.image.hobby.alt')"
                 src="/images/general/lutzweigold_portrait.webp"
                 :img-attrs="{
@@ -44,7 +48,7 @@
           >
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">
-          <MoleculesExperience :items="test" />
+          <MoleculesExperience :items="experience" />
         </OrganismsOneComponentsRow>
       </AtomsFlex>
     </template>
@@ -54,9 +58,8 @@
 <script lang="ts" setup>
 import { Experience } from '@Types';
 const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
-const scope = ref();
 
-const test: Experience = {
+const experience: Experience = {
   year: 20,
   entries: [
     {

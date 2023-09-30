@@ -3,6 +3,8 @@
     <div ref="target" class="absolute bottom-0 h-[calc(100%+100px)] w-full">
       <nuxt-picture
         fit="cover"
+        format="webp"
+        densities="x1 x2"
         :src="props.image?.src!"
         :alt="$t(props.image?.alt!)"
         :img-attrs="{

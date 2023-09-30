@@ -15,6 +15,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
+                  format="webp"
+                  densities="x1 x2"
                   :src="`images/${item.left.src}`"
                   :alt="$t(item.left.alt)"
                   :img-attrs="{
@@ -25,6 +27,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
+                  format="webp"
+                  densities="x1 x2"
                   :src="`images/${item.center.src}`"
                   :alt="$t(item.center.alt)"
                   :img-attrs="{
@@ -35,6 +39,8 @@
               <div class="col-span-1 h-10 xs:h-15 sm:h-20 md:h-25 lg:h-30 xl:h-35 2xl:h-40 3xl:h-45 4xl:h-50">
                 <nuxt-picture
                   fit="cover"
+                  format="webp"
+                  densities="x1 x2"
                   :src="`images/${item.right.src}`"
                   :alt="$t(item.right.alt)"
                   :img-attrs="{

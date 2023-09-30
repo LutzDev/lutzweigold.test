@@ -6,6 +6,8 @@
           <div ref="left" class="col-span-full overflow-hidden lg:-translate-y-[5%]">
             <nuxt-picture
               fit="cover"
+              format="webp"
+              densities="x1 x2"
               :src="props.leftImage?.src!"
               :alt="props.leftImage?.alt!"
               @load="ScrollTrigger.refresh()"
@@ -19,6 +21,8 @@
           <div ref="right" class="col-span-full overflow-hidden lg:translate-y-[5%]">
             <nuxt-picture
               fit="cover"
+              format="webp"
+              densities="x1 x2"
               :src="props.rightImage?.src!"
               :alt="props.rightImage?.alt!"
               @load="ScrollTrigger.refresh()"
