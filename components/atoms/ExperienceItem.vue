@@ -39,10 +39,6 @@ import { ExperienceItem } from '@Types';
 const isHover = ref<boolean>(false);
 
 const props = defineProps({
-  year: {
-    type: Number,
-    required: true,
-  },
   item: {
     type: Object as PropType<ExperienceItem>,
     required: true,
