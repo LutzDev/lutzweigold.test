@@ -15,7 +15,7 @@
     :key="key"
     class="section col-span-full col-start-1 md:col-span-8 md:col-start-3"
   >
-    <MoleculesExperienceContainer :year="props.items.year" :item="item" />
+    <MoleculesExperienceContainer :prefix="props.items?.year!" :item="item" />
 
     <div class="col-start-3 my-2 h-[2px] w-full bg-black md:col-span-8"></div>
   </div>
