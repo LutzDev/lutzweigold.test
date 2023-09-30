@@ -1,5 +1,10 @@
 <template>
-  <AtomsWrapper html-tag="section" y-padding="xl" data-speed="clamp(0.8)">
+  <AtomsWrapper
+    v-if="breakpoints.greaterOrEqual('tablet').value"
+    html-tag="section"
+    y-padding="xl"
+    data-speed="clamp(0.8)"
+  >
     <template #default>
       <AtomsGrid :cols="10" :rows="3">
         <div class="col-span-8 row-span-1 row-start-1 md:col-span-4 md:col-start-1">
@@ -34,6 +39,10 @@
 
 <script setup lang="ts">
 import { ListItem } from '@Types';
+
+const breakpoints = useBreakpoints({
+  tablet: 640,
+});
 
 const list: Array<ListItem> = [
   {
