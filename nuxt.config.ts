@@ -38,6 +38,13 @@ export default defineNuxtConfig({
     '/': { redirect: '/en-CA' },
   }, */
 
+  image: {
+    provider: 'netlify',
+    netlify: {
+      baseURl: process.env.IMAGES_URL,
+    },
+  },
+
   i18n: {
     detectBrowserLanguage: {
       alwaysRedirect: true,
