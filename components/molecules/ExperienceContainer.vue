@@ -1,10 +1,10 @@
 <template>
   <AtomsGrid ref="wrapper" :cols="8" y-gap="none">
     <AtomsTitleText size="lg" class="col-span-full mb-md inline-block xs:col-span-2 xs:mb-0">
-      <span class="inline-block md:hidden">{{ props.year }}</span
+      <span class="inline-block md:hidden">{{ props.prefix }}</span
       >{{ props.item.year }}
     </AtomsTitleText>
-    <template v-for="(entry, key) in props.item.items" :key="key">
+    <template v-for="(entry, key) in props.item?.items" :key="key">
       <NuxtLink
         v-if="entry.link"
         target="_blank"
@@ -25,15 +25,15 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue';
-import { ExperienceItem } from '@Types';
+import { ExperienceContainer } from '@Types';
 
 const props = defineProps({
-  year: {
+  prefix: {
     type: Number,
     required: true,
   },
   item: {
-    type: Object as PropType<ExperienceItem>,
+    type: Object as PropType<ExperienceContainer>,
     required: true,
   },
 });
