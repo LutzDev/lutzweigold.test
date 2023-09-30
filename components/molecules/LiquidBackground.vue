@@ -1,5 +1,7 @@
 <template>
-  <div ref="container" class="!h-[100svh] h-screen w-screen bg-gray-800 brightness-100"></div>
+  <div>
+    <div ref="container" class="sticky top-0 h-screen w-screen bg-typo-800 brightness-100"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
