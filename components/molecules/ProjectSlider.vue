@@ -1,6 +1,8 @@
 <template>
   <div ref="scope" class="relative h-30 bg-black xs:h-40 sm:h-50 md:h-60 lg:h-70 xl:h-80 2xl:h-90 3xl:h-95 4xl:h-100">
-    <div class="absolute left-1/2 top-1/2 w-full origin-center -translate-x-1/2 -translate-y-[calc(50%+200px)]">
+    <div
+      class="absolute left-1/2 top-1/2 w-full origin-center -translate-x-1/2 -translate-y-[calc(50%+100px)] sm:-translate-y-[calc(50%+200px)]"
+    >
       <div ref="target">
         <AtomsGrid :cols="1" y-gap="sm" class="origin-center rotate-12 scale-150">
           <div
@@ -67,18 +69,17 @@ onMounted(() => {
 
       mm.add(
         {
-          isMobile: '(max-width: 639px)',
-          isTablet: '(min-width: 640px)',
+          isTablet: '(min-width: 768px)',
           isDesktop: '(min-width: 1024px)',
           isDisplay: '(min-width: 1920px)',
         },
         (context) => {
-          const { isMobile, isTablet, isDesktop, isDisplay } = context.conditions as gsap.Conditions;
+          const { isTablet, isDesktop, isDisplay } = context.conditions as gsap.Conditions;
           gsap.to(row, {
             x: () =>
               row.getAttribute('data-direction') === 'forward'
-                ? `${isMobile ? '25' : isTablet ? '50' : isDesktop ? '75' : isDisplay ? '100' : '125'}`
-                : `${isMobile ? '-25' : isTablet ? '-50' : isDesktop ? '-75' : isDisplay ? '-100' : '-125'}`,
+                ? `${isTablet ? '50' : isDesktop ? '75' : isDisplay ? '100' : 0}`
+                : `${isTablet ? '-50' : isDesktop ? '-75' : isDisplay ? '-100' : 0}`,
             duration: 0.15,
             ease: Power0.easeNone,
             scrollTrigger: {
@@ -94,19 +95,25 @@ onMounted(() => {
         }
       );
     });
-    gsap.to(target.value, {
-      y: 400,
-      ease: Power0.easeInOut,
-      scrollTrigger: {
-        refreshPriority: 1,
-        invalidateOnRefresh: true,
-
-        trigger: scope.value,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
+    mm.add(
+      {
+        isMobile: '(max-width: 639px)',
+        isTablet: '(min-width: 640px)',
       },
-    });
+      (context) => {
+        const { isMobile, isTablet, isDesktop, isDisplay } = context.conditions as gsap.Conditions;
+        gsap.to(target.value, {
+          y: () => (isMobile ? 200 : isTablet ? 400 : 0),
+          ease: Power0.easeInOut,
+          scrollTrigger: {
+            trigger: scope.value,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+      }
+    );
   }, scope.value);
 });
 
