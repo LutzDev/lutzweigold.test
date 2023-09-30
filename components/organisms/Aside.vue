@@ -1,6 +1,6 @@
 <template>
   <aside class="col-span-2 col-start-1 row-start-1">
-    <AtomsWrapper is-full-screen class="sticky top-0">
+    <AtomsWrapper is-full-screen class="sticky top-0 !min-h-[100svh]">
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap>
           <div class="space-y-4">

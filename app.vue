@@ -9,7 +9,7 @@
     <OrganismsAside class="hidden lg:block" />
     <MoleculesLazyLiquidBackground class="pointer-events-none -z-10 col-span-full row-start-1 touch-none" />
     <div id="smooth-content" class="z-20 col-span-full row-start-1 lg:col-span-10 lg:col-start-3">
-      <div class="pointer-events-none touch-none overflow-x-hidden">
+      <div class="overflow-x-hidden">
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>
