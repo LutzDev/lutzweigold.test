@@ -5,13 +5,10 @@
     >asdasd</AtomsWrapper
   >-->
   <MoleculesMobileMenu />
-  <div id="smooth-wrapper" class="pointer-events-none grid !min-h-[100svh] min-h-screen touch-none grid-cols-12">
+  <div id="smooth-wrapper" class="pointer-events-none grid !min-h-[100svh] min-h-screen grid-cols-12">
     <OrganismsAside class="hidden lg:block" />
-    <MoleculesLazyLiquidBackground class="-z-10 col-span-full row-start-1" />
-    <div
-      id="smooth-content"
-      class="pointer-events-none z-20 col-span-full row-start-1 touch-none lg:col-span-10 lg:col-start-3"
-    >
+    <MoleculesLazyLiquidBackground class="pointer-events-none -z-10 col-span-full row-start-1 touch-none" />
+    <div id="smooth-content" class="z-20 col-span-full row-start-1 lg:col-span-10 lg:col-start-3">
       <div class="pointer-events-none touch-none overflow-x-hidden">
         <NuxtLayout>
           <NuxtPage />
