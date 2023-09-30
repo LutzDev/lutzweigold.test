@@ -333,8 +333,8 @@ export default {
             },
           },
           description: {
-            role: 'Ich bin ein unabhängiger Software-Entwickler mit Sitz in Deutschland, der Spaß daran hat, Projekte vom Konzept bis zur Implementierung umzusetzen. Bei meinen Projekten arbeite ich sowohl auf der Backend- als auch auf der Frontend-Seite.',
-            hobby: 'Wenn ich gerade nicht neue Technologien erforsche, bin ich wahrscheinlich in den Bergen wandern.',
+            role: 'Ich bin ein selbständiger Software-Entwickler mit Sitz in Deutschland, der Spaß daran hat, Projekte vom Konzept bis zur Implementierung umzusetzen. Bei meinen Projekten arbeite ich sowohl auf der Backend- als auch auf der Frontend-Seite.',
+            hobby: 'Meine Freizeit verbringe ich gerne in den Bergen.',
           },
         },
         experience: {
