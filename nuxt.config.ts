@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    'nuxt-viewport',
   ],
   css: ['@/assets/css/main.css'],
 
