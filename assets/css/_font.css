@@ -23,7 +23,7 @@ h2 {
 }*/
 
 .text-display {
-    font-size: clamp(4rem, 10vw + 1rem, 25rem);
+    font-size: clamp(3rem, 10.476vw + -0.143rem, 25rem);
     line-height: 1;
 }
 
