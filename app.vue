@@ -20,7 +20,7 @@
 </template>
 <script lang="ts" setup>
 const route = useRoute();
-const { $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 const appStore = useAppStore();
 const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
@@ -29,21 +29,29 @@ let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 
 onMounted(() => {
-  onMounted(() => {
-    ctx = gsap.context(() => {
-      mm = gsap.matchMedia();
-
-      mm.add('(min-width: 640px)', () => {
-        if (ScrollTrigger.isTouch === 0) {
-          smoother.value = ScrollSmoother.create({
-            smooth: 0.8,
-            ignoreMobileResize: true,
-            effects: true,
-          });
-        }
-      });
+  useHead({
+    bodyAttrs: {
+      class: 'overscroll-none',
+    },
+  });
+  ctx = gsap.context(() => {
+    mm = gsap.matchMedia();
+    mm.add('(min-width: 640px)', () => {
+      if (ScrollTrigger.isTouch === 0) {
+        console.log('ScrollTrigger.isTouch === 0');
+        smoother.value = ScrollSmoother.create({
+          smooth: 0.8,
+          ignoreMobileResize: true,
+          effects: true,
+        });
+      }
     });
   });
+});
+
+onUnmounted(() => {
+  ctx.kill();
+  ctx.revert();
 });
 
 watch(
