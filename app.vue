@@ -25,12 +25,24 @@ const appStore = useAppStore();
 const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { smoother } = storeToRefs(modalStore);
+let mm: gsap.MatchMedia;
+let ctx: gsap.Context;
 
 onMounted(() => {
-  smoother.value = ScrollSmoother.create({
-    smooth: 0.8,
-    effects: false,
-    smoothTouch: false,
+  onMounted(() => {
+    ctx = gsap.context(() => {
+      mm = gsap.matchMedia();
+
+      mm.add('(min-width: 640px)', () => {
+        if (ScrollTrigger.isTouch === 0) {
+          smoother.value = ScrollSmoother.create({
+            smooth: 0.8,
+            ignoreMobileResize: true,
+            effects: true,
+          });
+        }
+      });
+    });
   });
 });
 
