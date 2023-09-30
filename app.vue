@@ -4,32 +4,8 @@
     <!--    <div class="pb-safe fixed bottom-0 z-20 h-10 w-full bg-green-500">Test</div>-->
     <!--    <AtomsWrapper class="bg-red-black/0 fixed left-0 top-0 z-20 w-full text-white mix-blend-difference lg:hidden"
       >asdasd</AtomsWrapper
-    >
-    <AtomsWrapper
-      class="bg-red-black/0 pb-safe fixed bottom-0 left-0 z-20 w-full text-white mix-blend-difference lg:hidden"
-      >asdasd</AtomsWrapper
     >-->
-    <!--    <div class="relative z-40 flex gap-4">
-      <div class="sticky top-0 h-40 bg-green-200">Navigation</div>
-      <div>
-        <div class="box-content h-80 bg-red-600 p-40">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
-        <div class="box-content h-80 bg-red-600 p-40">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-        </div>
-      </div>
-    </div>-->
+    <MoleculesMobileMenu />
     <div id="smooth-wrapper" class="grid min-h-screen grid-cols-12">
       <OrganismsAside class="hidden lg:block" />
       <div id="smooth-content" class="pointer-events-none col-span-full row-start-1 lg:col-span-10 lg:col-start-3">
