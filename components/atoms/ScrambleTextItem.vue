@@ -57,7 +57,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 
 const props = defineProps({

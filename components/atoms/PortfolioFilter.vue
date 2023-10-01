@@ -12,7 +12,7 @@
     </div>
     <div
       ref="filterWrapper"
-      :class="`gapy-md gapx-md pointer-events-none absolute right-0 top-0 z-50 grid !h-[100svh] h-screen w-full touch-none grid-cols-10 overflow-hidden bg-black/0`"
+      :class="`gapy-md gapx-md pointer-events-none absolute right-0 top-0 z-40 grid !h-[100svh] h-screen w-full touch-none grid-cols-10 overflow-hidden bg-black/0`"
       :style="{ top: y + 'px' }"
     >
       <div
@@ -157,7 +157,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 
 const props = defineProps({

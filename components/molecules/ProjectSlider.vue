@@ -16,6 +16,8 @@
                 <nuxt-picture
                   fit="cover"
                   format="webp"
+                  width="1800"
+                  height="1285"
                   densities="x1 x2"
                   :src="`images/${item.left.src}`"
                   :alt="$t(item.left.alt)"
@@ -28,6 +30,8 @@
                 <nuxt-picture
                   fit="cover"
                   format="webp"
+                  width="1800"
+                  height="1285"
                   densities="x1 x2"
                   :src="`images/${item.center.src}`"
                   :alt="$t(item.center.alt)"
@@ -40,6 +44,8 @@
                 <nuxt-picture
                   fit="cover"
                   format="webp"
+                  width="1800"
+                  height="1285"
                   densities="x1 x2"
                   :src="`images/${item.right.src}`"
                   :alt="$t(item.right.alt)"
@@ -89,9 +95,6 @@ onMounted(() => {
             duration: 0.15,
             ease: Power0.easeNone,
             scrollTrigger: {
-              refreshPriority: 1,
-              invalidateOnRefresh: true,
-
               trigger: scope.value,
               start: 'top bottom',
               end: 'bottom top',
@@ -124,7 +127,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 
 const props = defineProps({

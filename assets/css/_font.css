@@ -36,10 +36,10 @@ h2 {
 }
 
 /*
- * 480px - 3840px: 20px - 56px
+ * 480px - 3840px: 14px - 64px
  */
 .text-title-sm {
-    font-size: clamp(1.25rem, 1.071vw + 0.929rem, 3.5rem);
+    font-size: clamp(0.875rem, 1.488vw + 0.429rem, 4rem);
     line-height: 1;
 }
 

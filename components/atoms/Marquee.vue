@@ -2,18 +2,24 @@
   <div class="overflow-hidden">
     <div class="wrapper relative flex text-6xl">
       <div ref="target" class="box flex">
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme">{{
           $t(props.title)
         }}</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme"
+          >—</AtomsTitleText
+        >
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme">{{
           $t(props.title)
         }}</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
-        <AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">{{
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme"
+          >—</AtomsTitleText
+        >
+        <AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme">{{
           $t(props.title)
         }}</AtomsTitleText
-        ><AtomsTitleText html-tag="span" size="md" class="self-center px-4" :theme="props.theme">—</AtomsTitleText>
+        ><AtomsTitleText html-tag="span" size="md" class="self-center px-1 sm:px-2 lg:px-4" :theme="props.theme"
+          >—</AtomsTitleText
+        >
       </div>
     </div>
   </div>
@@ -50,9 +56,6 @@ onMounted(() => {
 
     const tl = marquee(target.value!, { duration: 30 }, props.reverse || false);
     ScrollTrigger.create({
-      refreshPriority: 1,
-      invalidateOnRefresh: true,
-
       onUpdate(self) {
         if (self.direction !== direction) {
           direction *= -1;

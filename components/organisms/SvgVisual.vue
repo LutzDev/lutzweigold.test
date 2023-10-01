@@ -19,7 +19,9 @@
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.strategy.title') }}
                     </AtomsTitleText>
-                    <AtomsBodyText> {{ $t('pages.skill.content.visual.circles.strategy.description') }} </AtomsBodyText>
+                    <AtomsBodyText v-if="viewport.isGreaterOrEquals('tablet')">
+                      {{ $t('pages.skill.content.visual.circles.strategy.description') }}
+                    </AtomsBodyText>
                   </div>
                 </div>
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +37,7 @@
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.development.title') }}
                     </AtomsTitleText>
-                    <AtomsBodyText>
+                    <AtomsBodyText v-if="viewport.isGreaterOrEquals('tablet')">
                       {{ $t('pages.skill.content.visual.circles.development.description') }}
                     </AtomsBodyText>
                   </div>
@@ -53,7 +55,7 @@
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.maintenance.title') }}
                     </AtomsTitleText>
-                    <AtomsBodyText>
+                    <AtomsBodyText v-if="viewport.isGreaterOrEquals('tablet')">
                       {{ $t('pages.skill.content.visual.circles.maintenance.description') }}
                     </AtomsBodyText>
                   </div>
@@ -135,6 +137,7 @@
 <script setup lang="ts">
 const { $gsap: gsap, $Power4: Power4, $ScrollTrigger: ScrollTrigger, $DrawSVGPlugin: DrawSVGPlugin } = useNuxtApp();
 const animationStore = useAnimationStore();
+const viewport = useViewport();
 
 let ctx: gsap.Context;
 let mm: gsap.MatchMedia;
@@ -168,8 +171,6 @@ onMounted(() => {
         pin: true,
         scrub: 0.2,
         markers: false,
-        refreshPriority: 1,
-        invalidateOnRefresh: true,
 
         animation: tlScroll,
       });
@@ -208,6 +209,5 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 </script>

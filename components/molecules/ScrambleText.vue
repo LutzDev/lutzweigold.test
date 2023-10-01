@@ -29,16 +29,14 @@ onMounted(() => {
       trigger: wrapper.value,
       toggleActions: 'play pause resume pause',
       animation: tl.value?.seek(gsap.utils.random(1, 3)),
-      refreshPriority: 1,
-      invalidateOnRefresh: true,
-      markers: false,
+
+      markers: true,
     });
   });
 });
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 
 const props = defineProps({

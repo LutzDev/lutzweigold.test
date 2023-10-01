@@ -63,7 +63,7 @@ onMounted(() => {
       animation: tl,
       refreshPriority: props.priority,
       markers: false,
-      invalidateOnRefresh: true,
+
       onRefresh: console.log('Prallax refreshed', props.priority),
     });
   }, scope.value!);
@@ -71,6 +71,5 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 </script>

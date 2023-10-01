@@ -99,7 +99,7 @@ onMounted(() => {
         scrub: true,
         animation: tl,
         refreshPriority: props.priority,
-        invalidateOnRefresh: true,
+
         markers: false,
         onRefresh: console.log('TwoProjectImages refreshed', props.priority),
       });
@@ -109,6 +109,5 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 </script>

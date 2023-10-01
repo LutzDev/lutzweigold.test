@@ -217,7 +217,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 
 const vertexShader = () => {

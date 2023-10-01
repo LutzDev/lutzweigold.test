@@ -50,8 +50,6 @@ onMounted(() => {
 
     mm.add('(min-width: 768px)', () => {
       ScrollTrigger.create({
-        refreshPriority: 1,
-        invalidateOnRefresh: true,
         trigger: wrapper.value,
         start: 'top 50%',
         endTrigger: sections[sections.length - 1],
@@ -87,6 +85,5 @@ watch(height, () => {
 
 onUnmounted(() => {
   ctx.revert();
-  ctx.kill();
 });
 </script>

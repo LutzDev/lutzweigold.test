@@ -471,6 +471,9 @@ export default {
           fuwaCar: {
             alt: 'Vorschau der Fuwa-Car Applikation',
           },
+          rotlachs: {
+            alt: 'Vorschau der Rotlachs Stuttgart Webseite',
+          },
         },
       },
     },

@@ -466,6 +466,9 @@ export default {
           fuwaCar: {
             alt: 'Preview of the Fuwa-Car application',
           },
+          rotlachs: {
+            alt: 'Preview of the Rotlachs stuttgart website',
+          },
         },
       },
     },
