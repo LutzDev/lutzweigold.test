@@ -135,7 +135,7 @@
 </template>
 
 <script setup lang="ts">
-const { $gsap: gsap, $Power4: Power4, $ScrollTrigger: ScrollTrigger, $DrawSVGPlugin: DrawSVGPlugin } = useNuxtApp();
+const { $gsap: gsap, $Power4: Power4, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 const animationStore = useAnimationStore();
 const viewport = useViewport();
 

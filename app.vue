@@ -22,8 +22,8 @@
 <script lang="ts" setup>
 const route = useRoute();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
-const appStore = useAppStore();
-const { isAppLoading } = storeToRefs(appStore);
+// const appStore = useAppStore();
+// const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { smoother } = storeToRefs(modalStore);
 let mm: gsap.MatchMedia;
@@ -59,12 +59,11 @@ watch(
   () => {
     // console.log(smoother.effects());
     // TODO: fix smoother.effects -> Conflict with scrolltrigger in footer
-    /*   smoother.value?.effects().forEach((effect) => effect.kill());
-    smoother.value?.effects('[data-lag], [data-speed]');
-    ScrollTrigger.clearScrollMemory();*/
+    // smoother.value?.effects().forEach((effect) => effect.kill());
+    // smoother.value?.effects('[data-lag], [data-speed]');
+    // ScrollTrigger.clearScrollMemory();
 
-    ScrollTrigger.refresh();
-    console.log('refresh was called');
+    smoother.value?.scrollTo(0, true);
   }
 );
 </script>

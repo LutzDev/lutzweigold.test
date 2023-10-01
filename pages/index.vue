@@ -57,7 +57,6 @@
 
 <script lang="ts" setup>
 import { Experience } from '@Types';
-const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 const experience: Experience = {
   year: 20,

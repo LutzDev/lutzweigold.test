@@ -286,11 +286,11 @@ mat2 rotate2D(float angle){
 void main() {
     float n = noise(vPosition +time);
 
-    vec3 highlight =  vec3(30./255., 5./255., 60./255.); // purple
-    vec3 background =  vec3(255./255., 56./255., 110./255.); // red
-    vec3 peak =  vec3(5./255., 0./255., 40./255.);
-    vec3 accent =   vec3(100./255., 255./255., 0./255.); // green
-    vec3 test =   vec3(75./255., 125./255., 0./255.);
+    vec3 highlight =  vec3(100./255., 0./255., 100./255.); // purple
+    vec3 background =  vec3(255./255., 50./255., 150./255.); // red
+    vec3 peak =  vec3(0./255., 0./255., 50./255.);
+    vec3 accent =   vec3(200./255., 255./255., 0./255.); // green
+    vec3 test =   vec3(75./255., 100./255., 0./255.);
 
 
     vec2 baseUV = rotate2D(n)*vPosition.xy*0.1; // rotation, edit 0.2

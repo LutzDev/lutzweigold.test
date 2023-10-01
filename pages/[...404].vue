@@ -38,12 +38,6 @@ definePageMeta({
 let ctx: gsap.Context;
 const code = ref<HTMLSpanElement | null>(null);
 
-const handleError = () => {
-  clearError({
-    redirect: '/',
-  });
-};
-
 onMounted(() => {
   ctx = gsap.context(() => {
     gsap.to(code.value, {

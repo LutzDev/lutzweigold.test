@@ -4,10 +4,11 @@ import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 export default defineNuxtPlugin(() => {
   if (process.client) {
-    gsap.registerPlugin(SplitText, ScrambleTextPlugin, ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
+    gsap.registerPlugin(SplitText, ScrambleTextPlugin, ScrollTrigger, ScrollSmoother, DrawSVGPlugin, ScrollToPlugin);
   }
 
   return {
@@ -22,6 +23,7 @@ export default defineNuxtPlugin(() => {
       SplitText,
       ScrambleTextPlugin,
       DrawSVGPlugin,
+      ScrollToPlugin,
     },
   };
 });

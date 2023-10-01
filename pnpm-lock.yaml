@@ -26,7 +26,8 @@ dependencies:
 
 devDependencies:
   '@nuxt/devtools':
-    specifier: latest
+    specifier:
+    latest
     version: 0.8.5(nuxt@3.7.4)(vite@4.4.9)
   '@nuxt/image':
     specifier: 1.0.0-rc.1

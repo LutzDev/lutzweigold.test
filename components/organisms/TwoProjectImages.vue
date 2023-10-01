@@ -10,7 +10,6 @@
               densities="x1 x2"
               :src="props.leftImage?.src!"
               :alt="props.leftImage?.alt!"
-              @load="ScrollTrigger.refresh()"
               :img-attrs="{
                 class: 'object-cover',
               }"
@@ -25,7 +24,6 @@
               densities="x1 x2"
               :src="props.rightImage?.src!"
               :alt="props.rightImage?.alt!"
-              @load="ScrollTrigger.refresh()"
               :img-attrs="{
                 class: 'object-cover',
               }"
@@ -42,7 +40,7 @@ import { PropType } from 'vue';
 import Wrapper from '~/components/atoms/Wrapper.vue';
 import { Image } from '@Types';
 
-const { $gsap: gsap, $Power0: Power0, $Power1: Power1, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+const { $gsap: gsap, $Power0: Power0, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 
 let tl: gsap.core.Timeline;
 const scope = ref<InstanceType<typeof Wrapper> | null>(null);
@@ -99,9 +97,7 @@ onMounted(() => {
         scrub: true,
         animation: tl,
         refreshPriority: props.priority,
-
         markers: false,
-        onRefresh: console.log('TwoProjectImages refreshed', props.priority),
       });
     });
   }, scope.value.target);

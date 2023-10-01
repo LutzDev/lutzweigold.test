@@ -63,8 +63,6 @@ onMounted(() => {
       animation: tl,
       refreshPriority: props.priority,
       markers: false,
-
-      onRefresh: console.log('Prallax refreshed', props.priority),
     });
   }, scope.value!);
 });

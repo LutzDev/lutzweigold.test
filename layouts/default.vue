@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-const { $gsap: gsap, $Power4: Power4 } = useNuxtApp();
+const { $gsap: gsap, $Power4: Power4, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 const modalStore = useModalStore();
 const { isModalOpen, smoother } = storeToRefs(modalStore);
 const animationStore = useAnimationStore();
@@ -32,6 +32,7 @@ onMounted(() => {
       },
       onReverseComplete: () => {
         smoother.value?.paused(false);
+        ScrollTrigger.refresh();
       },
       data: { name: 'DEFAULT' },
       defaults: { ease: Power4.easeInOut, duration: 2 },

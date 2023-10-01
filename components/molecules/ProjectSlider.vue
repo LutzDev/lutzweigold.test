@@ -108,8 +108,7 @@ onMounted(() => {
       {
         isTablet: '(min-width: 768px)',
       },
-      (context) => {
-        const { isMobile, isTablet, isDesktop, isDisplay } = context.conditions as gsap.Conditions;
+      () => {
         gsap.to(target.value, {
           y: 400,
           ease: Power0.easeInOut,

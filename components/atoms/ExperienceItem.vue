@@ -16,7 +16,7 @@
       }}</AtomsSmallText>
       <ul class="list-outside list-square pl-2">
         <AtomsBodyText
-          v-for="(entry, key) in $tm(<string>props.item?.description!)"
+          v-for="(entry, key) in $tm(props.item?.description!)"
           :key="key"
           html-tag="li"
           class="col-span-1 xs:col-span-2"

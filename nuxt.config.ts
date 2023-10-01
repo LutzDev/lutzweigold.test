@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         { name: 'robots', content: 'noindex, noarchive, nofollow' },
       ],
     },
-  },*/
+  },  */
 
   devtools: {
     enabled: false,
