@@ -1,6 +1,9 @@
 <template>
   <div class="pb-safe fixed bottom-0 left-0 z-30 w-full">
-    <AtomsWrapper class="text-white" :style="{ backdropFilter: 'blur(8px) brightness(0.4)' }">
+    <AtomsWrapper
+      class="text-white"
+      :style="{ backdropFilter: 'blur(8px) brightness(0.4)', '-webkit-backdrop-filter': 'blur(8px) brightness(0.4)' }"
+    >
       <div class="flex divide-x-2 divide-white border-2 border-white">
         <div
           class="pointer-events-auto flex w-1/2 cursor-pointer justify-between px-2 py-1"
