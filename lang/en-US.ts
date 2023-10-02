@@ -21,6 +21,16 @@ export default {
         to: '/',
         title: 'Check out the website @:general.personal.website.name',
       },
+      github: {
+        name: 'GitHub',
+        to: 'https://github.com/LutzDev',
+        title: 'Check out my @:general.personal.github.name profile',
+      },
+      linkedin: {
+        name: 'LinkedIn',
+        to: 'https://www.linkedin.com/in/lutz-weigold/',
+        title: 'Check out my @:general.personal.linkedin.name profile',
+      },
       company: 'Lutz Weigold (Einzelunterehmen)',
       street: 'Hintergasse 8',
       city: 'Wald-Michelbach',
@@ -39,6 +49,7 @@ export default {
     footer: {
       contact: 'Contact details',
       copyright: '© lutz weigold',
+      socials: 'Socials',
       headline: "Let's collaborate and build your next projects together.",
     },
   },
@@ -319,7 +330,12 @@ export default {
     about: {
       name: 'About',
       title: '@:general.phrases.openInSameTab @:pages.about.name',
-      description: 'the description',
+      seo: {
+        ogDescription: 'Lutz is a self-employed developer creating digital products with passion and expertise.',
+        description: 'Lutz is a self-employed developer creating digital products with passion and expertise.',
+        ogTitle: "About {'|'} Lutz Weigold",
+        title: "About {'|'} Lutz Weigold",
+      },
       to: 'index',
       content: {
         visual: {
@@ -423,8 +439,13 @@ export default {
     work: {
       name: 'Work',
       title: '@:general.phrases.openInSameTab @:pages.work.name',
-      description: 'the description',
       to: 'work',
+      seo: {
+        ogDescription: 'I design, develop and ship digital products for small and medium-sized businesses.',
+        description: 'I design, develop and ship digital products for small and medium-sized businesses.',
+        ogTitle: "Work {'|'} Lutz Weigold",
+        title: "Work {'|'} Lutz Weigold",
+      },
       content: {
         headline: 'Selected projects:',
         filter: {
@@ -475,8 +496,15 @@ export default {
     skill: {
       name: 'Skill',
       title: '@:general.phrases.openInSameTab @:pages.skill.name',
-      description: 'the description',
       to: 'skill',
+      seo: {
+        ogDescription:
+          'I am a software developer with a skill set in designing, developing and maintaining digital products.',
+        description:
+          'I am a software developer with a skill set in designing, developing and maintaining digital products.',
+        ogTitle: "Skill {'|'} Lutz Weigold",
+        title: "Skill {'|'} Lutz Weigold",
+      },
       content: {
         visual: {
           headline: 'I help brands with developing and maintaining digital products.',
@@ -517,14 +545,26 @@ export default {
     contact: {
       name: 'Contact',
       title: '@:general.phrases.openInSameTab @:pages.contact.name',
-      description: 'the description',
+      seo: {
+        ogDescription:
+          "Ready to create your next digital masterpiece? Let's connect and bring your vision to life! Get in touch today.",
+        description:
+          "Ready to create your next digital masterpiece? Let's connect and bring your vision to life! Get in touch today.",
+        ogTitle: "Contact {'|'} Lutz Weigold",
+        title: "Contact {'|'} Lutz Weigold",
+      },
       to: 'contact',
       content: {},
     },
     privacy: {
       name: 'Privacy',
       title: '@:general.phrases.openInSameTab @:pages.privacy.name',
-      description: 'the description',
+      seo: {
+        ogDescription: 'Discover the privacy policy, keeping your information safe and secure.',
+        description: 'Discover the privacy policy, keeping your information safe and secure.',
+        ogTitle: "Privacy {'|'} Lutz Weigold",
+        title: "Privacy {'|'} Lutz Weigold",
+      },
       to: 'privacy',
       content: {
         analytics: {
@@ -570,7 +610,12 @@ export default {
     imprint: {
       name: 'Imprint',
       title: '@:general.phrases.openInSameTab @:pages.imprint.name',
-      description: 'the description',
+      seo: {
+        ogDescription: 'Find all the necessary details about myself, including contact information and legal stuff.',
+        description: 'Find all the necessary details about myself, including contact information and legal stuff.',
+        ogTitle: "Imprint {'|'} Lutz Weigold",
+        title: "Imprint {'|'} Lutz Weigold",
+      },
       to: 'imprint',
       content: {
         commission: {
@@ -579,6 +624,96 @@ export default {
             title: '@:general.phrases.openInNewTab @:pages.imprint.content.commission.website.entry',
           },
         },
+      },
+    },
+    didem: {
+      name: 'Didem',
+      title: '@:general.phrases.openInSameTab @:pages.didem.name',
+      seo: {
+        ogDescription: 'Project overview of the case Didem.',
+        description: 'Project overview of the case Didem.',
+        ogTitle: "Project - Didem {'|'} Lutz Weigold",
+        title: "Project - Didem {'|'} Lutz Weigold",
+      },
+    },
+    portfolio: {
+      name: 'Portfolio',
+      title: '@:general.phrases.openInSameTab @:pages.portfolio.name',
+      seo: {
+        ogDescription: 'Project overview of my portfolio.',
+        description: 'Project overview of the case Didem.',
+        ogTitle: "Project - Portfolio {'|'} Lutz Weigold",
+        title: "Project - Portfolio {'|'} Lutz Weigold",
+      },
+    },
+    xtrym: {
+      name: 'Xtrym',
+      title: '@:general.phrases.openInSameTab @:pages.xtrym.name',
+      seo: {
+        ogDescription: 'Project overview of the case Xtrym.',
+        description: 'Project overview of the case Xtrym.',
+        ogTitle: "Project - Xtrym {'|'} Lutz Weigold",
+        title: "Project - Xtrym {'|'} Lutz Weigold",
+      },
+    },
+    freya: {
+      name: 'Freya',
+      title: '@:general.phrases.openInSameTab @:pages.freya.name',
+      seo: {
+        ogDescription: 'Project overview of the case Freya.',
+        description: 'Project overview of the case Freya.',
+        ogTitle: "Project - Freya {'|'} Lutz Weigold",
+        title: "Project - Freya {'|'} Lutz Weigold",
+      },
+    },
+    pleta: {
+      name: 'Pleta',
+      title: '@:general.phrases.openInSameTab @:pages.pleta.name',
+      seo: {
+        ogDescription: 'Project overview of the case Pleta.',
+        description: 'Project overview of the case Pleta.',
+        ogTitle: "Project - Pleta {'|'} Lutz Weigold",
+        title: "Project - Pleta {'|'} Lutz Weigold",
+      },
+    },
+    smaract: {
+      name: 'SmarAct',
+      title: '@:general.phrases.openInSameTab @:pages.smaract.name',
+      seo: {
+        ogDescription: 'Project overview of the case SmarAct.',
+        description: 'Project overview of the case SmarAct.',
+        ogTitle: "Project - SmarAct {'|'} Lutz Weigold",
+        title: "Project - SmarAct {'|'} Lutz Weigold",
+      },
+    },
+    darkpattern: {
+      name: 'pattern',
+      title: '@:general.phrases.openInSameTab @:pages.darkpattern.name',
+      seo: {
+        ogDescription: 'Project overview of the case Dark Pattern Detection.',
+        description: 'Project overview of the case Dark Pattern Detection.',
+        ogTitle: "Project - Dark Pattern {'|'} Lutz Weigold",
+        title: "Project - Dark Pattern {'|'} Lutz Weigold",
+      },
+    },
+    querformat: {
+      name: 'Querformat',
+      title: '@:general.phrases.openInSameTab @:pages.querformat.name',
+      seo: {
+        ogDescription: 'Project overview of the case Querformat.',
+        description: 'Project overview of the case Querformat.',
+        ogTitle: "Project - Querformat {'|'} Lutz Weigold",
+        title: "Project - Querformat {'|'} Lutz Weigold",
+      },
+    },
+    fuwacar: {
+      name: 'Fuwa Car',
+      title: '@:general.phrases.openInSameTab @:pages.fuwacar.name',
+      seo: {
+        ogDescription: 'Project overview of the case Fuwa Car.',
+        description: 'Project overview of the case Fuwa Car.',
+        ogTitle: "Project - Fuwa Car {'|'} Lutz Weigold",
+        title: "Project - Fuwa Car {'|'} Lutz Weigold",
       },
     },
   },

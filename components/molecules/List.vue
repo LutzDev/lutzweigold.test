@@ -12,12 +12,15 @@
       v-for="(item, key) in props.list"
       :key="key"
       :cols="props.width === 'full' ? 10 : 5"
+      :rows="item.entries.length"
       y-gap="none"
       :class="`border-t-2 ${props.theme === 'light' ? 'border-black' : 'border-white'}`"
     >
       <AtomsBodyText
         html-tag="span"
-        :class="`${props.width === 'full' ? 'col-span-5 md:col-span-6' : 'col-span-2'} py-sm`"
+        :class="`${
+          props.width === 'full' ? 'col-span-4 row-span-full xs:col-span-5 md:col-span-6' : 'col-span-2'
+        } py-sm`"
         :theme="props.theme"
         >{{ $t(item.title) }}
       </AtomsBodyText>
@@ -25,7 +28,9 @@
         v-for="(entry, index) in item.entries"
         :key="index"
         :class="`${
-          props.width === 'full' ? 'col-span-5 col-start-6 md:col-span-4 md:col-start-7' : 'col-span-3 col-start-3'
+          props.width === 'full'
+            ? 'col-span-6 col-start-5 xs:col-span-5 xs:col-start-6 md:col-span-4 md:col-start-7'
+            : 'col-span-3 col-start-3'
         }`"
       >
         <AtomsListLinkItem

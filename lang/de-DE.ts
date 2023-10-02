@@ -21,6 +21,16 @@ export default {
         to: '/',
         title: 'Schaue auf der Website @:general.personal.website.name vorbei',
       },
+      github: {
+        name: 'GitHub',
+        to: 'https://github.com/LutzDev',
+        title: 'Schaue auf @:general.personal.github.name vorbei',
+      },
+      linkedin: {
+        name: 'LinkedIn',
+        to: 'https://www.linkedin.com/in/lutz-weigold/',
+        title: 'Schaue auf @:general.personal.linkedin.name vorbei',
+      },
       company: 'Lutz Weigold (Einzelunterehmen)',
       street: 'Hintergasse 8',
       city: 'Wald-Michelbach',
@@ -29,8 +39,8 @@ export default {
     phrases: {
       openInNewTab: 'Öffne Webseite in einem neuem Browsertab:',
       openInSameTab: 'Gehe weiter zu:',
-      openProject: 'Nähere Informationen zum Projekt:',
-      closeProject: 'Zurück zur Übersicht aller Projekte',
+      openProjekt: 'Nähere Informationen zum Projekt:',
+      closeProjekt: 'Zurück zur Übersicht aller Projekte',
     },
     tags: {
       work: 'arbeit',
@@ -39,6 +49,7 @@ export default {
     footer: {
       contact: 'Kontakt',
       copyright: '© lutz weigold',
+      socials: 'Soziale Netzwerke',
       headline: 'Lassen Sie uns zusammenarbeiten und Ihr nächstes Projekt umsetzen.',
     },
   },
@@ -319,7 +330,14 @@ export default {
     about: {
       name: 'Profil',
       title: '@:general.phrases.openInSameTab @:pages.about.name',
-      description: 'the description',
+      seo: {
+        ogDescription:
+          'Lutz ist ein selbständiger Entwickler, der mit Leidenschaft und Expertise Softwareprodukte entwickelt.',
+        description:
+          'Lutz ist ein selbständiger Entwickler, der mit Leidenschaft und Expertise Softwareprodukte entwickelt.',
+        ogTitle: "Profil {'|'} Lutz Weigold",
+        title: "Profil {'|'} Lutz Weigold",
+      },
       to: 'index',
       content: {
         visual: {
@@ -426,10 +444,15 @@ export default {
       },
     },
     work: {
-      name: 'Work',
+      name: 'Projekte',
       title: '@:general.phrases.openInSameTab @:pages.work.name',
       description: 'the description',
-      to: 'work',
+      seo: {
+        ogDescription: 'Ich plane, entwickle und verwalte Softwareprodukte für kleine und mittlere Unternehmen.',
+        description: 'Ich plane, entwickle und verwalte Softwareprodukte für kleine und mittlere Unternehmen.',
+        ogTitle: "Projekte {'|'} Lutz Weigold",
+        title: "Projekte {'|'} Lutz Weigold",
+      },
       content: {
         headline: 'Ausgewählte Projekte:',
         filter: {
@@ -480,7 +503,14 @@ export default {
     skill: {
       name: 'Skill',
       title: '@:general.phrases.openInSameTab @:pages.skill.name',
-      description: 'the description',
+      seo: {
+        ogDescription:
+          'Ich bin Softwareentwickler mit Kenntnissen im Design, der Entwicklung und Pflege von Softwareprodukten.',
+        description:
+          'Ich bin Softwareentwickler mit Kenntnissen im Design, der Entwicklung und Pflege von Softwareprodukten.',
+        ogTitle: "Skill {'|'} Lutz Weigold",
+        title: "Skill {'|'} Lutz Weigold",
+      },
       to: 'skill',
       content: {
         visual: {
@@ -522,14 +552,26 @@ export default {
     contact: {
       name: 'Kontakt',
       title: '@:general.phrases.openInSameTab @:pages.contact.name',
-      description: 'the description',
+      seo: {
+        ogDescription:
+          'Sind Sie bereit, Ihr nächstes digitales Produkt zu aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
+        description:
+          'Sind Sie bereit, Ihr nächstes digitales Produkt zu aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
+        ogTitle: "Kontakt {'|'} Lutz Weigold",
+        title: "Kontakt {'|'} Lutz Weigold",
+      },
       to: 'contact',
       content: {},
     },
     privacy: {
       name: 'Datenschutz',
       title: '@:general.phrases.openInSameTab @:pages.privacy.name',
-      description: 'the description',
+      seo: {
+        ogDescription: 'Entdecken Sie die Datenschutzbestimmungen, damit Ihre Daten sicher sind.',
+        description: 'Entdecken Sie die Datenschutzbestimmungen, damit Ihre Daten sicher sind.',
+        ogTitle: "Datenschutz {'|'} Lutz Weigold",
+        title: "Datenschutz {'|'} Lutz Weigold",
+      },
       to: 'privacy',
       content: {
         analytics: {
@@ -575,7 +617,14 @@ export default {
     imprint: {
       name: 'Impressum',
       title: '@:general.phrases.openInSameTab @:pages.imprint.name',
-      description: 'the description',
+      seo: {
+        ogDescription:
+          'Hier finden Sie alle notwendigen Informationen zu meiner Person, einschließlich Kontaktinformationen und rechtliche Hinweise.',
+        description:
+          'Hier finden Sie alle notwendigen Informationen zu meiner Person, einschließlich Kontaktinformationen und rechtliche Hinweise.',
+        ogTitle: "Impressum {'|'} Lutz Weigold",
+        title: "Impressum {'|'} Lutz Weigold",
+      },
       to: 'imprint',
       content: {
         commission: {
@@ -584,6 +633,96 @@ export default {
             title: '@:general.phrases.openInNewTab @:pages.imprint.content.commission.website.entry',
           },
         },
+      },
+    },
+    didem: {
+      name: 'Didem',
+      title: '@:general.phrases.openInSameTab @:pages.didem.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Didem.',
+        description: 'Projektübersicht über Didem.',
+        ogTitle: "Projekt - Didem {'|'} Lutz Weigold",
+        title: "Projekt - Didem {'|'} Lutz Weigold",
+      },
+    },
+    portfolio: {
+      name: 'Portfolio',
+      title: '@:general.phrases.openInSameTab @:pages.portfolio.name',
+      seo: {
+        ogDescription: 'Projekt overview of my portfolio.',
+        description: 'Projektübersicht über Didem.',
+        ogTitle: "Projekt - Portfolio {'|'} Lutz Weigold",
+        title: "Projekt - Portfolio {'|'} Lutz Weigold",
+      },
+    },
+    xtrym: {
+      name: 'Xtrym',
+      title: '@:general.phrases.openInSameTab @:pages.xtrym.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Xtrym.',
+        description: 'Projektübersicht über Xtrym.',
+        ogTitle: "Projekt - Xtrym {'|'} Lutz Weigold",
+        title: "Projekt - Xtrym {'|'} Lutz Weigold",
+      },
+    },
+    freya: {
+      name: 'Freya',
+      title: '@:general.phrases.openInSameTab @:pages.freya.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Freya.',
+        description: 'Projektübersicht über Freya.',
+        ogTitle: "Projekt - Freya {'|'} Lutz Weigold",
+        title: "Projekt - Freya {'|'} Lutz Weigold",
+      },
+    },
+    pleta: {
+      name: 'Pleta',
+      title: '@:general.phrases.openInSameTab @:pages.pleta.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Pleta.',
+        description: 'Projektübersicht über Pleta.',
+        ogTitle: "Projekt - Pleta {'|'} Lutz Weigold",
+        title: "Projekt - Pleta {'|'} Lutz Weigold",
+      },
+    },
+    smaract: {
+      name: 'SmarAct',
+      title: '@:general.phrases.openInSameTab @:pages.smaract.name',
+      seo: {
+        ogDescription: 'Projektübersicht über SmarAct.',
+        description: 'Projektübersicht über SmarAct.',
+        ogTitle: "Projekt - SmarAct {'|'} Lutz Weigold",
+        title: "Projekt - SmarAct {'|'} Lutz Weigold",
+      },
+    },
+    darkpattern: {
+      name: 'pattern',
+      title: '@:general.phrases.openInSameTab @:pages.darkpattern.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Dark Pattern Detection.',
+        description: 'Projektübersicht über Dark Pattern Detection.',
+        ogTitle: "Projekt - Dark Pattern {'|'} Lutz Weigold",
+        title: "Projekt - Dark Pattern {'|'} Lutz Weigold",
+      },
+    },
+    querformat: {
+      name: 'Querformat',
+      title: '@:general.phrases.openInSameTab @:pages.querformat.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Querformat.',
+        description: 'Projektübersicht über Querformat.',
+        ogTitle: "Projekt - Querformat {'|'} Lutz Weigold",
+        title: "Projekt - Querformat {'|'} Lutz Weigold",
+      },
+    },
+    fuwacar: {
+      name: 'Fuwa Car',
+      title: '@:general.phrases.openInSameTab @:pages.fuwacar.name',
+      seo: {
+        ogDescription: 'Projektübersicht über Fuwa Car.',
+        description: 'Projektübersicht über Fuwa Car.',
+        ogTitle: "Projekt - Fuwa Car {'|'} Lutz Weigold",
+        title: "Projekt - Fuwa Car {'|'} Lutz Weigold",
       },
     },
   },

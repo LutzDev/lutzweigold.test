@@ -1,16 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  /*  app: {
-    head: {
-      htmlAttrs: { lang: 'ja' },
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'robots', content: 'noindex, noarchive, nofollow' },
-      ],
-    },
-  },  */
-
   devtools: {
     enabled: false,
   },
@@ -45,10 +34,6 @@ export default defineNuxtConfig({
           : false, // disable cssnano when not in production
     },
   },
-
-  /*  routeRules: {
-    '/': { redirect: '/en-CA' },
-  }, */
 
   image: {
     provider: 'netlify',
@@ -90,9 +75,33 @@ export default defineNuxtConfig({
         en: '/privacy',
         de: '/datenschutz',
       },
+      'projects/portfolio': {
+        en: '/projects/portfolio',
+        de: '/projekte/portfolio',
+      },
       'projects/xtrym': {
         en: '/projects/xtrym',
         de: '/projekte/xtrym',
+      },
+      'projects/didem': {
+        en: '/projects/didem',
+        de: '/projekte/didem',
+      },
+      'projects/pleta': {
+        en: '/projects/pleta',
+        de: '/projekte/pleta',
+      },
+      'projects/smaract': {
+        en: '/projects/smaract',
+        de: '/projekte/smaract',
+      },
+      'projects/darkpattern': {
+        en: '/projects/darkpattern',
+        de: '/projekte/darkpattern',
+      },
+      'projects/fuwacar': {
+        en: '/projects/fuwacar',
+        de: '/projekte/fuwacar',
       },
     },
     locales: [

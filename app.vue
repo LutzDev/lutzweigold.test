@@ -1,4 +1,18 @@
 <template>
+  <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
+    <Head>
+      <template v-for="link in head.link" :key="link.id">
+        <Link :id="link.id" :rel="link.rel" :href="link.href" :hreflang="link.hreflang" />
+      </template>
+      <template v-for="meta in head.meta" :key="meta.id">
+        <Meta :id="meta.id" :property="meta.property" :content="meta.content" />
+      </template>
+    </Head>
+    <Body>
+      <slot />
+    </Body>
+  </Html>
+
   <!--  <OrganismsLoadingScreen v-if="false" />-->
   <!--    <div class="pb-safe fixed bottom-0 z-20 h-10 w-full bg-green-500">Test</div>-->
   <!--    <AtomsWrapper class="bg-red-black/0 fixed left-0 top-0 z-20 w-full text-white mix-blend-difference lg:hidden"
@@ -21,14 +35,40 @@
 </template>
 <script lang="ts" setup>
 const route = useRoute();
+const { t } = useI18n();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 // const appStore = useAppStore();
 // const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { smoother } = storeToRefs(modalStore);
+const localeRoute = useLocaleRoute();
 let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 const viewport = useViewport();
+const activeRoute = useActiveRoute();
+
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: 'id',
+  addSeoAttributes: true,
+});
+
+useSeoMeta({
+  // title: 'Self-employed software developer | Lutz Weigold',
+  title: () => {
+    return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`);
+  },
+  ogTitle: () => {
+    return t(`pages.${activeRoute()}.seo.ogTitle`);
+  },
+  description: () => {
+    return t(`pages.${activeRoute()}.seo.description`);
+  },
+  ogDescription: () => {
+    return t(`pages.${activeRoute()}.seo.ogDescription`);
+  },
+  ogImage: '/images/general/og-image.webp',
+});
 
 onMounted(() => {
   useHead({

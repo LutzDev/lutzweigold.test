@@ -24,24 +24,40 @@ definePageMeta({
 
 const list: Array<ListItem> = [
   {
-    title: 'Contact details',
+    title: 'general.footer.contact',
     entries: [
-      { name: 'info@lutzweigold.de', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
-      { name: 'info@lutzweigold.de', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
+      {
+        name: 'general.personal.email.name',
+        to: 'general.personal.email.to',
+        title: 'general.personal.email.title',
+      },
+      {
+        name: 'general.personal.phone.name',
+        to: 'general.personal.phone.to',
+        title: 'general.personal.phone.title',
+      },
     ],
   },
   {
-    title: 'Socials',
+    title: 'general.footer.socials',
     entries: [
-      { name: 'GitHub', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
-      { name: 'LinkedIn', to: 'mailto:info@lutzweigold.de', title: 'Its the title of the link' },
+      {
+        name: 'general.personal.linkedin.name',
+        to: 'general.personal.linkedin.to',
+        title: 'general.personal.linkedin.title',
+      },
+      {
+        name: 'general.personal.github.name',
+        to: 'general.personal.github.to',
+        title: 'general.personal.github.title',
+      },
     ],
   },
   {
-    title: '© lutz weigold',
+    title: 'general.footer.copyright',
     entries: [
-      { name: 'Privacy', to: '/', title: 'Its the title of the link' },
-      { name: 'Imprint', to: '/', title: 'Its the title of the link' },
+      { name: 'pages.privacy.name', to: 'pages.privacy.to', title: 'pages.privacy.title' },
+      { name: 'pages.imprint.name', to: 'pages.imprint.to', title: 'pages.imprint.title' },
     ],
   },
 ];

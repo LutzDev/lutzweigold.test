@@ -42,7 +42,7 @@ const { isModalOpen } = storeToRefs(modalStore);
 const { toggleModal } = modalStore;
 const { t, locale } = useI18n();
 const localePath = useLocalePath();
-const localeRoute = useLocaleRoute();
+const activeRoute = useActiveRoute();
 
 const { openMenu, openLang, navigationState } = navigationStore;
 
@@ -70,7 +70,7 @@ onMounted(() => {
     watch(
       () => route.name,
       (newValue) => {
-        const localRoute = localePath(String(localeRoute('')?.name).split('___')[0], 'en');
+        const localRoute = localePath(String(activeRoute()), 'en');
         gsap.to(nav.value, {
           duration: 1,
           scrambleText: {
