@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="mailto:info@lutzweigold.de">
+  <NuxtLink :title="$t('general.personal.email.title')" :to="$t('general.personal.email.to')">
     <AtomsBodyText theme="dark" html-tag="div" class="inline-flex whitespace-nowrap">
       <div ref="prefix" class="overflow-hidden">crafted @</div>
       <div class="inline-flex gap-0">

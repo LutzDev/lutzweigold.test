@@ -20,7 +20,7 @@
             <MoleculesList :list="list" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText class="self-top col-span-full self-center lg:col-span-4 lg:col-start-2" data-speed="1.05">
               {{ $t('projects.smaract.content.techStack.description') }}
             </AtomsBodyText>
           </template>
@@ -48,8 +48,8 @@ const list: Array<ListItem> = [
     title: 'projects.smaract.content.techStack.list.preview.name',
     entries: [
       {
-        name: 'smaract.com',
-        to: 'https://www.smaract.com/en/',
+        name: 'projects.smaract.content.techStack.list.preview.value',
+        to: 'projects.smaract.content.techStack.list.preview.to',
         title: 'projects.smaract.content.techStack.list.preview.title',
       },
     ],

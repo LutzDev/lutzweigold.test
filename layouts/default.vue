@@ -34,6 +34,7 @@ onMounted(() => {
         // smoother.value?.paused(false);
         ScrollTrigger.refresh();
       },
+      delay: 0.5,
       data: { name: 'DEFAULT' },
       defaults: { ease: Power4.easeInOut, duration: 2 },
     });

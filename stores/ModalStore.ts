@@ -1,5 +1,4 @@
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const useModalStore = defineStore('modal', () => {
   const isModalOpen = ref<Boolean>(true);
@@ -9,8 +8,6 @@ export const useModalStore = defineStore('modal', () => {
     isModalOpen.value = !isModalOpen.value;
     if (isModalOpen.value) {
       smoother.value?.paused(false);
-      ScrollTrigger.refresh();
-      smoother.value?.scrollTo(0, true);
     }
   };
 

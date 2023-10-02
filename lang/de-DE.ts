@@ -70,7 +70,9 @@ export default {
           list: {
             technology: 'Tech-Stack',
             preview: {
-              name: 'Zum Projekt',
+              name: 'Live-Site',
+              value: 'xtrym.de',
+              to: 'https://xtrym.de/',
               title: 'Projekt in einem neuen Browsertab öffnen: Xtrym',
             },
           },
@@ -101,9 +103,13 @@ export default {
             preview: {
               name: 'Zum Code',
               frontend: {
+                value: 'User interface',
+                to: 'https://github.com/LutzDev/admin-frontend',
                 title: 'Code auf Github öffnen: Admin-Frontend',
               },
               backend: {
+                value: 'REST-Api',
+                to: 'https://github.com/LutzDev/admin-backend',
                 title: 'Code auf Github öffnen: Admin-Backend',
               },
             },
@@ -117,6 +123,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Code',
+              value: 'Transformation service',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Code auf Github öffnen: Transformation-Service',
             },
           },
@@ -134,6 +142,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Code',
+              value: 'Dialog manager',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Code auf Github öffnen: Dialog-Manager',
             },
           },
@@ -146,6 +156,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Code',
+              value: 'Mobile app',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Code auf Github öffnen: Mobile-Applikation',
             },
           },
@@ -168,6 +180,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Code',
+              value: 'FuwaCar',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Code auf Github öffnen: FuwaCar',
             },
           },
@@ -179,14 +193,26 @@ export default {
     portfolio: {
       content: {
         visual: {
-          headline: 'Mein eigener Webauftritt.',
+          headline: 'Mein eigener Webauftritt ',
+          image: {
+            alt: 'Vorschaubild der Skillseite von Lutz Weigold',
+          },
         },
         techStack: {
           headline: 'Projektübersicht.',
+          list: {
+            technology: 'Tech-Stack',
+            preview: {
+              name: 'Zum Code',
+              value: 'Portfolio',
+              to: 'https://github.com/LutzDev/transformation-service',
+              title: 'Code auf Github öffnen: Lutz Weigold Portfolio',
+            },
+          },
         },
-        images: {
-          visual: {
-            alt: 'Vorschaubild des Xtrym E-Commerce shops',
+        teaser: {
+          image: {
+            alt: 'Preview of the portfolio webpage in mobile view',
           },
         },
       },
@@ -205,6 +231,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Projekt',
+              value: 'smaract.com',
+              to: 'https://www.smaract.com/de/',
               title: 'Projekt in einem neuen Browsertab öffnen: SmarAct',
             },
           },
@@ -232,6 +260,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Projekt',
+              value: 'querformat-weyhe.de',
+              to: 'https://querformat-weyhe.de/',
               title: 'Projekt in einem neuen Browsertab öffnen: Querformat',
             },
           },
@@ -259,10 +289,14 @@ export default {
             technology: 'Tech-Stack',
             contributor: {
               name: 'Mitwirkender',
+              value: 'Philipp Oeschger',
+              to: 'https://philipp-oeschger.de/',
               title: 'Zum Porfolio von Philipp Oeschger',
             },
             preview: {
               name: 'Zum Projekt',
+              value: 'freya-stuttgart.de',
+              to: 'https://www.freya-stuttgart.de/',
               title: 'Projekt in einem neuen Browsertab öffnen: Freya',
             },
           },
@@ -290,6 +324,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Projekt',
+              value: 'pleta.de',
+              to: 'https://pleta.de/',
               title: 'Projekt in einem neuen Browsertab öffnen: Pleta',
             },
           },
@@ -317,6 +353,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Zum Code',
+              value: 'Dark Pattern Detection',
+              to: 'https://www.darkpattern-stuttgart.de/',
               title: 'Code auf Github öffnen: Dark Pattern Detektion',
             },
           },

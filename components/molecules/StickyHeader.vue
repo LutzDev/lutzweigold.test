@@ -6,16 +6,16 @@
         <div class="text-right">
           <AtomsSmallText>
             <AtomsContactItem
-              title="general.personal.email.title"
-              to="general.personal.email.to"
-              name="general.personal.email.name"
+              title="general.personal.phone.title"
+              to="general.personal.phone.to"
+              name="general.personal.phone.name"
             />
           </AtomsSmallText>
           <AtomsSmallText>
             <AtomsContactItem
-              title="general.personal.phone.title"
-              to="general.personal.phone.to"
-              name="general.personal.phone.name"
+              title="general.personal.email.title"
+              to="general.personal.email.to"
+              name="general.personal.email.name"
             />
           </AtomsSmallText>
         </div>
@@ -23,3 +23,4 @@
     </AtomsWrapper>
   </div>
 </template>
+<script setup lang="ts"></script>

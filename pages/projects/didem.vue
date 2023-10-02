@@ -27,7 +27,7 @@
             <MoleculesList :list="interfaceList" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText class="self-top col-span-full self-center lg:col-span-4 lg:col-start-2" data-speed="1.05">
               {{ $t('projects.didem.content.interface.description') }}
             </AtomsBodyText>
           </template>
@@ -48,7 +48,7 @@
             <MoleculesList :list="parserList" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText class="self-top col-span-full self-center lg:col-span-4 lg:col-start-2" data-speed="1.05">
               {{ $t('projects.didem.content.parser.description') }}
             </AtomsBodyText>
           </template>
@@ -75,7 +75,7 @@
             <MoleculesList :list="dialogManagerList" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText class="self-top col-span-full self-center lg:col-span-4 lg:col-start-2" data-speed="1.05">
               {{ $t('projects.didem.content.dialogManager.description') }}
             </AtomsBodyText>
           </template>
@@ -96,7 +96,10 @@
             <MoleculesList :list="mobileApplicationList" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText
+              class="self-top col-span-full self-center self-center lg:col-span-4 lg:col-start-2"
+              data-speed="1.05"
+            >
               {{ $t('projects.didem.content.mobileApplication.description') }}
             </AtomsBodyText>
           </template>
@@ -118,13 +121,13 @@ const interfaceList: Array<ListItem> = [
     title: 'projects.didem.content.interface.list.preview.name',
     entries: [
       {
-        name: 'User interface',
-        to: 'https://github.com/LutzDev/admin-frontend',
+        name: 'projects.didem.content.interface.list.preview.frontend.value',
+        to: 'projects.didem.content.interface.list.preview.frontend.to',
         title: 'projects.didem.content.interface.list.preview.frontend.title',
       },
       {
-        name: 'REST-Api',
-        to: 'https://github.com/LutzDev/admin-backend',
+        name: 'projects.didem.content.interface.list.preview.backend.value',
+        to: 'projects.didem.content.interface.list.preview.backend.to',
         title: 'projects.didem.content.interface.list.preview.backend.title',
       },
     ],
@@ -140,8 +143,8 @@ const parserList: Array<ListItem> = [
     title: 'projects.didem.content.parser.list.preview.name',
     entries: [
       {
-        name: 'Transformation service',
-        to: 'https://github.com/LutzDev/transformation-service',
+        name: 'projects.didem.content.parser.list.preview.value',
+        to: 'projects.didem.content.parser.list.preview.to',
         title: 'projects.didem.content.parser.list.preview.title',
       },
     ],
@@ -157,8 +160,8 @@ const dialogManagerList: Array<ListItem> = [
     title: 'projects.didem.content.dialogManager.list.preview.name',
     entries: [
       {
-        name: 'Dialog manager',
-        to: 'https://github.com/LutzDev/transformation-service',
+        name: 'projects.didem.content.dialogManager.list.preview.value',
+        to: 'projects.didem.content.dialogManager.list.preview.to',
         title: 'projects.didem.content.dialogManager.list.preview.title',
       },
     ],
@@ -174,8 +177,8 @@ const mobileApplicationList: Array<ListItem> = [
     title: 'projects.didem.content.mobileApplication.list.preview.name',
     entries: [
       {
-        name: 'Mobile app',
-        to: 'https://github.com/LutzDev/transformation-service',
+        name: 'projects.didem.content.mobileApplication.list.preview.value',
+        to: 'projects.didem.content.mobileApplication.list.preview.to',
         title: 'projects.didem.content.mobileApplication.list.preview.title',
       },
     ],

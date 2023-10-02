@@ -20,7 +20,7 @@
             <MoleculesList :list="list" theme="light" class="self-end" width="half" />
           </template>
           <template #rightCol>
-            <AtomsBodyText class="self-top col-span-full lg:col-span-4 lg:col-start-2" data-speed="1.05">
+            <AtomsBodyText class="self-top col-span-full self-center lg:col-span-4 lg:col-start-2" data-speed="1.05">
               {{ $t('projects.freya.content.techStack.description') }}
             </AtomsBodyText>
           </template>
@@ -48,8 +48,8 @@ const list: Array<ListItem> = [
     title: 'projects.freya.content.techStack.list.contributor.name',
     entries: [
       {
-        name: 'Philipp Oeschger',
-        to: 'https://philipp-oeschger.de/',
+        name: 'projects.freya.content.techStack.list.contributor.value',
+        to: 'projects.freya.content.techStack.list.contributor.to',
         title: 'projects.freya.content.techStack.list.contributor.title',
       },
     ],
@@ -58,8 +58,8 @@ const list: Array<ListItem> = [
     title: 'projects.freya.content.techStack.list.preview.name',
     entries: [
       {
-        name: 'freya-stuttgart.de',
-        to: 'https://www.freya-stuttgart.de/',
+        name: 'projects.freya.content.techStack.list.preview.value',
+        to: 'projects.freya.content.techStack.list.preview.to',
         title: 'projects.freya.content.techStack.list.preview.title',
       },
     ],

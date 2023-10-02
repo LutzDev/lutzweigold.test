@@ -4,6 +4,8 @@
       <nuxt-picture
         fit="cover"
         format="webp"
+        width="1800"
+        height="1285"
         densities="x1 x2"
         :src="props.image?.src!"
         :alt="$t(props.image?.alt!)"

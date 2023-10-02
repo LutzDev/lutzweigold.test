@@ -4,10 +4,22 @@
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap>
           <div class="space-y-4">
-            <AtomsLogo />
-            <div class="text-white">
-              <AtomsSmallText>+49 152 26269766</AtomsSmallText>
-              <AtomsSmallText>info@lutzweigold.de</AtomsSmallText>
+            <AtomsLogo class="pointer-events-auto" />
+            <div class="pointer-events-auto text-white">
+              <AtomsSmallText>
+                <AtomsContactItem
+                  title="general.personal.phone.title"
+                  to="general.personal.phone.to"
+                  name="general.personal.phone.name"
+                />
+              </AtomsSmallText>
+              <AtomsSmallText>
+                <AtomsContactItem
+                  title="general.personal.email.title"
+                  to="general.personal.email.to"
+                  name="general.personal.email.name"
+                />
+              </AtomsSmallText>
             </div>
           </div>
           <div class="w-full divide-y-2 divide-white border-2 border-white">

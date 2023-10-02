@@ -59,13 +59,13 @@ useSeoMeta({
     return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`);
   },
   ogTitle: () => {
-    return t(`pages.${activeRoute()}.seo.ogTitle`);
+    return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.ogTitle`);
   },
   description: () => {
-    return t(`pages.${activeRoute()}.seo.description`);
+    return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.description`);
   },
   ogDescription: () => {
-    return t(`pages.${activeRoute()}.seo.ogDescription`);
+    return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.ogDescription`);
   },
   ogImage: '/images/general/og-image.webp',
 });
@@ -77,16 +77,19 @@ onMounted(() => {
     },
   });
   ctx = gsap.context(() => {
-    mm = gsap.matchMedia();
-    mm.add('(min-width: 640px)', () => {
-      if (ScrollTrigger.isTouch === 0) {
-        smoother.value = ScrollSmoother.create({
-          smooth: 0.8,
-          ignoreMobileResize: true,
-          effects: true,
-        });
-      }
-    });
+    if (ScrollTrigger.isTouch === 0) {
+      smoother.value = ScrollSmoother.create({
+        smooth: 0.8,
+        ignoreMobileResize: true,
+        effects: true,
+      });
+    } else {
+      smoother.value = ScrollSmoother.create({
+        smooth: 0,
+        ignoreMobileResize: true,
+        effects: false,
+      });
+    }
   });
 });
 
@@ -99,6 +102,8 @@ watch(
   () => {
     smoother.value?.effects().forEach((effect) => effect.kill());
     smoother.value?.effects('[data-lag], [data-speed]');
+    smoother.value?.scrollTo(0, true);
+    ScrollTrigger.refresh();
     smoother.value?.scrollTo(0, true);
   }
 );

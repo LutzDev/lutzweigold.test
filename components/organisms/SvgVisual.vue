@@ -12,10 +12,10 @@
             <template #default>
               <div
                 ref="leftCircle"
-                class="relative col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
+                class="relative col-span-4 col-start-1 row-start-1 -translate-y-[100px] self-end overflow-visible rounded-full opacity-0 lg:-z-20"
               >
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
-                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                  <div class="serviceText p-y-1 translate-y-full text-center">
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.strategy.title') }}
                     </AtomsTitleText>
@@ -30,10 +30,10 @@
               </div>
               <div
                 ref="middleCircle"
-                class="relative col-span-4 col-start-4 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
+                class="relative col-span-4 col-start-4 row-start-1 -translate-y-[100px] self-end overflow-visible rounded-full opacity-0"
               >
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
-                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                  <div class="serviceText p-y-1 translate-y-full text-center">
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.development.title') }}
                     </AtomsTitleText>
@@ -48,10 +48,10 @@
               </div>
               <div
                 ref="rightCircle"
-                class="relative col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply lg:-z-20"
+                class="relative col-span-4 col-start-7 row-start-1 -translate-y-[100px] self-end overflow-visible rounded-full opacity-0 lg:-z-20"
               >
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
-                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                  <div class="serviceText p-y-1 translate-y-full text-center">
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.maintenance.title') }}
                     </AtomsTitleText>
@@ -76,10 +76,10 @@
             <AtomsGrid :cols="10" class="h-full w-full items-end">
               <div
                 ref="backendCircle"
-                class="relative col-span-4 col-start-1 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
+                class="relative col-span-4 col-start-1 row-start-1 -translate-y-[100px] self-end overflow-visible rounded-full opacity-0 mix-blend-multiply"
               >
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
-                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                  <div class="serviceText p-y-1 translate-y-full text-center">
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.backend.title') }}
                     </AtomsTitleText>
@@ -102,10 +102,10 @@
               </div>
               <div
                 ref="frontendCircle"
-                class="relative col-span-4 col-start-7 row-start-1 self-end overflow-visible rounded-full mix-blend-multiply"
+                class="relative col-span-4 col-start-7 row-start-1 -translate-y-[100px] self-end overflow-visible rounded-full opacity-0 mix-blend-multiply"
               >
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden py-0.5">
-                  <div class="serviceText p-y-1 translate-y-0 text-center">
+                  <div class="serviceText p-y-1 translate-y-full text-center">
                     <AtomsTitleText size="sm"
                       >{{ $t('pages.skill.content.visual.circles.frontend.title') }}
                     </AtomsTitleText>
@@ -143,6 +143,8 @@ let ctx: gsap.Context;
 let mm: gsap.MatchMedia;
 let tlReveal: gsap.core.Timeline;
 let tlScroll: gsap.core.Timeline;
+const modalStore = useModalStore();
+const { isModalOpen } = storeToRefs(modalStore);
 const background = ref<HTMLDivElement | null>(null);
 const backendCircle = ref<HTMLDivElement | null>(null);
 const frontendCircle = ref<HTMLDivElement | null>(null);
@@ -178,7 +180,7 @@ onMounted(() => {
 
     tlReveal = gsap.timeline({
       data: { name: 'SVG-VISUAL' },
-      defaults: { ease: Power4.easeInOut, duration: 1.5 },
+      defaults: { ease: Power4.easeInOut, duration: 1 },
     });
 
     gsap.utils.toArray([backendCircle.value, frontendCircle.value]).forEach((entry) => {
@@ -192,18 +194,30 @@ onMounted(() => {
       }
     });
 
-    tlReveal.to('.serviceText', { duration: 2, y: '100%', stagger: 0.2, ease: Power4.easeInOut, overwrite: true }, 0);
+    tlReveal.to('.serviceText', { duration: 2, y: 0, stagger: 0.2, ease: Power4.easeInOut, overwrite: true }, 0);
     tlReveal.to(
       [leftCircle.value, backendCircle.value, middleCircle.value, rightCircle.value, frontendCircle.value],
       {
-        y: -100,
-        opacity: 0,
+        y: 0,
+        opacity: 100,
         stagger: 0.1,
       },
       '0+=0.5'
     );
-    tlReveal.to('.drawStroke', { stagger: 0.25, drawSVG: 0, ease: Power4.easeInOut }, '0+=0.5');
-    animationStore.master.value.add(tlReveal, '0-=0.25');
+    tlReveal.from('.drawStroke', { stagger: 0.25, drawSVG: 0, ease: Power4.easeInOut }, '0+=0.5');
+    // animationStore.master.value.add(tlReveal, '0-=0.25');
+
+    watch(
+      () => isModalOpen.value,
+      (newValue) => {
+        if (newValue) {
+          tlReveal.play();
+        } else {
+          tlReveal.reverse();
+        }
+      },
+      { immediate: true }
+    );
   }, scope.value!);
 });
 

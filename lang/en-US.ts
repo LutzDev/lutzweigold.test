@@ -71,6 +71,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Live-Site',
+              value: 'xtrym.de',
+              to: 'https://xtrym.de/',
               title: 'Open project in a new browser tab: Xtrym',
             },
           },
@@ -101,9 +103,13 @@ export default {
             preview: {
               name: 'Code',
               frontend: {
+                value: 'User interface',
+                to: 'https://github.com/LutzDev/admin-frontend',
                 title: 'Open code on Github: Admin Frontend',
               },
               backend: {
+                value: 'REST-Api',
+                to: 'https://github.com/LutzDev/admin-backend',
                 title: 'Open code on Github: Admin-Backend',
               },
             },
@@ -117,6 +123,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Code',
+              value: 'Transformation service',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Open code on Github: Transformation-Service',
             },
           },
@@ -134,6 +142,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Code',
+              value: 'Dialog manager',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Open code on Github: Dialog-Manager',
             },
           },
@@ -146,6 +156,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Code',
+              value: 'Mobile app',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Open code on Github: Mobile-Applikation',
             },
           },
@@ -168,6 +180,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Code',
+              value: 'FuwaCar',
+              to: 'https://github.com/LutzDev/transformation-service',
               title: 'Open code on Github: FuwaCar',
             },
           },
@@ -179,14 +193,26 @@ export default {
     portfolio: {
       content: {
         visual: {
-          headline: 'My portfolio.',
+          headline: 'My own webpage',
+          image: {
+            alt: 'Preview of the portfolio website',
+          },
         },
         techStack: {
           headline: 'Project overview.',
+          list: {
+            technology: 'Tech-Stack',
+            preview: {
+              name: 'Code',
+              value: 'Portfolio',
+              to: 'https://github.com/LutzDev/transformation-service',
+              title: 'Open code on Github: Lutz Weigold Portfolio',
+            },
+          },
         },
-        images: {
-          visual: {
-            alt: 'Preview of the portfolio',
+        teaser: {
+          image: {
+            alt: 'Preview of the portfolio webpage in mobile view',
           },
         },
       },
@@ -205,6 +231,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Live-Site',
+              value: 'smaract.com',
+              to: 'https://www.smaract.com/en/',
               title: 'Open project in a new browser tab: SmarAct',
             },
           },
@@ -232,6 +260,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Live-Site',
+              value: 'querformat-weyhe.de',
+              to: 'https://querformat-weyhe.de/',
               title: 'Open project in a new browser tab: Querformat',
             },
           },
@@ -259,10 +289,14 @@ export default {
             technology: 'Tech-Stack',
             contributor: {
               name: 'Contributor',
+              value: 'Philipp Oeschger',
+              to: 'https://philipp-oeschger.de/',
               title: 'Open portfolio of Philipp Oeschger',
             },
             preview: {
               name: 'Live-Site',
+              value: 'freya-stuttgart.de',
+              to: 'https://www.freya-stuttgart.de/',
               title: 'Open project in a new browser tab: Freya',
             },
           },
@@ -290,6 +324,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Live-Site',
+              value: 'pleta.de',
+              to: 'https://pleta.de/',
               title: 'Open project in a new browser tab: Pleta',
             },
           },
@@ -317,6 +353,8 @@ export default {
             technology: 'Tech-Stack',
             preview: {
               name: 'Code',
+              value: 'Dark Pattern Detection',
+              to: 'https://www.darkpattern-stuttgart.de/',
               title: 'Open code on Github: Dark Pattern Detektion',
             },
           },
