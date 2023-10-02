@@ -43,7 +43,7 @@ onMounted(() => {
         smoother.value = ScrollSmoother.create({
           smooth: 0.8,
           ignoreMobileResize: true,
-          effects: false,
+          effects: true,
         });
       }
     });
@@ -57,12 +57,8 @@ onUnmounted(() => {
 watch(
   () => route.name,
   () => {
-    // console.log(smoother.effects());
-    // TODO: fix smoother.effects -> Conflict with scrolltrigger in footer
-    // smoother.value?.effects().forEach((effect) => effect.kill());
-    // smoother.value?.effects('[data-lag], [data-speed]');
-    // ScrollTrigger.clearScrollMemory();
-
+    smoother.value?.effects().forEach((effect) => effect.kill());
+    smoother.value?.effects('[data-lag], [data-speed]');
     smoother.value?.scrollTo(0, true);
   }
 );

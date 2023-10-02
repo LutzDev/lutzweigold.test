@@ -29,7 +29,6 @@ onMounted(() => {
       trigger: wrapper.value,
       toggleActions: 'play pause resume pause',
       animation: tl.value?.seek(gsap.utils.random(1, 3)),
-
       markers: true,
     });
   });

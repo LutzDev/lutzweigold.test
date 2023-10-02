@@ -116,7 +116,7 @@ onMounted(() => {
             trigger: scope.value,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: 1,
+            scrub: 0.5,
           },
         });
       }

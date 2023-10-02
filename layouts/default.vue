@@ -31,7 +31,7 @@ onMounted(() => {
         smoother.value?.paused(true);
       },
       onReverseComplete: () => {
-        smoother.value?.paused(false);
+        // smoother.value?.paused(false);
         ScrollTrigger.refresh();
       },
       data: { name: 'DEFAULT' },
