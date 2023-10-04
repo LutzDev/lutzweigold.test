@@ -39,8 +39,8 @@ export default {
     phrases: {
       openInNewTab: 'Öffne Webseite in einem neuem Browsertab:',
       openInSameTab: 'Gehe weiter zu:',
-      openProjekt: 'Nähere Informationen zum Projekt:',
-      closeProjekt: 'Zurück zur Übersicht aller Projekte',
+      openProject: 'Nähere Informationen zum Projekt:',
+      closeProject: 'Zurück zur Übersicht aller Projekte',
     },
     tags: {
       work: 'arbeit',

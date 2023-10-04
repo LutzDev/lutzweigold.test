@@ -13,7 +13,6 @@
         : 'fourth-headline'
     } ${props.theme === 'light' ? 'text-black' : 'text-white'}`"
     ><slot />
-    <div>Touch: {{ touch }}</div>
   </component>
 </template>
 
@@ -28,10 +27,7 @@ let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
 const headline = ref<HTMLElement | null>(null);
 
-const touch = ref<number | null>(null);
-
 onMounted(() => {
-  touch.value = ScrollTrigger.isTouch;
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       defaults: { ease: Power4.easeInOut, duration: 1.5 },

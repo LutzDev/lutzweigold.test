@@ -31,7 +31,7 @@ h2 {
  * 480px - 3840px: 20px - 56px
  */
 .text-title-xs {
-    font-size: clamp(1rem, 0.952vw + 0.714rem, 3rem);
+    font-size: clamp(1.5rem, 0.714vw + 1.286rem, 3rem);
     line-height: 1.5;
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper" class="relative col-span-2 hidden md:block">
+  <div ref="wrapper" :class="`${isTouch === 0 ? 'hidden md:block' : 'hidden'} relative col-span-2`">
     <div ref="text" class="text-title flex justify-end">
       <AtomsTitleText
         ref="el"
@@ -13,7 +13,9 @@
   <div
     v-for="(item, key) in props.items?.entries"
     :key="key"
-    class="section col-span-full col-start-1 md:col-span-8 md:col-start-3"
+    :class="`section ${
+      isTouch === 0 ? 'col-span-full col-start-1 md:col-span-8 md:col-start-3' : 'col-span-full col-start-1'
+    }`"
   >
     <MoleculesExperienceContainer :prefix="props.items?.year!" :item="item" />
 
@@ -35,6 +37,7 @@ const text = ref<HTMLDivElement | null>(null);
 let ctx: gsap.Context;
 let mm: gsap.MatchMedia;
 let trigger: ScrollTrigger[];
+const isTouch = ref<number | null>(null);
 
 const props = defineProps({
   items: {
@@ -45,36 +48,38 @@ const props = defineProps({
 
 onMounted(() => {
   ctx = gsap.context(() => {
+    isTouch.value = ScrollTrigger.isTouch;
     mm = gsap.matchMedia();
     const sections: HTMLElement[] = gsap.utils.toArray('.section');
 
     mm.add('(min-width: 768px)', () => {
-      ScrollTrigger.create({
-        trigger: wrapper.value,
-        start: 'top 50%',
-        endTrigger: sections[sections.length - 1],
-        end: 'top 50%',
-        markers: false,
-        pin: text.value,
-        pinSpacing: false,
-      });
-
-      trigger = ScrollTrigger.batch(sections, {
-        start: () => `top 50%+=${height.value / 2}px`,
-        end: () => `bottom 50%+=${height.value / 2}px`,
-        onEnter: (batch) => {
-          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
-        },
-        onLeave: (batch) => {
-          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
-        },
-        onEnterBack: (batch) => {
-          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
-        },
-        onLeaveBack: (batch) => {
-          gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
-        },
-      });
+      if (isTouch.value === 0) {
+        ScrollTrigger.create({
+          trigger: wrapper.value,
+          start: 'top 50%',
+          endTrigger: sections[sections.length - 1],
+          end: 'top 50%',
+          markers: false,
+          pin: text.value,
+          pinSpacing: false,
+        });
+      }
+    });
+    trigger = ScrollTrigger.batch(sections, {
+      start: () => `top 50%+=${height.value / 2}px`,
+      end: () => `bottom 50%+=${height.value / 2}px`,
+      onEnter: (batch) => {
+        gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
+      },
+      onLeave: (batch) => {
+        gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
+      },
+      onEnterBack: (batch) => {
+        gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 1, duration: 0.5, overwrite: true });
+      },
+      onLeaveBack: (batch) => {
+        gsap.to(gsap.utils.selector(batch)('.tag'), { autoAlpha: 0.25, duration: 0.5, overwrite: true });
+      },
     });
   });
 });
