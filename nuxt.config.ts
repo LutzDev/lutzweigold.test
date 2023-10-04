@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     'nuxt-viewport',
+    '@nuxtjs/robots',
   ],
   css: ['@/assets/css/main.css'],
 
