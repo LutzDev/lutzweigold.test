@@ -1,17 +1,10 @@
 <template>
-  <div class="!h-[100svh] h-screen bg-gray-600"><h1>Privacy SITE</h1></div>
-  <div class="!h-[100svh] h-screen bg-gray-200">Second section</div>
-  <div class="!h-[100svh] h-screen bg-gray-600">Third section</div>
-  <div class="!h-[100svh] h-screen bg-gray-200">Fourgh section</div>
-</template>
-<!--
-<template>
   <AtomsWrapper
     theme="light"
     is-full-screen
     html-tag="section"
     y-padding="lg"
-    class="flex min-h-screen !h-[100svh] flex-col bg-typo-100"
+    class="flex !h-[100svh] min-h-screen flex-col bg-typo-100"
   >
     <template #default="{ isFullScreen, theme }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
@@ -782,5 +775,3 @@ definePageMeta({
   layout: 'footerless',
 });
 </script>
--->
-<script setup lang="ts"></script>
