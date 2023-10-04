@@ -97,8 +97,10 @@ onUnmounted(() => {
 watch(
   () => route.name,
   () => {
-    smoother.value?.effects().forEach((effect) => effect.kill());
-    smoother.value?.effects('[data-lag], [data-speed]');
+    if (ScrollTrigger.isTouch === 0) {
+      smoother.value?.effects().forEach((effect) => effect.kill());
+      smoother.value?.effects('[data-lag], [data-speed]');
+    }
     smoother.value?.scrollTo(0, true);
     ScrollTrigger.refresh();
   }
