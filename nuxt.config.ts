@@ -14,8 +14,19 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-viewport',
     '@nuxtjs/robots',
+    'nuxt-simple-sitemap',
   ],
   css: ['@/assets/css/main.css'],
+
+  sitemap: {
+    autoI18n: true,
+    cacheTtl: 1000 * 60 * 60 * 24,
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
+      { label: 'Hreflangs', select: 'count(xhtml)', width: '25%' },
+    ],
+  },
 
   nitro: {
     compressPublicAssets: true,
