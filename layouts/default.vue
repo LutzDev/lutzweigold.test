@@ -36,7 +36,7 @@ onMounted(() => {
       },
       delay: 0.5,
       data: { name: 'DEFAULT' },
-      defaults: { ease: Power4.easeInOut, duration: 2 },
+      defaults: { ease: Power4.easeInOut, duration: 1.5 },
     });
     tl.to(
       [main.value, footer.value],
