@@ -13,7 +13,7 @@
     </Body>
   </Html>
 
-  <!--  <OrganismsLoadingScreen v-if="false" />-->
+  <OrganismsLoadingScreen v-if="isAppLoading" />
   <!--    <div class="pb-safe fixed bottom-0 z-20 h-10 w-full bg-green-500">Test</div>-->
   <!--    <AtomsWrapper class="bg-red-black/0 fixed left-0 top-0 z-20 w-full text-white mix-blend-difference lg:hidden"
     >asdasd</AtomsWrapper
@@ -41,8 +41,8 @@
 const route = useRoute();
 const { t } = useI18n();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger, $Power4: Power4 } = useNuxtApp();
-// const appStore = useAppStore();
-// const { isAppLoading } = storeToRefs(appStore);
+const appStore = useAppStore();
+const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { isModalOpen, smoother } = storeToRefs(modalStore);
 const animationStore = useAnimationStore();
