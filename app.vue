@@ -84,7 +84,6 @@ onMounted(() => {
     } else {
       smoother.value = ScrollSmoother.create({
         smooth: 0,
-        ignoreMobileResize: true,
         effects: false,
       });
     }
