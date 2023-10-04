@@ -41,8 +41,6 @@ const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrig
 // const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { smoother } = storeToRefs(modalStore);
-const localeRoute = useLocaleRoute();
-let mm: gsap.MatchMedia;
 let ctx: gsap.Context;
 const viewport = useViewport();
 const activeRoute = useActiveRoute();

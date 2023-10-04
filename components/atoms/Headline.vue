@@ -13,21 +13,25 @@
         : 'fourth-headline'
     } ${props.theme === 'light' ? 'text-black' : 'text-white'}`"
     ><slot />
+    <div>Touch: {{ touch }}</div>
   </component>
 </template>
 
 <script lang="ts" setup>
 import { PropType } from 'vue';
 import { HeadlineTag, Theme } from '@Types';
-const { $gsap: gsap, $Power4: Power4, $SplitText: SplitText } = useNuxtApp();
+const { $gsap: gsap, $Power4: Power4, $SplitText: SplitText, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 const modalStore = useModalStore();
 const { isModalOpen } = storeToRefs(modalStore);
 
 let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
-const headline = ref(null);
+const headline = ref<HTMLElement | null>(null);
+
+const touch = ref<number | null>(null);
 
 onMounted(() => {
+  touch.value = ScrollTrigger.isTouch;
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       defaults: { ease: Power4.easeInOut, duration: 1.5 },
@@ -64,6 +68,10 @@ onMounted(() => {
       { immediate: true }
     );
   });
+});
+
+onUnmounted(() => {
+  ctx.revert();
 });
 
 const props = defineProps({
