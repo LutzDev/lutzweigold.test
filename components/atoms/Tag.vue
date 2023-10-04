@@ -1,6 +1,5 @@
 <template>
-  <AtomsTitleText
-    size="xs"
+  <AtomsSmallText
     html-tag="span"
     :class="`tag p-x-xs ${
       props.color === 1
@@ -15,7 +14,7 @@
     }`"
   >
     {{ $t(props.entry) }}
-  </AtomsTitleText>
+  </AtomsSmallText>
 </template>
 
 <script setup lang="ts">

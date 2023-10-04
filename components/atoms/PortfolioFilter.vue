@@ -1,14 +1,13 @@
 <template>
   <div ref="scope" class="col-span-full">
     <div class="mb-8 flex w-full justify-between">
-      <AtomsTitleText size="sm"
+      <AtomsTitleText size="xs"
         ><span class="text-typo-200">{{ $t('pages.work.content.filter.prefix') }}</span
         ><span ref="filterText" class="cursor-pointer underline" @click="openFilter">{{
           $t('pages.work.content.filter.all').toLowerCase()
         }}</span></AtomsTitleText
       >
-      <div class=""></div>
-      <AtomsTitleText size="sm" class="text-typo-200">[0{{ props.listLength }}]</AtomsTitleText>
+      <AtomsTitleText size="xs" class="text-typo-200">[0{{ props.listLength }}]</AtomsTitleText>
     </div>
     <div
       ref="filterWrapper"
@@ -26,32 +25,36 @@
           <AtomsBodyText html-tag="span">{{ $t('pages.work.content.filter.close') }}</AtomsBodyText>
         </div>
         <div class="space-y-4 self-start lg:self-end">
-          <AtomsHeadline html-tag="h3" class="filterTag col-span-full row-start-2 self-end">{{
+          <AtomsHeadline html-tag="h2" class="col-span-full row-start-2 self-end">{{
             $t('pages.work.content.filter.title')
           }}</AtomsHeadline>
           <div class="col-span-full row-start-3">
-            <div class="py-0.2 overflow-hidden">
+            <div class="overflow-hidden">
               <AtomsFlex x-gap="none" class="filterTag">
                 <AtomsTitleText
-                  size="sm"
+                  size="xs"
                   data-filter=""
                   class="cursor-pointer hover:underline"
                   @click="updateFilter($event)"
                   >{{ $t('pages.work.content.filter.all') }}</AtomsTitleText
                 >
-                <div class="ml-0.5 -translate-y-0.5">{{ props.totalLength }}</div>
+                <AtomsSmallText size="xs" class="ml-0.5 -translate-y-0.5">
+                  {{ props.totalLength }}
+                </AtomsSmallText>
               </AtomsFlex>
             </div>
-            <div v-for="(filter, key) in props.tags" :key="key" class="overflow-hidden py-0.5">
+            <div v-for="(filter, key) in props.tags" :key="key" class="overflow-hidden">
               <AtomsFlex x-gap="none" class="filterTag">
                 <AtomsTitleText
                   class="cursor-pointer hover:underline"
-                  size="sm"
+                  size="xs"
                   :data-filter="filter[0].toLocaleLowerCase()"
                   @click="updateFilter($event)"
                   >{{ $t(filter[0]) }}</AtomsTitleText
                 >
-                <div class="ml-0.5 -translate-y-0.5">{{ filter[1] }}</div>
+                <AtomsSmallText size="xs" class="ml-0.5 -translate-y-0.5">
+                  {{ filter[1] }}
+                </AtomsSmallText>
               </AtomsFlex>
             </div>
           </div>
