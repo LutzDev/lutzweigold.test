@@ -1,22 +1,24 @@
 <template>
-  <OrganismsSvgVisual />
-  <AtomsWrapper html-tag="section" y-padding="xl" class="bg-primary">
-    <template #default>
-      <OrganismsOneComponentsRow y-gap="none">
-        <MoleculesList
-          :list="backendList"
-          :title="{ name: 'pages.skill.content.technologies.backend', reverse: true }"
-        />
-      </OrganismsOneComponentsRow>
-    </template>
-  </AtomsWrapper>
-  <AtomsWrapper html-tag="section" y-padding="xl">
-    <template #default>
-      <OrganismsOneComponentsRow y-gap="none">
-        <MoleculesList :list="frontendList" :title="{ name: 'pages.skill.content.technologies.frontend' }" />
-      </OrganismsOneComponentsRow>
-    </template>
-  </AtomsWrapper>
+  <div class="bg-primary">
+    <OrganismsSvgVisual />
+    <AtomsWrapper html-tag="section" y-padding="xl" class="bg-primary">
+      <template #default>
+        <OrganismsOneComponentsRow y-gap="none">
+          <MoleculesList
+            :list="backendList"
+            :title="{ name: 'pages.skill.content.technologies.backend', reverse: true }"
+          />
+        </OrganismsOneComponentsRow>
+      </template>
+    </AtomsWrapper>
+    <AtomsWrapper html-tag="section" y-padding="xl" class="bg-white">
+      <template #default>
+        <OrganismsOneComponentsRow y-gap="none">
+          <MoleculesList :list="frontendList" :title="{ name: 'pages.skill.content.technologies.frontend' }" />
+        </OrganismsOneComponentsRow>
+      </template>
+    </AtomsWrapper>
+  </div>
 </template>
 
 <script setup lang="ts">

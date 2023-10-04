@@ -3,9 +3,9 @@
     html-tag="span"
     :class="`tag p-x-xs ${
       props.color === 1
-        ? 'bg-primary-50 text-primary-800'
+        ? 'bg-primary-200 text-primary-900'
         : props.color === 2
-        ? 'bg-secondary-50 text-secondary-600'
+        ? 'bg-secondary-100 text-secondary-700'
         : props.color === 0
         ? props.theme === 'light'
           ? 'border-2 border-black text-black'

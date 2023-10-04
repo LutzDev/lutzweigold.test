@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`relative inline-block cursor-pointer overflow-hidden leading-[0px] after:absolute after:left-0 after:top-0 after:h-full after:bg-[#BFFF00] after:transition-all after:ease-in-out ${
+    :class="`relative inline-block cursor-pointer overflow-hidden leading-[0px] after:absolute after:left-0 after:top-0 after:h-full after:bg-primary-400 after:transition-all after:ease-in-out ${
       event ? 'after:w-full' : 'after:w-0'
     }`"
   >

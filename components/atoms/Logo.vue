@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :title="$t('general.personal.email.title')" :to="$t('general.personal.email.to')">
-    <AtomsBodyText theme="dark" html-tag="div" class="inline-flex whitespace-nowrap">
-      <div ref="prefix" class="overflow-hidden">crafted @</div>
+    <AtomsBodyText theme="dark" html-tag="div" class="inline-flex gap-0.5 whitespace-nowrap">
+      <div ref="prefix" class="overflow-hidden">crafted by</div>
       <div class="inline-flex gap-0">
         lutz
         <div ref="lastName" class="w-0 overflow-hidden">weigold</div>

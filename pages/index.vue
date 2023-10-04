@@ -1,5 +1,5 @@
 <template>
-  <AtomsWrapper is-full-screen html-tag="section" y-padding="lg">
+  <AtomsWrapper is-full-screen html-tag="section" y-padding="lg" class="bg-white">
     <template #default="{ isFullScreen }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>

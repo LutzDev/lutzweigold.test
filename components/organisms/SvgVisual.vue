@@ -1,5 +1,5 @@
 <template>
-  <div ref="scope">
+  <div ref="scope" class="bg-white">
     <AtomsWrapper is-full-screen html-tag="section" y-padding="lg">
       <template #default="{ isFullScreen }">
         <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">

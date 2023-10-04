@@ -1,10 +1,16 @@
 <template>
-  <AtomsWrapper theme="dark" is-full-screen html-tag="section" y-padding="lg" class="flex min-h-screen flex-col">
+  <AtomsWrapper
+    theme="dark"
+    is-full-screen
+    html-tag="section"
+    y-padding="lg"
+    class="flex min-h-screen flex-col bg-black"
+  >
     <template #default="{ isFullScreen, theme }">
       <AtomsFlex :is-full-screen="isFullScreen" wrap y-gap="lg">
         <OrganismsOneComponentsRow>
           <AtomsHeadline html-tag="h1" class="col-span-full lg:col-span-8" :theme="theme">
-            I'm a creative developer based in germany
+            {{ $t('general.footer.headline') }}
           </AtomsHeadline>
         </OrganismsOneComponentsRow>
         <OrganismsOneComponentsRow y-gap="none">

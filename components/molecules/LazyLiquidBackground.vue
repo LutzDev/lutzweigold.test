@@ -172,7 +172,7 @@ onMounted(() => {
   ctx = gsap.context(() => {
     tl = gsap.timeline({
       paused: true,
-      defaults: { duration: 2, ease: Power4.easeInOut },
+      defaults: { duration: 1.5, ease: Power4.easeInOut },
     });
 
     tl.to(camera.rotation, {
@@ -286,11 +286,11 @@ mat2 rotate2D(float angle){
 void main() {
     float n = noise(vPosition +time);
 
-    vec3 highlight =  vec3(100./255., 0./255., 100./255.); // purple
-    vec3 background =  vec3(255./255., 50./255., 150./255.); // red
-    vec3 peak =  vec3(0./255., 0./255., 50./255.);
-    vec3 accent =   vec3(200./255., 255./255., 0./255.); // green
-    vec3 test =   vec3(75./255., 100./255., 0./255.);
+    vec3 highlight =  vec3(400./255., 400./255., 510./255.); // green
+    vec3 background =   vec3(0./255., 0./255., 0./255.); // red
+    vec3 peak =    vec3(-100./255., 100./255., -255./255.);
+    vec3 accent =    vec3(100./255., 0./255., 255./255.); // purple
+    vec3 test =    vec3(0./255., 0./255., 0./255.); // purple
 
 
     vec2 baseUV = rotate2D(n)*vPosition.xy*0.1; // rotation, edit 0.2
@@ -305,6 +305,7 @@ void main() {
     vec3 fourthBaseColor = mix(thirdBaseColor,test,fourthPattern);
 
     gl_FragColor = vec4( vec3(fourthBaseColor), 1.);
-}`;
+}
+`;
 };
 </script>

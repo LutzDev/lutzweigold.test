@@ -13,7 +13,7 @@
         target="_blank"
         :title="$t(entry.link.title)"
         :to="$t(entry.link.to)"
-        :class="`col-span-full w-full self-end ${
+        :class="`pointer-events-auto col-span-full w-full cursor-pointer self-end ${
           isTouch === 0 ? 'xs:col-span-6 xs:col-start-3' : 'xs:col-span-5 xs:col-start-4'
         }`"
       >

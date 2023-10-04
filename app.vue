@@ -25,9 +25,13 @@
     <MoleculesLazyLiquidBackground class="pointer-events-none -z-10 col-span-full row-start-1 touch-none" />
     <div id="smooth-content" class="z-20 col-span-full row-start-1 lg:col-span-10 lg:col-start-3">
       <div class="overflow-x-hidden">
-        <NuxtLayout>
-          <NuxtPage />
-        </NuxtLayout>
+        <div ref="modal" class="overflow-hidden bg-white">
+          <div ref="content">
+            <NuxtLayout>
+              <NuxtPage />
+            </NuxtLayout>
+          </div>
+        </div>
       </div>
     </div>
     <OrganismsHeader class="col-span-full row-span-full row-start-1 lg:col-span-10 lg:col-start-3" />
@@ -36,14 +40,19 @@
 <script lang="ts" setup>
 const route = useRoute();
 const { t } = useI18n();
-const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger, $Power4: Power4 } = useNuxtApp();
 // const appStore = useAppStore();
 // const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
-const { smoother } = storeToRefs(modalStore);
+const { isModalOpen, smoother } = storeToRefs(modalStore);
+const animationStore = useAnimationStore();
+let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
+const modal = ref<HTMLElement | null>(null);
+const content = ref<HTMLElement | null>(null);
 const viewport = useViewport();
 const activeRoute = useActiveRoute();
+const title = ref<string>(t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`));
 
 const head = useLocaleHead({
   addDirAttribute: true,
@@ -54,7 +63,7 @@ const head = useLocaleHead({
 useSeoMeta({
   // title: 'Self-employed software developer | Lutz Weigold',
   title: () => {
-    return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`);
+    return title.value;
   },
   ogTitle: () => {
     return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.ogTitle`);
@@ -69,12 +78,48 @@ useSeoMeta({
 });
 
 onMounted(() => {
+  useEventListener(document, 'visibilitychange', () => {
+    if (document.hidden) {
+      title.value = '👋 Lutz Weigold';
+    } else {
+      title.value = t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`);
+    }
+  });
+
   useHead({
     bodyAttrs: {
       class: 'overscroll-none',
     },
   });
+
   ctx = gsap.context(() => {
+    tl = gsap.timeline({
+      onStart: () => {
+        smoother.value?.paused(true);
+      },
+      onReverseComplete: () => {
+        // smoother.value?.paused(false);
+        ScrollTrigger.refresh();
+      },
+      delay: 0,
+      data: { name: 'DEFAULT' },
+      defaults: { ease: Power4.easeInOut, duration: 1.5 },
+    });
+    tl.to(
+      [modal.value],
+      {
+        x: '100%',
+      },
+      0
+    );
+    tl.to(
+      [content.value],
+      {
+        x: '-50%',
+      },
+      0
+    );
+
     if (ScrollTrigger.isTouch === 0) {
       smoother.value = ScrollSmoother.create({
         smooth: 0.8,
@@ -87,6 +132,20 @@ onMounted(() => {
         effects: false,
       });
     }
+
+    animationStore.master.value.add(tl, 0);
+
+    watch(
+      () => isModalOpen.value,
+      (state) => {
+        if (!state) {
+          animationStore.master.value.play();
+        } else {
+          animationStore.master.value.reverse();
+        }
+      },
+      { immediate: true }
+    );
   });
 });
 
@@ -97,6 +156,7 @@ onUnmounted(() => {
 watch(
   () => route.name,
   () => {
+    title.value = t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.title`);
     if (ScrollTrigger.isTouch === 0) {
       smoother.value?.effects().forEach((effect) => effect.kill());
       smoother.value?.effects('[data-lag], [data-speed]');
