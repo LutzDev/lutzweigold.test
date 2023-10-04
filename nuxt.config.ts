@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     'nuxt-viewport',
     '@nuxtjs/robots',
     'nuxt-simple-sitemap',
+    'nuxt-gtag',
   ],
   css: ['@/assets/css/main.css'],
 
@@ -26,6 +27,11 @@ export default defineNuxtConfig({
       { label: 'Last Modified', select: 'sitemap:lastmod', width: '25%' },
       { label: 'Hreflangs', select: 'count(xhtml)', width: '25%' },
     ],
+  },
+
+  gtag: {
+    id: 'G-XXXXXXXXXX',
+    initialConsent: true,
   },
 
   nitro: {
