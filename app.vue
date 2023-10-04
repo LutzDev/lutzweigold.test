@@ -102,7 +102,6 @@ watch(
     smoother.value?.effects('[data-lag], [data-speed]');
     smoother.value?.scrollTo(0, true);
     ScrollTrigger.refresh();
-    smoother.value?.scrollTo(0, true);
   }
 );
 </script>
