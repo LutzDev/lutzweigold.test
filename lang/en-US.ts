@@ -377,7 +377,7 @@ export default {
       to: 'index',
       content: {
         visual: {
-          headline: 'I build digital solutions, tailer-made for your audience.',
+          headline: 'Creative developer.',
           image: {
             business: {
               alt: 'Portrait image of Lutz Weigold',
@@ -387,12 +387,12 @@ export default {
             },
           },
           description: {
-            role: 'I am an independent developer based in Germany who enjoys shaping and implementing projects from concept to implementation and maintenance. With a academical background in both, I work for my projects on the backend and frontend side.',
-            hobby: "When I'm not exploring new technologies, I'm probably hiking in the mountains.",
+            role: 'I am an independent developer based in Germany who enjoys shaping and implementing projects from concept to implementation. With a academical background in both, I work for my projects on the backend and frontend side.',
+            hobby: 'In my free time I like to go hiking in the mountains.',
           },
         },
         experience: {
-          headline: '6+ years of practical experience',
+          headline: 'Several years of hands-on experience as a software developer',
           items: {
             abi: {
               additionalYear: 'started 08/2015 · 2 years',
@@ -545,7 +545,7 @@ export default {
       },
       content: {
         visual: {
-          headline: 'I help brands with developing and maintaining digital products.',
+          headline: 'Skill set in designing and developing of Applications.',
           circles: {
             strategy: {
               title: 'Strategy',

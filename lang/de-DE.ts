@@ -379,7 +379,7 @@ export default {
       to: 'index',
       content: {
         visual: {
-          headline: 'Ich entwickle digitale Lösungen, die auf Ihr Publikum zugeschnitten sind.',
+          headline: 'Kreativer Entwickler.',
           image: {
             business: {
               alt: 'Portraitbild von Lutz Weigold',
@@ -394,7 +394,7 @@ export default {
           },
         },
         experience: {
-          headline: '6+ Jahre an praktischer Erfahrung',
+          headline: 'Mehrere Jahre an praktischer Erfahrung als Softwareentwickler.',
           items: {
             abi: {
               additionalYear: 'begonnen 08/2015 · 2 Jahre',
@@ -552,7 +552,7 @@ export default {
       to: 'skill',
       content: {
         visual: {
-          headline: 'I help brands with developing and maintaining digital products.',
+          headline: 'Expertise in Planung und Entwicklung von Software.',
           circles: {
             strategy: {
               title: 'Design',

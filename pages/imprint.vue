@@ -26,31 +26,27 @@
                     <AtomsHeadline html-tag="h4">Kontakt</AtomsHeadline>
                   </template>
                   <template #text>
-                    <AtomsBodyText>
-                      <NuxtLink
-                        class="underline"
-                        :to="`mailto:${$t('general.personal.email.entry')}`"
-                        :title="$t('general.personal.email.title')"
-                        >{{ $t('general.personal.email.entry') }}</NuxtLink
-                      >
-                    </AtomsBodyText>
-                    <AtomsBodyText>
-                      <NuxtLink
-                        class="underline"
-                        :to="`tel:${$t('general.personal.phone.entry')}`"
-                        :title="$t('general.personal.phone.title')"
-                        >{{ $t('general.personal.phone.entry') }}</NuxtLink
-                      >
-                    </AtomsBodyText>
-                    <AtomsBodyText>
-                      <NuxtLink
-                        class="underline"
-                        target="_blank"
-                        :to="`https://${$t('general.personal.website.entry')}`"
-                        :title="$t('general.personal.website.title')"
-                        >{{ $t('general.personal.website.entry') }}</NuxtLink
-                      >
-                    </AtomsBodyText>
+                    <div>
+                      <AtomsBodyText>
+                        <NuxtLink
+                          class="underline"
+                          :to="$t('general.personal.email.to')"
+                          :title="$t('general.personal.email.title')"
+                          >{{ $t('general.personal.email.name') }}</NuxtLink
+                        >
+                      </AtomsBodyText>
+                      <AtomsBodyText>
+                        <NuxtLink
+                          class="underline"
+                          :to="$t('general.personal.phone.to')"
+                          :title="$t('general.personal.phone.title')"
+                          >{{ $t('general.personal.phone.name') }}</NuxtLink
+                        >
+                      </AtomsBodyText>
+                      <AtomsBodyText>
+                        {{ $t('general.personal.website.name') }}
+                      </AtomsBodyText>
+                    </div>
                   </template>
                 </AtomsInformationTextItem>
                 <AtomsInformationTextItem>
