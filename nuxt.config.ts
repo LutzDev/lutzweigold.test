@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     barPosition: 'bottom-right',
     closeModalOnClickOutside: false,
     cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365,
-    isControlButtonEnabled: true,
+    isControlButtonEnabled: false,
     isIframeBlocked: false,
     locales: ['en', 'de'],
     cookies: {
