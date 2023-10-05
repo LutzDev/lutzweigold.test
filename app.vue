@@ -13,7 +13,7 @@
     </Body>
   </Html>
 
-  <OrganismsLoadingScreen v-if="false" />
+  <OrganismsLoadingScreen v-if="isAppLoading" />
   <CookieControl :locale="$i18n.locale" />
   <MoleculesStickyHeader v-if="viewport.isLessThan('desktop')" />
   <MoleculesMobileMenu v-if="viewport.isLessThan('desktop')" />
