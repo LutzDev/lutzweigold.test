@@ -104,6 +104,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
+    id: 'G-L48NZR39T1',
     initialConsent: false,
   },
 
