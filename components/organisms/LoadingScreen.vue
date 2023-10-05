@@ -106,8 +106,8 @@ onMounted(() => {
       {
         duration: 1,
         scrambleText: {
-          text: 'enthusiastic developer.',
-          chars: 'enthusiastic developer.',
+          text: 'creative developer.',
+          chars: 'creative developer.',
           tweenLength: true,
           newClass: 'text-center',
         },

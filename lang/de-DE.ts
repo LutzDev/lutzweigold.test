@@ -379,7 +379,7 @@ export default {
       to: 'index',
       content: {
         visual: {
-          headline: 'Kreativer Entwickler.',
+          headline: 'Creative developer.',
           image: {
             business: {
               alt: 'Portraitbild von Lutz Weigold',
