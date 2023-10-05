@@ -13,7 +13,7 @@
     </Body>
   </Html>
 
-  <OrganismsLoadingScreen v-if="isAppLoading" />
+  <OrganismsLoadingScreen v-if="false" />
   <CookieControl :locale="$i18n.locale" />
   <MoleculesStickyHeader v-if="viewport.isLessThan('desktop')" />
   <MoleculesMobileMenu v-if="viewport.isLessThan('desktop')" />
@@ -36,7 +36,7 @@
 </template>
 <script lang="ts" setup>
 const route = useRoute();
-const { t, locale } = useI18n();
+const { t } = useI18n();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger, $Power4: Power4 } = useNuxtApp();
 const appStore = useAppStore();
 const { isAppLoading } = storeToRefs(appStore);
@@ -158,10 +158,8 @@ watch(
   (current, previous) => {
     if (!previous?.includes('google-analytics') && current?.includes('google-analytics')) {
       grantConsent();
-      window.location.reload();
     } else {
       revokeConsent();
-      window.location.reload();
     }
   },
   { deep: true }

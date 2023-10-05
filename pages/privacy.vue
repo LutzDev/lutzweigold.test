@@ -643,20 +643,11 @@
                       Datenschutzerklärung entnehmen.</AtomsBodyText
                     >
                     <MoleculesList
+                      class="pb-md"
                       :list="[
                         {
                           title: 'Name',
                           entries: ['i18n_redirected'],
-                        },
-                        {
-                          title: 'Anbieter',
-                          entries: [
-                            {
-                              name: t('general.personal.website.entry'),
-                              to: `https://${t('general.personal.website.entry')}`,
-                              title: t('general.personal.website.title'),
-                            },
-                          ],
                         },
                         {
                           title: 'Zweck',
@@ -671,6 +662,63 @@
                         {
                           title: 'Typ',
                           entries: ['HTTP Cookie'],
+                        },
+                      ]"
+                    >
+                    </MoleculesList>
+                    <MoleculesList
+                      class="pb-md"
+                      :list="[
+                        {
+                          title: 'Name',
+                          entries: ['viewport'],
+                        },
+                        {
+                          title: 'Zweck',
+                          entries: [
+                            'Dieser Cookie speichert die Viewport-Informationen und ist für das Responsive Design der Seite erforderlich.',
+                          ],
+                        },
+                        {
+                          title: 'Ablauf',
+                          entries: ['365 Tage'],
+                        },
+                      ]"
+                    >
+                    </MoleculesList>
+                    <MoleculesList
+                      class="pb-md"
+                      :list="[
+                        {
+                          title: 'Name',
+                          entries: ['ncc_e', 'ncc_c'],
+                        },
+                        {
+                          title: 'Zweck',
+                          entries: ['Diese Cookies sind notwendig, um alle Cookies zu managen.'],
+                        },
+                        {
+                          title: 'Ablauf',
+                          entries: ['365 Tage'],
+                        },
+                      ]"
+                    >
+                    </MoleculesList>
+                    <MoleculesList
+                      :list="[
+                        {
+                          title: 'Name',
+                          entries: ['Google Analytics'],
+                        },
+                        {
+                          title: 'Zweck',
+                          entries: [
+                            'Dieser Cookie hilft mir dabei Informationen über Ihre Interaktion zu sammeln, um die Webseite stetig zu verbessern.',
+                          ],
+                        },
+                        {
+                          title: 'Ablauf',
+                          entries: ['365 Tage'],
                         },
                       ]"
                     >
@@ -762,9 +810,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO: NETLIFY POLICY
-const { t } = useI18n();
-
 definePageMeta({
   layout: 'footerless',
 });

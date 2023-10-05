@@ -23,8 +23,7 @@ export default defineNuxtConfig({
   cookieControl: {
     barPosition: 'bottom-right',
     closeModalOnClickOutside: false,
-    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24,
-    isAcceptNecessaryButtonEnabled: true,
+    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365,
     isControlButtonEnabled: true,
     isIframeBlocked: false,
     locales: ['en', 'de'],
@@ -48,6 +47,16 @@ export default defineNuxtConfig({
           description: {
             en: 'This cookie stores the viewport information and is necessary for resposive design.',
             de: 'Dieser Cookie speichert die Viewport-Informationen und ist für das Responsive Design der Seite erforderlich.',
+          },
+        },
+        {
+          name: {
+            en: 'ncc_c | ncc_e',
+            de: 'ncc_c | ncc_e',
+          },
+          description: {
+            en: 'This cookies are necessary to mange all cookies.',
+            de: 'Diese Cookies sind notwendig, um alle Cookies zu managen.',
           },
         },
       ],
