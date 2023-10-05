@@ -143,7 +143,7 @@ export default {
             preview: {
               name: 'Code',
               value: 'Dialog manager',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/',
               title: 'Open code on Github: Dialog-Manager',
             },
           },
@@ -157,7 +157,7 @@ export default {
             preview: {
               name: 'Code',
               value: 'Mobile app',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/mobile-application',
               title: 'Open code on Github: Mobile-Applikation',
             },
           },
@@ -205,7 +205,7 @@ export default {
             preview: {
               name: 'Code',
               value: 'Portfolio',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/lutzweigold.test',
               title: 'Open code on Github: Lutz Weigold Portfolio',
             },
           },
@@ -354,7 +354,7 @@ export default {
             preview: {
               name: 'Code',
               value: 'Dark Pattern Detection',
-              to: 'https://www.darkpattern-stuttgart.de/',
+              to: 'https://github.com/LutzDev/darkpattern',
               title: 'Open code on Github: Dark Pattern Detektion',
             },
           },

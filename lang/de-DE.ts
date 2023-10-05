@@ -143,7 +143,7 @@ export default {
             preview: {
               name: 'Zum Code',
               value: 'Dialog manager',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/',
               title: 'Code auf Github öffnen: Dialog-Manager',
             },
           },
@@ -157,7 +157,7 @@ export default {
             preview: {
               name: 'Zum Code',
               value: 'Mobile app',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/mobile-application',
               title: 'Code auf Github öffnen: Mobile-Applikation',
             },
           },
@@ -205,7 +205,7 @@ export default {
             preview: {
               name: 'Zum Code',
               value: 'Portfolio',
-              to: 'https://github.com/LutzDev/transformation-service',
+              to: 'https://github.com/LutzDev/lutzweigold.test',
               title: 'Code auf Github öffnen: Lutz Weigold Portfolio',
             },
           },
@@ -230,7 +230,7 @@ export default {
           list: {
             technology: 'Tech-Stack',
             preview: {
-              name: 'Zum Projekt',
+              name: 'Live-Seite',
               value: 'smaract.com',
               to: 'https://www.smaract.com/de/',
               title: 'Projekt in einem neuen Browsertab öffnen: SmarAct',
@@ -259,7 +259,7 @@ export default {
           list: {
             technology: 'Tech-Stack',
             preview: {
-              name: 'Zum Projekt',
+              name: 'Live-Seite',
               value: 'querformat-weyhe.de',
               to: 'https://querformat-weyhe.de/',
               title: 'Projekt in einem neuen Browsertab öffnen: Querformat',
@@ -354,7 +354,7 @@ export default {
             preview: {
               name: 'Zum Code',
               value: 'Dark Pattern Detection',
-              to: 'https://www.darkpattern-stuttgart.de/',
+              to: 'https://github.com/LutzDev/darkpattern',
               title: 'Code auf Github öffnen: Dark Pattern Detektion',
             },
           },
