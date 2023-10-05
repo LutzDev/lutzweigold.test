@@ -13,7 +13,7 @@
     </Body>
   </Html>
 
-  <OrganismsLoadingScreen v-if="false" />
+  <OrganismsLoadingScreen v-if="isAppLoading" />
   <CookieControl :locale="$i18n.locale" />
   <MoleculesStickyHeader v-if="viewport.isLessThan('desktop')" />
   <MoleculesMobileMenu v-if="viewport.isLessThan('desktop')" />
@@ -38,8 +38,8 @@
 const route = useRoute();
 const { t } = useI18n();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger, $Power4: Power4 } = useNuxtApp();
-/* const appStore = useAppStore();
-const { isAppLoading } = storeToRefs(appStore); */
+const appStore = useAppStore();
+const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { isModalOpen, smoother } = storeToRefs(modalStore);
 const animationStore = useAnimationStore();
