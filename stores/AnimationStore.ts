@@ -5,7 +5,6 @@ export const useAnimationStore = defineStore('animation', () => {
       paused: true,
       smoothChildTiming: true,
     })
-    /* .add('start', 0) */
   );
 
   const navigationMaster = shallowRef(

@@ -16,12 +16,6 @@ h2 {
     font-family: 'PPMondwest', serif;
 }
 
-/*.text-display,
-.text-body
-{
-    font-family: 'PPNeueMontreal', sans-serif;
-}*/
-
 .text-display {
     font-size: clamp(3rem, 10.476vw + -0.143rem, 25rem);
     line-height: 1;

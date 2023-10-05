@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
 import { HeadlineTag, Theme } from '@Types';
-const { $gsap: gsap, $Power4: Power4, $SplitText: SplitText, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
+const { $gsap: gsap, $Power4: Power4, $SplitText: SplitText } = useNuxtApp();
 const modalStore = useModalStore();
 const { isModalOpen } = storeToRefs(modalStore);
 
