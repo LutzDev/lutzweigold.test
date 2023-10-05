@@ -3,7 +3,7 @@
     html-tag="span"
     :class="`tag p-x-xs ${
       props.color === 1
-        ? 'bg-primary-200 text-primary-900'
+        ? 'bg-primary-100 text-primary-800'
         : props.color === 2
         ? 'bg-secondary-100 text-secondary-700'
         : props.color === 0

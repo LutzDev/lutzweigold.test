@@ -16,8 +16,73 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'nuxt-simple-sitemap',
     'nuxt-gtag',
+    '@dargmuesli/nuxt-cookie-control',
   ],
   css: ['@/assets/css/main.css'],
+
+  cookieControl: {
+    barPosition: 'bottom-right',
+    closeModalOnClickOutside: false,
+    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24,
+    isAcceptNecessaryButtonEnabled: true,
+    isControlButtonEnabled: true,
+    isIframeBlocked: false,
+    locales: ['en', 'de'],
+    cookies: {
+      necessary: [
+        {
+          name: {
+            en: 'i18n',
+            de: 'i18n',
+          },
+          description: {
+            en: 'This cookie is necessary for the proper translation of the page.',
+            de: 'Dieser Cookie ist für die einwandfreie übersetzung der Seite notwendig.',
+          },
+        },
+        {
+          name: {
+            en: 'Viewport',
+            de: 'Viewport',
+          },
+          description: {
+            en: 'This cookie stores the viewport information and is necessary for resposive design.',
+            de: 'Dieser Cookie speichert die Viewport-Informationen und ist für das Responsive Design der Seite erforderlich.',
+          },
+        },
+      ],
+      optional: [
+        {
+          name: {
+            en: 'Google analytics',
+            de: 'Google Analytics',
+          },
+          description: {
+            en: 'This cookie helps me collect information about your interaction to constantly improve the website.',
+            de: 'Dieser Cookie hilft mir dabei Informationen über Ihre Interaktion zu sammeln, um die Webseite stetig zu verbessern.',
+          },
+        },
+      ],
+    },
+    localeTexts: {
+      en: {
+        save: 'Save',
+        decline: 'Decline',
+        declineAll: 'Decline all',
+        manageCookies: 'Settings',
+        bannerDescription:
+          'I use my own cookies and third-party cookies so that this website can be displayed correctly.',
+      },
+      de: {
+        save: 'Speichern',
+        decline: 'Ablehnen',
+        declineAll: 'Alle ablehnen',
+        manageCookies: 'Einstellungen',
+        bannerDescription:
+          'Ich verwende eigene Cookies und Cookies von Drittanbietern, damit diese Webseite korrekt dargestellt werden kann.',
+      },
+    },
+  },
 
   sitemap: {
     autoI18n: true,
@@ -30,8 +95,7 @@ export default defineNuxtConfig({
   },
 
   gtag: {
-    id: 'G-XXXXXXXXXX',
-    initialConsent: true,
+    initialConsent: false,
   },
 
   nitro: {

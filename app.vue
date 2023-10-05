@@ -14,10 +14,7 @@
   </Html>
 
   <OrganismsLoadingScreen v-if="isAppLoading" />
-  <!--    <div class="pb-safe fixed bottom-0 z-20 h-10 w-full bg-green-500">Test</div>-->
-  <!--    <AtomsWrapper class="bg-red-black/0 fixed left-0 top-0 z-20 w-full text-white mix-blend-difference lg:hidden"
-    >asdasd</AtomsWrapper
-  >-->
+  <CookieControl :locale="$i18n.locale" />
   <MoleculesStickyHeader v-if="viewport.isLessThan('desktop')" />
   <MoleculesMobileMenu v-if="viewport.isLessThan('desktop')" />
   <div id="smooth-wrapper" class="pointer-events-none grid !min-h-[100svh] min-h-screen grid-cols-12">
@@ -39,13 +36,16 @@
 </template>
 <script lang="ts" setup>
 const route = useRoute();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother, $ScrollTrigger: ScrollTrigger, $Power4: Power4 } = useNuxtApp();
 const appStore = useAppStore();
 const { isAppLoading } = storeToRefs(appStore);
 const modalStore = useModalStore();
 const { isModalOpen, smoother } = storeToRefs(modalStore);
 const animationStore = useAnimationStore();
+const { cookiesEnabledIds } = useCookieControl();
+const { grantConsent, revokeConsent } = useGtag();
+
 let tl: gsap.core.Timeline;
 let ctx: gsap.Context;
 const modal = ref<HTMLElement | null>(null);
@@ -152,6 +152,20 @@ onMounted(() => {
 onUnmounted(() => {
   ctx.revert();
 });
+
+watch(
+  () => cookiesEnabledIds.value,
+  (current, previous) => {
+    if (!previous?.includes('google-analytics') && current?.includes('google-analytics')) {
+      grantConsent();
+      window.location.reload();
+    } else {
+      revokeConsent();
+      window.location.reload();
+    }
+  },
+  { deep: true }
+);
 
 watch(
   () => route.name,
