@@ -390,11 +390,11 @@ export default {
           },
           description: {
             role: 'Ich bin ein selbständiger Software-Entwickler mit Sitz in Deutschland, der Spaß daran hat, Projekte vom Konzept bis zur Implementierung umzusetzen. Bei meinen Projekten arbeite ich sowohl auf der Backend- als auch auf der Frontend-Seite.',
-            hobby: 'Meine Freizeit verbringe ich gerne in den Bergen.',
+            hobby: '',
           },
         },
         experience: {
-          headline: 'Mehrere Jahre an praktischer Erfahrung als Softwareentwickler.',
+          headline: 'Mehrere Jahre an praktischer Erfahrung als Entwickler.',
           items: {
             abi: {
               additionalYear: 'begonnen 08/2015 · 2 Jahre',
@@ -444,7 +444,7 @@ export default {
               additionalYear: 'begonnen  02/2021 · 1 Semester',
               title: "Studentische Hilfskraft {'@'}hfu",
               description: [
-                "Durchführung eines Usability-Tests für das 'Fraunhofer-Institut' unter Verwendung der Eyetracking-Technologie",
+                'Durchführung eines Usability-Tests für das Fraunhofer-Institut unter Verwendung der Eyetracking-Technologie',
               ],
             },
             teaching: {
@@ -473,7 +473,7 @@ export default {
               },
             },
             selfEmployment: {
-              additionalYear: 'begonnen 06/2015 · bis heute',
+              additionalYear: 'begonnen 06/2016 · bis heute',
               title: 'Eigener Gewerbebetrieb',
               description: ['Umsetzung von Webanwendungen', 'Betreuung von kleinen Unternehmen'],
             },

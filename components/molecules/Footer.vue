@@ -11,7 +11,7 @@
           <MoleculesScrambleText class="text-white" title="Designing. Coding. Maintaining ..." :rows="6" />
         </div>
         <div class="row-span-2 row-start-1 hidden self-center md:col-span-4 md:col-start-7 md:block">
-          <MoleculesScrambleText class="text-white" title="Get in touch" :rows="2" />
+          <MoleculesScrambleText class="text-white" title="Get in touch for collaboration" :rows="2" />
         </div>
       </AtomsGrid>
     </template>

@@ -388,11 +388,11 @@ export default {
           },
           description: {
             role: 'I am an independent developer based in Germany who enjoys shaping and implementing projects from concept to implementation. With a academical background in both, I work for my projects on the backend and frontend side.',
-            hobby: 'In my free time I like to go hiking in the mountains.',
+            hobby: '',
           },
         },
         experience: {
-          headline: 'Several years of hands-on experience as a software developer',
+          headline: 'Several years of hands-on experience as a developer',
           items: {
             abi: {
               additionalYear: 'started 08/2015 · 2 years',
@@ -420,7 +420,7 @@ export default {
             ibc: {
               additionalYear: 'joined  06/2018 · 6 semesters',
               title: "Student consultant {'@'}ibc",
-              description: ['Realisation of web projects', 'Participation in consulting workshops'],
+              description: ['Realization of web projects', 'Participation in consulting workshops'],
               link: {
                 to: 'https://business-consulting.de/',
                 title: '@:general.phrases.openInNewTab @:pages.about.content.experience.items.ibc.link.to',
@@ -438,7 +438,7 @@ export default {
             hiwi: {
               additionalYear: 'started  02/2021 · 1 semesters',
               title: "Student assistant {'@'}hfu",
-              description: ["Usability test for the 'Fraunhofer-Institute' using eye tracking technology"],
+              description: ['Usability test for the Fraunhofer-Institute using eye tracking technology'],
             },
             teaching: {
               additionalYear: 'started 10/2021 · 2 semesters',
@@ -466,9 +466,12 @@ export default {
               },
             },
             selfEmployment: {
-              additionalYear: 'started 06/2015 · today',
+              additionalYear: 'started 06/2016 · present',
               title: 'Independent developer',
-              description: ['Realisation of web applications ', 'Customer support for small businesses'],
+              description: [
+                'Realization of web applications, with a focus on e-commerce stores, websites and plugins',
+                'Customer support for small businesses and start-ups',
+              ],
             },
           },
         },
