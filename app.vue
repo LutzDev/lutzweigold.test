@@ -61,7 +61,6 @@ const head = useLocaleHead({
 });
 
 useSeoMeta({
-  // title: 'Self-employed software developer | Lutz Weigold',
   title: () => {
     return title.value;
   },
@@ -75,6 +74,7 @@ useSeoMeta({
     return t(`pages.${activeRoute().split('-').splice(-1, 1)[0]}.seo.ogDescription`);
   },
   ogImage: '/images/general/og-image.webp',
+  ogType: 'website',
 });
 
 onMounted(() => {

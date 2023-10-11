@@ -6,6 +6,13 @@ export default defineNuxtConfig({
   devtools: {
     enabled: false,
   },
+
+  app: {
+    head: {
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
+    },
+  },
+
   ssr: true,
   modules: [
     '@nuxtjs/eslint-module',
