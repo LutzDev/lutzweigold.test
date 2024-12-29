@@ -16,9 +16,10 @@
                     <AtomsHeadline html-tag="h4">Angaben gemäß § 5 TMG</AtomsHeadline>
                   </template>
                   <template #text>
-                    <AtomsBodyText>Lutz Weigold (Einzelunterehmen)</AtomsBodyText>
-                    <AtomsBodyText>Hintergasse 8</AtomsBodyText>
-                    <AtomsBodyText>69483 Wald-Michelbach</AtomsBodyText>
+                    <AtomsBodyText>Lutz Weigold</AtomsBodyText>
+                    <AtomsBodyText>Obere Hönggerstrasse 5</AtomsBodyText>
+                    <AtomsBodyText>8103 Unterengstringen</AtomsBodyText>
+                    <AtomsBodyText>Schweiz</AtomsBodyText>
                   </template>
                 </AtomsInformationTextItem>
                 <AtomsInformationTextItem>
@@ -47,16 +48,6 @@
                         {{ $t('general.personal.website.name') }}
                       </AtomsBodyText>
                     </div>
-                  </template>
-                </AtomsInformationTextItem>
-                <AtomsInformationTextItem>
-                  <template #headline>
-                    <AtomsHeadline html-tag="h4">Gewerbeanmeldung</AtomsHeadline>
-                  </template>
-                  <template #text>
-                    <AtomsBodyText
-                      >Die Gewerbeanmeldung wurde am 02.07.2015 durch Gemeinde Wald-Michelbach erteilt.</AtomsBodyText
-                    >
                   </template>
                 </AtomsInformationTextItem>
                 <AtomsInformationTextItem>

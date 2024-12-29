@@ -31,15 +31,11 @@ const backendList: Array<ListItem> = [
   },
   {
     title: 'pages.skill.content.technologies.frameworks',
-    entries: ['Ktor', 'Fastify', 'Jest'],
+    entries: ['Spring Boot', 'Node', 'Ktor', 'Fastify', 'Jest', 'Directus'],
   },
   {
     title: 'pages.skill.content.technologies.tools',
     entries: ['MongoDB', 'PostgreSQL', 'Docker', 'Git'],
-  },
-  {
-    title: 'pages.skill.content.technologies.learning',
-    entries: ['Spring Boot'],
   },
 ];
 
@@ -58,7 +54,7 @@ const frontendList: Array<ListItem> = [
   },
   {
     title: 'pages.skill.content.technologies.learning',
-    entries: ['React'],
+    entries: ['Angular'],
   },
 ];
 </script>

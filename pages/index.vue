@@ -62,6 +62,21 @@ const experience: Experience = {
   year: 20,
   entries: [
     {
+      year: 24,
+      items: [
+        {
+          additionalYear: 'pages.about.content.experience.items.zuehlke.additionalYear',
+          title: 'pages.about.content.experience.items.zuehlke.title',
+          description: 'pages.about.content.experience.items.zuehlke.description',
+          link: {
+            to: 'pages.about.content.experience.items.zuehlke.link.to',
+            title: 'pages.about.content.experience.items.zuehlke.link.title',
+          },
+          tags: [{ name: 'general.tags.work', color: 1 }],
+        },
+      ],
+    },
+    {
       year: 23,
       items: [
         {

@@ -7,8 +7,8 @@ export default {
     },
     personal: {
       phone: {
-        name: '+49 (0)152 26269766',
-        to: 'tel:+49(0)15226269766',
+        name: '+41 (0)795398424',
+        to: 'tel:+41(0)795398424',
         title: 'Call me via @:general.personal.phone.name',
       },
       email: {
@@ -50,7 +50,7 @@ export default {
       contact: 'Contact details',
       copyright: '© lutz weigold',
       socials: 'Socials',
-      headline: "Let's collaborate and build your next projects together.",
+      headline: "Let's collaborate.",
     },
   },
   projects: {
@@ -387,7 +387,7 @@ export default {
             },
           },
           description: {
-            role: 'I am an independent developer based in Germany who enjoys shaping and implementing projects from concept to implementation. With a academical background in both, I work for my projects on the backend and frontend side.',
+            role: 'I am a software engineer based in Zürich 🇨🇭 who enjoys shaping and implementing projects from concept to implementation. With a academical background in both, I work for my projects on the backend and frontend side.',
             hobby: '',
           },
         },
@@ -465,8 +465,16 @@ export default {
                 title: '@:general.phrases.openInNewTab @:pages.about.content.experience.items.master.link.to',
               },
             },
+            zuehlke: {
+              additionalYear: 'started 01/2023 · present',
+              title: "Software Engineer {'@'}Zühlke",
+              link: {
+                to: 'https://www.zuehlke.com/en',
+                title: '@:general.phrases.openInNewTab @:pages.about.content.experience.items.zuehlke.link.to',
+              },
+            },
             selfEmployment: {
-              additionalYear: 'started 06/2016 · present',
+              additionalYear: 'started 06/2016 · 7 years',
               title: 'Independent developer',
               description: [
                 'Realization of web applications, with a focus on e-commerce stores, websites and plugins',

@@ -7,8 +7,8 @@ export default {
     },
     personal: {
       phone: {
-        name: '+49 (0)152 26269766',
-        to: 'tel:+49(0)15226269766',
+        name: '+41 (0)795398424',
+        to: 'tel:+41(0)795398424',
         title: 'Rufe mich über @:general.personal.phone.name an',
       },
       email: {
@@ -50,7 +50,7 @@ export default {
       contact: 'Kontakt',
       copyright: '© lutz weigold',
       socials: 'Soziale Netzwerke',
-      headline: 'Lassen Sie uns zusammenarbeiten und Ihr nächstes Projekt umsetzen.',
+      headline: 'Interesse an einem Austausch?',
     },
   },
   projects: {
@@ -389,7 +389,7 @@ export default {
             },
           },
           description: {
-            role: 'Ich bin ein selbständiger Software-Entwickler mit Sitz in Deutschland, der Spaß daran hat, Projekte vom Konzept bis zur Implementierung umzusetzen. Bei meinen Projekten arbeite ich sowohl auf der Backend- als auch auf der Frontend-Seite.',
+            role: 'Ich bin ein Software-Entwickler mit Sitz in Zürich 🇨🇭, der Spaß daran hat, Projekte vom Konzept bis zur Implementierung umzusetzen. Bei meinen Projekten arbeite ich sowohl auf der Backend- als auch auf der Frontend-Seite.',
             hobby: '',
           },
         },
@@ -472,8 +472,16 @@ export default {
                 title: '@:general.phrases.openInNewTab @:pages.about.content.experience.items.master.link.to',
               },
             },
+            zuehlke: {
+              additionalYear: 'begonnen 01/2023 · bis heute',
+              title: "Software Engineer {'@'}Zühlke",
+              link: {
+                to: 'https://www.zuehlke.com/de',
+                title: '@:general.phrases.openInNewTab @:pages.about.content.experience.items.zuehlke.link.to',
+              },
+            },
             selfEmployment: {
-              additionalYear: 'begonnen 06/2016 · bis heute',
+              additionalYear: 'begonnen 06/2016 · 7 Jahre',
               title: 'Eigener Gewerbebetrieb',
               description: ['Umsetzung von Webanwendungen', 'Betreuung von kleinen Unternehmen'],
             },
@@ -592,9 +600,9 @@ export default {
       title: '@:general.phrases.openInSameTab @:pages.contact.name',
       seo: {
         ogDescription:
-          'Sind Sie bereit, Ihr nächstes digitales Produkt zu aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
+          'Sind Sie bereit, Ihr nächstes digitales Produkt aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
         description:
-          'Sind Sie bereit, Ihr nächstes digitales Produkt zu aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
+          'Sind Sie bereit, Ihr nächstes digitales Produkt aufzubauen? Lassen Sie uns zusammenarbeiten und Ihre Vision zum Leben erwecken! Nehmen Sie noch heute Kontakt auf.',
         ogTitle: "Kontakt {'|'} Lutz Weigold",
         title: "Kontakt {'|'} Lutz Weigold",
       },
